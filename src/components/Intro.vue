@@ -1,39 +1,69 @@
 <template>
   <div id="intro">
-    <img src="../assets/logo.png">
-    <h1></h1>
+    <div class="center">
+      <h1>sofia boggio</h1>
+      <img src="../assets/svg/logo-sofia.svg">
+    </div>
+    <div id="scrollto">scroll to discover</div>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'hello',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
+  export default {
+    name: 'intro',
   }
-}
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-h1, h2 {
-  font-weight: normal;
-}
+<style lang="scss">
 
-ul {
-  list-style-type: none;
-  padding: 0;
-
-  li {
-    display: inline-block;
-    margin: 0 10px;
+  body, html {
+    height: 100%;
+    overflow: hidden;
   }
-}
 
+  #intro {
+    background: #F0F2FA;
+    height: 100vh;
+    width: 100vw;
 
-a {
-  color: #42b983;
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .center {
+      transform: rotate(-90deg);
+    }
+
+    h1 {
+      display: inline-block;
+    }
+
+    img {
+      display: inline-block;
+      height: 20px;
+      margin-left: 20px;
+    }
+
+    #scrollto {
+      font-size: .8rem;
+      position: absolute;
+      bottom: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+
+      &:after {
+        content: '';
+        height: 200px;
+        width: 4px;
+        background: #3C3D4C;
+        position: absolute;
+        display: block;
+        top: 20px;
+        left: calc(50% - 2px);
+       }
+    }
+
+  }
+
 </style>
