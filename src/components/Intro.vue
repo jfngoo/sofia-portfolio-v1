@@ -4,25 +4,40 @@
       <h1>sofia boggio</h1>
       <img src="../assets/svg/logo-sofia.svg">
     </div>
-    <div id="scrollto">scroll to discover</div>
+    <div id="scrollto">
+      <router-link to="home">scroll to discover</router-link>
+    </div>
   </div>
 </template>
 
 <script>
   export default {
     name: 'intro',
+
+
+
+    mounted() {
+      this.blockScroll();
+    },
+
+    methods: {
+      goTo() {
+        this.$router.push({ name: 'home'});
+      },
+
+      blockScroll() {
+        document.querySelector('body').style.overflow = "hidden";
+        document.querySelector('html').style.overflow = "hidden";
+      }
+    }
   }
 </script>
 
 <style lang="scss">
 
-  body, html {
-    height: 100%;
-    overflow: hidden;
-  }
+  @import '../utils/global';
 
   #intro {
-    background: #F0F2FA;
     height: 100vh;
     width: 100vw;
 
@@ -52,11 +67,16 @@
       transform: translateX(-50%);
       text-align: center;
 
+      a {
+        text-decoration: none;
+        color: $dark_purple;
+      }
+
       &:after {
         content: '';
         height: 200px;
         width: 4px;
-        background: #3C3D4C;
+        background: $dark_purple;
         position: absolute;
         display: block;
         top: 20px;

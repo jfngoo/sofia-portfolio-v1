@@ -5,17 +5,23 @@
 </template>
 
 <script>
-export default {
-  name: 'app'
-}
+  export default {
+    name: 'app'
+  }
 </script>
 
-<style>
-#app {
-  font-family: 'Poppins', 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #3C3D4C;
-}
+<style lang="scss">
+
+  @import './utils/global';
+
+  #app {
+    width: 100%;
+    height: 100%;
+    font-family: 'Poppins', 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: $dark_purple;
+    background: $background_color;
+  }
 </style>
