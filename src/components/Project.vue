@@ -1,9 +1,13 @@
 <template>
-  <div id="project">
+  <div>
 
     <borders></borders>
 
-    <h2>{{project.title}}</h2>
+    <div id="project">
+      <div id="banner" :style="{ backgroundImage: 'url(' + getPhoto(project.background) +')' }"></div>
+      <h1 class="title">{{project.title}}</h1>
+    </div>
+
   </div>
 </template>
 
@@ -18,7 +22,7 @@
     name: 'project',
 
     components: {
-        Borders
+      Borders
     },
 
     data () {
@@ -60,7 +64,25 @@
   }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 
-  @import '../utils/global.scss';
+  #project {
+    padding-top: 60px;
+
+    #banner {
+      width: calc(100vw - 120px);
+      height: 500px;
+      margin: 0 auto;
+      background: center center no-repeat;
+      background-size: cover;
+    }
+
+    .title {
+      text-transform: uppercase;
+      font-size: 4rem;
+      position: relative;
+      top: -80px;
+    }
+  }
+
 </style>
