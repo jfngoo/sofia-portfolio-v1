@@ -1,4 +1,4 @@
-export const data_fr =
+export const data_en =
   [
     {
       id: "cushy",

@@ -1,4 +1,4 @@
-import {data_fr} from '../../data'
+import {data_en} from '../../data'
 
 class DataManager {
   static instance;
@@ -10,7 +10,7 @@ class DataManager {
     }
     DataManager.instance = this;
 
-    this.setData(data_fr);
+    this.setData(data_en);
   }
 
   setData(data) {
