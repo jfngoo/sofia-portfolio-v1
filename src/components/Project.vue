@@ -1,24 +1,45 @@
 <template>
   <div id="project">
 
+    <borders></borders>
+
+    <h2>{{project.title}}</h2>
   </div>
 </template>
 
 <script>
 
+  import Borders from 'components/Borders'
+
   import DataManager from 'lib/dataManager'
   import AssetsManager from 'lib/assetsManager'
+
   export default {
-    name: 'home',
+    name: 'project',
+
+    components: {
+        Borders
+    },
+
     data () {
       return {
-        projects: null
+        project: null
+      }
+    },
+
+    beforeMount() {
+      this.projects = DataManager.getProjects();
+
+      for (let i = 0; i < this.projects.length; i++) {
+        const project = this.projects[i];
+        if (project.id === this.$route.params.id) {
+          this.project = project;
+        }
       }
     },
 
     mounted() {
       this.setScroll();
-      this.projects = DataManager.getProjects();
     },
 
     methods: {

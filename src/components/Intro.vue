@@ -14,8 +14,6 @@
   export default {
     name: 'intro',
 
-
-
     mounted() {
       this.blockScroll();
     },

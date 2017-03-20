@@ -1,25 +1,11 @@
 <template>
   <div id="home">
 
-    <div id="borders">
-      <div class="border-top horizontal-border"></div>
-      <div class="border-right vertical-border"></div>
-      <div class="border-bottom horizontal-border"></div>
-      <div class="border-left vertical-border">
-          <img class="logo" src="../assets/svg/logo-sofia.svg" alt="" @click="goTo('intro')">
-          <nav>
-            <ul>
-              <li>about & contact</li>
-              <li>archive</li>
-              <li>work</li>
-            </ul>
-          </nav>
-      </div>
-    </div>
+    <borders></borders>
 
     <div id="projects">
       <ul>
-        <li v-for="project in projects" :style="{ backgroundImage: 'url(' + getPhoto(project.background) +')' }">
+        <li v-for="project in projects" :style="{ backgroundImage: 'url(' + getPhoto(project.background) +')' }" @click="goTo('project', project.id)">
           <div class="wrapper">
             <div class="title">{{project.title}}</div>
             <div class="type">{{project.type}}</div>
@@ -34,10 +20,17 @@
 
 <script>
 
+  import Borders from 'components/Borders'
+
   import DataManager from 'lib/dataManager'
   import AssetsManager from 'lib/assetsManager'
   export default {
     name: 'home',
+
+    components : {
+        Borders,
+    },
+
     data () {
       return {
         projects: null
@@ -59,9 +52,12 @@
           return AssetsManager.getPhoto(fileName);
       },
 
-      goTo(name) {
-          console.log(name);
-          this.$router.push({name: name});
+      goTo(name, param) {
+          if (param) {
+              this.$router.push({name: name, params: {id: param}});
+          } else {
+              this.$router.push({name: name});
+          }
       }
     }
   }
@@ -140,8 +136,8 @@
 
     #projects {
       ul {
-        padding-top: 60px;
-        margin: 0;
+        padding: 60px 0 0 0;
+        margin: 0 auto;
         width: calc(100vw - 120px);
 
         li {
