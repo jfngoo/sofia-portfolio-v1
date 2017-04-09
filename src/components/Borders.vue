@@ -3,9 +3,11 @@
   <div id="borders">
     <div class="border-top horizontal-border"></div>
     <div class="border-right vertical-border"></div>
-    <div class="border-bottom horizontal-border"></div>
+    <div class="border-bottom horizontal-border">
+        © Sofia Boggio - 2017
+    </div>
     <div class="border-left vertical-border">
-      <img class="logo" src="../assets/svg/logo-sofia-clear.svg" alt="" @click="goTo('intro')">
+      <img class="logo" src="../assets/svg/logo-sofia-clear.svg" alt="" @click="goTo('home')">
       <nav>
         <ul>
           <li>about & contact</li>
@@ -57,6 +59,7 @@
       height: $border_width;
       width: 100vw;
       position: fixed;
+      left: 0;
       z-index: 99;
       background: $background_color;
     }
@@ -64,6 +67,7 @@
       height: 100vh;
       width: 60px;
       position: fixed;
+      top: 0;
       z-index: 99;
       background: $background_color;
     }
@@ -113,6 +117,8 @@
     }
     .border-bottom {
       bottom: 0;
+
+      line-height: $border_width;
     }
   }
 

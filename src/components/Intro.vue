@@ -35,6 +35,7 @@
       this.blockScroll();
       this.addEventListeners();
       this.launched = false;
+      this.setTweens();
     },
 
     beforeDestroy() {
@@ -66,6 +67,14 @@
 
       removeEventListeners() {
         window.removeEventListener("mousewheel", this.scrollListener);
+      },
+
+      setTweens() {
+
+          TweenMax.from(this.$refs.title, 1, {y: 50, opacity: 0});
+          TweenMax.from(this.$refs.bar, 1, {y: 50, opacity: 0, delay: .5});
+        TweenMax.from(this.$refs.scroll, 1, {opacity: 0, delay: 1.5});
+
       },
 
       onScroll(e) {

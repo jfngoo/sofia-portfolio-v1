@@ -7,6 +7,7 @@
 
       <div id="header" v-if="project.title">
         <div id="banner" :style="{ backgroundImage: 'url(' + getCover(project.background) +')' }"></div>
+        <div ref="bannerMask" id="banner-mask"></div>
         <h1 ref="title" class="title">{{project.title}}</h1>
       </div>
 
@@ -21,6 +22,7 @@
           <div class="title">When</div>
           {{project.details.when}}
 
+
         </div>
         <div class="who block">
           <div class="title">With</div>
@@ -34,6 +36,7 @@
 
         <div class="text" v-if="project.text1">
           {{project.text1}}
+
         </div>
 
         <div class="video" v-if="project.vimeoId">
@@ -42,11 +45,13 @@
         </div>
 
         <div class="video" v-if="project.youtubeId">
-          <iframe width="560" height="315" :src="youtubeURI" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          <iframe width="560" height="315" :src="youtubeURI" frameborder="0" webkitallowfullscreen mozallowfullscreen
+                  allowfullscreen></iframe>
         </div>
 
         <div class="text" v-if="project.text2">
           {{project.text2}}
+
         </div>
 
         <div id="gallery">
@@ -82,7 +87,7 @@
       return {
         project: null,
         vimeoURI: null,
-        youtubeURI : null
+        youtubeURI: null
       }
     },
 
@@ -121,11 +126,14 @@
       },
 
       setTweens() {
+
+        TweenMax.from(this.$refs.bannerMask, 1, {opacity: 0});
+
         const tl = new TimelineMax();
 
-          tl.from(this.$refs.title, 1, {y:40, opacity: 0});
-          tl.staggerFrom(".block", .5, {y:40, opacity: 0}, .15);
-          tl.from(this.$refs.container, 1, {y:40, opacity: 0});
+        tl.from(this.$refs.title, 1, {y: 40, opacity: 0});
+        tl.staggerFrom(".block", .5, {y: 40, opacity: 0}, .15);
+        tl.from(this.$refs.container, 1, {y: 40, opacity: 0});
       }
     }
   }
@@ -142,29 +150,27 @@
     font-size: .9rem;
 
     #project-wrapper {
-      padding: 0 $border_width;
+      padding: $border_width;
     }
 
     #header {
-      padding-top: 60px;
 
       #banner {
         position: relative;
-        width: calc(100vw - 120px);
+        width: 100%;
         height: 500px;
         margin: 0 auto;
         background: center center no-repeat;
         background-size: cover;
+      }
 
-        &:after {
-          content: '';
-          position: absolute;
-          width: calc(100vw - 120px);
-          height: 500px;
-          top: 0;
-          left: 0;
-          background: rgba(255, 255, 255, .3);
-        }
+      #banner-mask {
+        position: absolute;
+        top: $border_width;
+        width: 100%;
+        height: 500px;
+        background: #FFFFFF;
+        opacity: .5;
       }
 
       .title {
