@@ -38,14 +38,13 @@
     },
 
     mounted() {
-      this.setScroll();
+      this.resetScroll();
       this.projects = DataManager.getProjects();
     },
 
     methods: {
-      setScroll() {
-        document.querySelector('body').style.overflow = "auto";
-        document.querySelector('html').style.overflow = "auto";
+      resetScroll() {
+        window.scrollTo(0, 0);
       },
 
       getCover(fileName) {

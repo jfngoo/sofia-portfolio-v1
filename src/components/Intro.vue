@@ -18,14 +18,24 @@
       this.blockScroll();
     },
 
+    beforeDestroy() {
+      this.unblockScroll();
+    },
+
     methods: {
       goTo() {
-        this.$router.push({ name: 'home'});
+        this.$router.push({name: 'home'});
       },
 
       blockScroll() {
+        window.scrollTo(0, 0);
         document.querySelector('body').style.overflow = "hidden";
         document.querySelector('html').style.overflow = "hidden";
+      },
+
+      unblockScroll() {
+        document.querySelector('body').style.overflow = "auto";
+        document.querySelector('html').style.overflow = "auto";
       }
     }
   }
@@ -79,7 +89,7 @@
         display: block;
         top: 20px;
         left: calc(50% - 2px);
-       }
+      }
     }
 
   }

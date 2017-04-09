@@ -96,13 +96,11 @@
     },
 
     mounted() {
-      this.setScroll();
+      this.resetScroll();
     },
 
     methods: {
-      setScroll() {
-        document.querySelector('body').style.overflow = "auto";
-        document.querySelector('html').style.overflow = "auto";
+      resetScroll() {
         window.scrollTo(0, 0);
       },
 
