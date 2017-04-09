@@ -10,7 +10,7 @@
         <ul>
           <li>about & contact</li>
           <li>archive</li>
-          <li>work</li>
+          <li @click="goTo('home')">work</li>
         </ul>
       </nav>
     </div>
@@ -44,13 +44,13 @@
   }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 
   @import '../utils/global.scss';
 
   #borders {
     .horizontal-border {
-      height: 60px;
+      height: $border_width;
       width: 100vw;
       position: fixed;
       z-index: 99;

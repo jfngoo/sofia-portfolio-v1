@@ -1,32 +1,50 @@
 <template>
-  <div id="project">
+  <div id="project" v-if="project">
 
     <borders></borders>
 
-    <div id="header">
-      <div id="banner" :style="{ backgroundImage: 'url(' + getPhoto(project.background) +')' }"></div>
-      <h1 class="title">{{project.title}}</h1>
-    </div>
+    <div id="project-wrapper">
 
-    <div id="details">
-      <div class="what block">
-        <div class="title">What</div>
-        <ul class="list">
-          <li v-for="what in project.details.what">{{what}}</li>
-        </ul>
+      <div id="header" v-if="project.title">
+        <div id="banner" :style="{ backgroundImage: 'url(' + getPhoto(project.background) +')' }"></div>
+        <h1 class="title">{{project.title}}</h1>
       </div>
-      <div class="when block">
-        <div class="title">When</div>
-        {{project.details.when}}
 
+      <div id="details" v-if="project.details">
+        <div class="what block">
+          <div class="title">What</div>
+          <ul class="list">
+            <li v-for="what in project.details.what">{{what}}</li>
+          </ul>
+        </div>
+        <div class="when block">
+          <div class="title">When</div>
+          {{project.details.when}}
+      </div>
+        <div class="who block">
+          <div class="title">With</div>
+          <ul class="list">
+            <li v-for="who in project.details.who">{{who}}</li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="container">
+
+        <div class="text" v-if="project.details.text1">
+          {{project.details.text1}}
+        </div>
+
+        <div class="video" v-if="project.vimeoId">
+          <iframe :src="vimeoURI" width="640px" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
+
+        <div class="text" v-if="project.details.text2">
+          {{project.details.text2}}
+        </div>
 
       </div>
-      <div class="who block">
-        <div class="title">With</div>
-        <ul class="list">
-          <li v-for="who in project.details.who">{{who}}</li>
-        </ul>
-      </div>
+
     </div>
 
   </div>
@@ -48,13 +66,17 @@
 
     data () {
       return {
-        project: null
+        project: null,
+        vimeoURI: null,
       }
     },
 
     beforeMount() {
       this.project = DataManager.getProjectWithName(this.$route.params.id);
-      console.log(this.project.details);
+
+      if(this.project.vimeoId) {
+        this.vimeoURI = "https://player.vimeo.com/video/" + this.project.vimeoId;
+      }
     },
 
     mounted() {
@@ -72,7 +94,6 @@
       },
 
       goTo(name) {
-        console.log(name);
         this.$router.push({name: name});
       }
     }
@@ -81,7 +102,16 @@
 
 <style lang="scss">
 
+  @import '../utils/global.scss';
+
   #project {
+
+    min-height: 100vh;
+    background: #FFFFFF;
+
+    #project-wrapper {
+      padding: 0 $border_width;
+    }
 
     #header {
       padding-top: 60px;
@@ -105,7 +135,7 @@
 
     #details {
 
-      width: 100%;
+      padding: 0 40px;
 
       ul {
         margin: 0;
@@ -129,6 +159,64 @@
       }
     }
 
+    #container {
+      margin: 20px auto;
+      padding: 60px 0;
+      max-width: 800px;
+
+      .text {
+        padding: 0 15px;
+        text-align: left;
+        line-height: 1.5rem;
+      }
+
+      .video {
+        margin: 40px auto;
+
+        iframe {
+          width: 100%;
+          max-width: 960px;
+          height: 450px;
+        }
+      }
+    }
   }
+
+  @media all and (max-width: 680px) {
+    #project {
+      #container {
+        .video {
+          iframe {
+            height: 360px;
+          }
+        }
+      }
+    }
+  }
+
+  @media all and (max-width: 520px) {
+    #project {
+      #container {
+        .video {
+          iframe {
+            height: 300px;
+          }
+        }
+      }
+    }
+  }
+
+  @media all and (max-width: 460px) {
+    #project {
+      #container {
+        .video {
+          iframe {
+            height: 220px;
+          }
+        }
+      }
+    }
+  }
+
 
 </style>

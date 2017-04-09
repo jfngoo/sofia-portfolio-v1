@@ -12,7 +12,8 @@ export const data_en =
         who: ["Léo Ternoir", "Jacky Fong", "Léna Scaravella", "Thomas Boulongne", "Sofia Boggio"],
         text1: "Cushy! is a cushion that you can squeeze, pet, or punch when you’re cozy, on your couch, and you don’t know what TV show or movie to watch. It’ll tell you what’s best based on your mood. No need to wonder around for hours, looking for something you haven’t seen and that seems to fit how you’re feeling tonight.",
         text2: "Cushy! is a cushion that you can squeeze, pet, or punch when you’re cozy, on your couch, and you don’t know what TV show or movie to watch. It’ll tell you what’s best based on your mood. No need to wonder around for hours, looking for something you haven’t seen and that seems to fit how you’re feeling tonight."
-      }
+      },
+      vimeoId: "211794682"
 
     },
     {

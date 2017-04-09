@@ -26,7 +26,7 @@ module.exports = {
       '~': resolve('src/assets'),
       'lib': resolve('src/lib'),
       'data': resolve('src/data'),
-      'components': resolve('src/components'),
+      'components': resolve('src/components')
     }
   },
   module: {
