@@ -130,9 +130,9 @@
 
         const tl = new TimelineMax();
 
-        tl.from(this.$refs.bannerMask, 1, {opacity: 0});
-        tl.from(this.$refs.title, 1, {y: 40, opacity: 0});
-        tl.staggerFrom(".block", .5, {y: 40, opacity: 0}, .15);
+        tl.from(this.$refs.bannerMask, 1, {opacity: 0}, "tag");
+        tl.from(this.$refs.title, 1, {y: 40, opacity: 0}, "tag -= .5");
+        tl.staggerFrom(".block", .5, {y: 40, opacity: 0}, .15, "tag -= .25");
         tl.from(this.$refs.container, 1, {y: 40, opacity: 0});
       }
     }
@@ -168,7 +168,7 @@
         position: absolute;
         top: $border_width;
         left: $border_width;
-        width: calc(100% - 2*#{$border_width});
+        width: calc(100% - 2*#{$border-width});
         height: 500px;
         background: #FFFFFF;
         opacity: .5;
