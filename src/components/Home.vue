@@ -151,7 +151,7 @@
       visibility: hidden;
 
       ul {
-        padding: 60px 0 0 0;
+        padding: 60px 0 60px 0;
         margin: 0 auto;
         width: 100%;
 
@@ -197,6 +197,22 @@
 
         li + li {
           /*margin-top: 20px;*/
+        }
+      }
+    }
+  }
+
+
+  @media all and (max-width: 570px) {
+    #home {
+      #projects {
+        ul li .wrapper {
+          bottom: 20px;
+          left: 20px;
+
+          .title {
+            font-size: 8vw;
+          }
         }
       }
     }

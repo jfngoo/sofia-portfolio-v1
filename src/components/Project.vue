@@ -217,6 +217,7 @@
         display: inline-block;
         vertical-align: top;
         min-width: 200px;
+        margin-top: 40px;
       }
     }
 
@@ -253,6 +254,11 @@
 
   @media all and (max-width: 680px) {
     #project {
+      #header {
+        .title {
+          font-size: 10vw;
+        }
+      }
       #container {
         .video {
           iframe {

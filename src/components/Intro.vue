@@ -21,6 +21,7 @@
 
   import _ from 'lodash'
   import {TweenMax} from 'gsap'
+  import StateManager from 'lib/stateManager'
 
   import Borders from 'components/Borders'
 
@@ -45,6 +46,7 @@
 
     methods: {
       goTo() {
+        StateManager.setPlayHomeAnimation(true);
         this.$router.push({name: 'home'});
       },
 
@@ -73,7 +75,7 @@
 
           TweenMax.from(this.$refs.title, 1, {y: 50, opacity: 0});
           TweenMax.from(this.$refs.bar, 1, {y: 50, opacity: 0, delay: .5});
-        TweenMax.from(this.$refs.scroll, 1, {opacity: 0, delay: 1.5});
+          TweenMax.from(this.$refs.scroll, 1, {opacity: 0, delay: 1.5});
 
       },
 
