@@ -65,22 +65,22 @@
         this.scrollListener = _.throttle(this.onScroll, 200);
 
         window.addEventListener("mousewheel", this.scrollListener);
+        window.addEventListener("touchmove", this.scrollListener);
       },
 
       removeEventListeners() {
         window.removeEventListener("mousewheel", this.scrollListener);
+        window.removeEventListener("touchmove", this.scrollListener);
       },
 
       setTweens() {
-
           TweenMax.from(this.$refs.title, 1, {y: 50, opacity: 0});
           TweenMax.from(this.$refs.bar, 1, {y: 50, opacity: 0, delay: .5});
           TweenMax.from(this.$refs.scroll, 1, {opacity: 0, delay: 1.5});
-
       },
 
       onScroll(e) {
-        if (!this.launched && e.deltaY > 10) {
+        if (!this.launched && (e.deltaY > 10 || e.changedTouches)) {
           this.launched = true;
 
           TweenMax.killAll();
