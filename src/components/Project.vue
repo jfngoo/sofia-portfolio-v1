@@ -23,6 +23,7 @@
           {{project.details.when}}
 
 
+
         </div>
         <div class="who block">
           <div class="title">With</div>
@@ -36,6 +37,7 @@
 
         <div class="text" v-if="project.text1">
           {{project.text1}}
+
 
         </div>
 
@@ -51,6 +53,7 @@
 
         <div class="text" v-if="project.text2">
           {{project.text2}}
+
 
         </div>
 
@@ -73,6 +76,7 @@
 
   import DataManager from 'lib/dataManager'
   import AssetsManager from 'lib/assetsManager'
+  import StateManager from 'lib/stateManager'
 
   import {TweenMax} from 'gsap'
 
@@ -106,6 +110,10 @@
       this.resetScroll();
 
       this.$nextTick(this.setTweens);
+      StateManager.setIsInProject(this.project.id);
+    },
+
+    beforeDestroy() {
     },
 
     methods: {
@@ -122,11 +130,14 @@
       },
 
       goTo(name) {
-        this.$router.push({name: name});
+        TweenMax.to(window, .5, {
+          scrollTo: {y: 0, autoKill: false}, onComplete: () => {
+            this.$router.push({name: name});
+          }
+        });
       },
 
       setTweens() {
-
 
         const tl = new TimelineMax();
 
@@ -168,7 +179,7 @@
         position: absolute;
         top: $border_width;
         left: $border_width;
-        width: calc(100% - 2*#{$border-width});
+        width: calc(100% - 2 * #{$border-width});
         height: 500px;
         background: #FFFFFF;
         opacity: .5;

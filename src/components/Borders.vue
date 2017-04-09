@@ -4,15 +4,16 @@
     <div class="border-top horizontal-border"></div>
     <div class="border-right vertical-border"></div>
     <div class="border-bottom horizontal-border">
-        © Sofia Boggio - 2017
+      © Sofia Boggio - 2017
+
     </div>
     <div class="border-left vertical-border">
-      <img class="logo" src="../assets/svg/logo-sofia-clear.svg" alt="" @click="goTo('home')">
+      <img class="logo" src="../assets/svg/logo-sofia-clear.svg" alt="" @click="goToHome()">
       <nav>
         <ul>
           <li>about & contact</li>
           <li>archive</li>
-          <li @click="goTo('home')">work</li>
+          <li @click="goToHome()">work</li>
         </ul>
       </nav>
     </div>
@@ -22,6 +23,8 @@
 
 <script>
 
+  import StateManager from 'lib/stateManager'
+
   export default {
     name: 'borders',
     data () {
@@ -30,17 +33,9 @@
       }
     },
 
-    mounted() {
-    },
-
     methods: {
-
-      goTo(name, param) {
-        if (param) {
-          this.$router.push({name: name, params: {id: param}});
-        } else {
-          this.$router.push({name: name});
-        }
+      goToHome() {
+        this.$router.push({name: "home"});
       }
     }
   }

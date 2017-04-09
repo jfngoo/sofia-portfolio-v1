@@ -6,7 +6,7 @@
 
     <div ref="projects" id="projects">
       <ul>
-        <li v-for="project in projects" :style="{ backgroundImage: 'url(' + getCover(project.background) +')' }"
+        <li v-for="project in projects" :id="project.id" :style="{ backgroundImage: 'url(' + getCover(project.background) +')' }"
             @click="goToProject(project.id, $event)">
           <div class="wrapper">
             <div class="title">{{project.title}}</div>
@@ -25,6 +25,7 @@
   import Borders from 'components/Borders'
   import DataManager from 'lib/dataManager'
   import AssetsManager from 'lib/assetsManager'
+  import StateManager from 'lib/stateManager'
 
   import {TweenMax} from 'gsap'
   import ScrollToPlugin from 'gsap/ScrollToPlugin';
@@ -80,15 +81,42 @@
 
       setTweens() {
 
+
         const tl = new TimelineMax();
 
-        tl.set(this.$refs.mask, {width: 1});
-        tl.to(this.$refs.mask, 1, {scale: 5000, ease: Power3.easeIn});
-        tl.set(this.$refs.home, {background: "#F0F2FA"});
-        tl.set(this.$refs.mask, {display: "none"});
+        if (StateManager.getPlayHomeAnimation()) {
 
-        tl.set(this.$refs.projects, {visibility: "visible"});
-        tl.staggerFrom("#projects ul li", 1, {opacity: 0, x: 40}, .25);
+
+          tl.set(this.$refs.mask, {width: 1});
+          tl.to(this.$refs.mask, 1, {scale: 5000, ease: Power3.easeIn});
+
+          tl.set(this.$refs.home, {background: "#F0F2FA"});
+          tl.set(this.$refs.mask, {display: "none"});
+          tl.set(this.$refs.projects, {visibility: "visible"});
+          tl.staggerFrom("#projects ul li", 1, {opacity: 0, x: 40}, .25, "tag");
+          tl.staggerFrom("#projects ul li .wrapper", 1, {opacity: 0, x: 80}, .25, "tag -= 1.5");
+
+          StateManager.setPlayHomeAnimation(false);
+        } else if (StateManager.getIsInProject()) {
+
+          tl.set(this.$refs.home, {background: "#F0F2FA"});
+          tl.set(this.$refs.mask, {display: "none"});
+          tl.set(this.$refs.projects, {visibility: "visible"});
+          const target = document.getElementById(StateManager.getIsInProject()).offsetTop - 60;
+          window.scrollTo(0, target);
+          tl.staggerFrom("#projects ul li .wrapper", 1, {opacity: 0, x: 80}, .25, "tag -= 1.5");
+
+            StateManager.setIsInProject(false);
+
+        } else {
+          tl.set(this.$refs.home, {background: "#F0F2FA"});
+          tl.set(this.$refs.mask, {display: "none"});
+          tl.set(this.$refs.projects, {visibility: "visible"});
+//          tl.staggerFrom("#projects ul li", 1, {opacity: 0, x: 40}, .25, "tag");
+          tl.staggerFrom("#projects ul li .wrapper", 1, {opacity: 0, x: 80}, .25, "tag -= 1.5");
+        }
+
+
       }
     }
   }
@@ -144,6 +172,7 @@
             left: 100px;
             color: #FFFFFF;
             text-align: left;
+            text-shadow: 1px 1px 10px rgba(0, 0, 0, .5);
 
             .title {
               font-size: 2.4rem;
