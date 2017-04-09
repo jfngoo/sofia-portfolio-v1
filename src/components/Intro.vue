@@ -25,7 +25,7 @@
   import Borders from 'components/Borders'
 
   export default {
-    name: 'intro',
+    name: 'IntroComponent',
 
     components: {
         Borders,

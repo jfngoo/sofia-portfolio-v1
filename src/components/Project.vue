@@ -21,9 +21,6 @@
         <div class="when block">
           <div class="title">When</div>
           {{project.details.when}}
-
-
-
         </div>
         <div class="who block">
           <div class="title">With</div>
@@ -37,8 +34,6 @@
 
         <div class="text" v-if="project.text1">
           {{project.text1}}
-
-
         </div>
 
         <div class="video" v-if="project.vimeoId">
@@ -53,8 +48,6 @@
 
         <div class="text" v-if="project.text2">
           {{project.text2}}
-
-
         </div>
 
         <div id="gallery">
@@ -78,10 +71,12 @@
   import AssetsManager from 'lib/assetsManager'
   import StateManager from 'lib/stateManager'
 
+  import EventBus from 'lib/eventBus'
+
   import {TweenMax} from 'gsap'
 
   export default {
-    name: 'project',
+    name: 'ProjectComponent',
 
     components: {
       Borders
@@ -111,9 +106,8 @@
 
       this.$nextTick(this.setTweens);
       StateManager.setIsInProject(this.project.id);
-    },
 
-    beforeDestroy() {
+      this.addEventListeners();
     },
 
     methods: {
@@ -130,7 +124,7 @@
       },
 
       goTo(name) {
-        TweenMax.to(window, .5, {
+        TweenMax.to(window, .3, {
           scrollTo: {y: 0, autoKill: false}, onComplete: () => {
             this.$router.push({name: name});
           }
@@ -138,13 +132,18 @@
       },
 
       setTweens() {
-
         const tl = new TimelineMax();
 
         tl.from(this.$refs.bannerMask, 1, {opacity: 0}, "tag");
         tl.from(this.$refs.title, 1, {y: 40, opacity: 0}, "tag -= .5");
         tl.staggerFrom(".block", .5, {y: 40, opacity: 0}, .15, "tag -= .25");
         tl.from(this.$refs.container, 1, {y: 40, opacity: 0});
+      },
+
+      addEventListeners() {
+        EventBus.$on("BACK_TO_HOME", () => {
+          this.goTo("home");
+        });
       }
     }
   }

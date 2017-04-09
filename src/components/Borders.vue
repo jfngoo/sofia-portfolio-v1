@@ -24,9 +24,10 @@
 <script>
 
   import StateManager from 'lib/stateManager'
+  import EventBus from 'lib/eventBus'
 
   export default {
-    name: 'borders',
+    name: 'BordersComponent',
     data () {
       return {
         projects: null
@@ -35,7 +36,11 @@
 
     methods: {
       goToHome() {
-        this.$router.push({name: "home"});
+        if (StateManager.getIsInProject()) {
+          EventBus.$emit("BACK_TO_HOME");
+        } else {
+          this.$router.push({name: "home"});
+        }
       }
     }
   }
