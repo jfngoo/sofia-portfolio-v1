@@ -88,7 +88,8 @@
           tl.to(this.$refs.bar, 2, {height: "100vh", ease: Power3.easeIn}, "tag");
           tl.to(this.$refs.bar, 1, {scaleX: 500});
           tl.set("#borders", {display: "block"});
-          tl.fromTo("#borders .border-left", .5, {opacity: 0}, {opacity: 1});
+          tl.fromTo("#borders .border-left", .5, {opacity: 0}, {opacity: 1}, "tag2");
+          tl.fromTo("#borders .border-bottom", .5, {opacity: 0}, {opacity: 1}, "tag2");
         }
       },
     }

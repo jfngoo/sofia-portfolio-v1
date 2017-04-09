@@ -6,7 +6,8 @@
 
     <div ref="projects" id="projects">
       <ul>
-        <li v-for="project in projects" :style="{ backgroundImage: 'url(' + getCover(project.background) +')' }" @click="goTo('project', project.id)">
+        <li v-for="project in projects" :style="{ backgroundImage: 'url(' + getCover(project.background) +')' }"
+            @click="goToProject(project.id, $event)">
           <div class="wrapper">
             <div class="title">{{project.title}}</div>
             <div class="type">{{project.type}}</div>
@@ -26,12 +27,13 @@
   import AssetsManager from 'lib/assetsManager'
 
   import {TweenMax} from 'gsap'
+  import ScrollToPlugin from 'gsap/ScrollToPlugin';
 
   export default {
     name: 'home',
 
-    components : {
-        Borders,
+    components: {
+      Borders,
     },
 
     data () {
@@ -52,28 +54,41 @@
       },
 
       getCover(fileName) {
-          return AssetsManager.getCover(fileName);
+        return AssetsManager.getCover(fileName);
       },
 
-      goTo(name, param) {
-          if (param) {
-              this.$router.push({name: name, params: {id: param}});
-          } else {
-              this.$router.push({name: name});
+      goToProject(id, event) {
+
+        const target = event.target.offsetTop - 60;
+
+        const height = this.$refs.projects.offsetHeight * 1.5;
+
+        TweenMax.set(this.$refs.projects, {height: height});
+
+        TweenMax.to(window, .75, {
+          scrollTo: {
+            y: target,
+            onAutoKill: () => {
+              TweenMax.set(this.$refs.projects, {height: "auto"});
+            }
+          }, onComplete: () => {
+            this.$router.push({name: "project", params: {id: id}});
           }
+        });
+
       },
 
       setTweens() {
 
-          const tl = new TimelineMax();
+        const tl = new TimelineMax();
 
-          tl.set(this.$refs.mask, {width: 1});
-          tl.to(this.$refs.mask, 1, {scale: 5000, ease: Power3.easeIn});
-          tl.set(this.$refs.home, {background: "#F0F2FA"});
-          tl.set(this.$refs.mask, {display: "none"});
+        tl.set(this.$refs.mask, {width: 1});
+        tl.to(this.$refs.mask, 1, {scale: 5000, ease: Power3.easeIn});
+        tl.set(this.$refs.home, {background: "#F0F2FA"});
+        tl.set(this.$refs.mask, {display: "none"});
 
-          tl.set(this.$refs.projects, {visibility: "visible"});
-          tl.staggerFrom("#projects ul li", 1, {opacity: 0, x: 40 }, .25);
+        tl.set(this.$refs.projects, {visibility: "visible"});
+        tl.staggerFrom("#projects ul li", 1, {opacity: 0, x: 40}, .25);
       }
     }
   }
@@ -118,31 +133,31 @@
           transition: .25s filter ease;
           filter: grayscale(100%);
 
-            &:hover {
-               filter: grayscale(0%);
-                cursor: pointer;
-             }
+          &:hover {
+            filter: grayscale(0%);
+            cursor: pointer;
+          }
 
-            .wrapper {
-              position: absolute;
-              bottom: 100px;
-              left: 100px;
-              color: #FFFFFF;
-              text-align: left;
+          .wrapper {
+            position: absolute;
+            bottom: 100px;
+            left: 100px;
+            color: #FFFFFF;
+            text-align: left;
 
-              .title {
-                font-size: 2.4rem;
-                text-transform: uppercase;
-              }
-
-              .type {
-                margin: -4px 0 2px 0;
-              }
-
-              .date {
-                font-size: 1.1rem;
-              }
+            .title {
+              font-size: 2.4rem;
+              text-transform: uppercase;
             }
+
+            .type {
+              margin: -4px 0 2px 0;
+            }
+
+            .date {
+              font-size: 1.1rem;
+            }
+          }
 
         }
 
