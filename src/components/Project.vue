@@ -7,7 +7,7 @@
 
       <div id="header" v-if="project.title">
         <div id="banner" :style="{ backgroundImage: 'url(' + getCover(project.background) +')' }"></div>
-        <h1 class="title">{{project.title}}</h1>
+        <h1 ref="title" class="title">{{project.title}}</h1>
       </div>
 
       <div id="details" v-if="project.details">
@@ -30,7 +30,7 @@
         </div>
       </div>
 
-      <div id="container">
+      <div ref="container" id="container">
 
         <div class="text" v-if="project.text1">
           {{project.text1}}
@@ -69,6 +69,8 @@
   import DataManager from 'lib/dataManager'
   import AssetsManager from 'lib/assetsManager'
 
+  import {TweenMax} from 'gsap'
+
   export default {
     name: 'project',
 
@@ -97,6 +99,8 @@
 
     mounted() {
       this.resetScroll();
+
+      this.$nextTick(this.setTweens);
     },
 
     methods: {
@@ -114,6 +118,14 @@
 
       goTo(name) {
         this.$router.push({name: name});
+      },
+
+      setTweens() {
+        const tl = new TimelineMax();
+
+          tl.from(this.$refs.title, 1, {y:40, opacity: 0});
+          tl.staggerFrom(".block", .5, {y:40, opacity: 0}, .15);
+          tl.from(this.$refs.container, 1, {y:40, opacity: 0});
       }
     }
   }
@@ -127,6 +139,7 @@
 
     min-height: 100vh;
     background: #FFFFFF;
+    font-size: .9rem;
 
     #project-wrapper {
       padding: 0 $border_width;
@@ -136,11 +149,22 @@
       padding-top: 60px;
 
       #banner {
+        position: relative;
         width: calc(100vw - 120px);
         height: 500px;
         margin: 0 auto;
         background: center center no-repeat;
         background-size: cover;
+
+        &:after {
+          content: '';
+          position: absolute;
+          width: calc(100vw - 120px);
+          height: 500px;
+          top: 0;
+          left: 0;
+          background: rgba(255, 255, 255, .3);
+        }
       }
 
       .title {

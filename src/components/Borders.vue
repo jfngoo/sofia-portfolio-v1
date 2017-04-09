@@ -51,6 +51,7 @@
   #borders {
 
     color: $clear-purple;
+    font-size: .9rem;
 
     .horizontal-border {
       height: $border_width;

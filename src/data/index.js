@@ -46,7 +46,7 @@ export const data_en =
       text1: "Cushy! is a cushion that you can squeeze, pet, or punch when you’re cozy, on your couch, and you don’t know what TV show or movie to watch. It’ll tell you what’s best based on your mood. No need to wonder around for hours, looking for something you haven’t seen and that seems to fit how you’re feeling tonight.",
       youtubeId: "XXzo9GRlFNo",
       text2: "Cushy! is a cushion that you can squeeze, pet, or punch when you’re cozy, on your couch, and you don’t know what TV show or movie to watch. It’ll tell you what’s best based on your mood. No need to wonder around for hours, looking for something you haven’t seen and that seems to fit how you’re feeling tonight.",
-      photos: ["o-1.gif", "o-2.gif", "o-3.gif", "o-4.jpg", "o-5.jpg"]
+      photos: ["o-3.gif", "o-4.jpg", "o-5.jpg"]
     },
     {
       id: "s4m-m1",

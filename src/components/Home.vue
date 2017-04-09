@@ -72,8 +72,8 @@
           tl.set(this.$refs.home, {background: "#F0F2FA"});
           tl.set(this.$refs.mask, {display: "none"});
 
-          tl.set(this.$refs.projects, {display: "block"});
-          tl.staggerFrom("#projects ul li", 1, {opacity: 0, y: 100, ease: Sine.easeOut} , .25);
+          tl.set(this.$refs.projects, {visibility: "visible"});
+          tl.staggerFrom("#projects ul li", 1, {opacity: 0, x: 40 }, .25);
       }
     }
   }
@@ -87,6 +87,7 @@
     min-height: 100vh;
     background: $dark_purple;
     overflow-x: hidden;
+    padding: 0 60px;
 
     #mask {
       position: fixed;
@@ -99,17 +100,18 @@
     }
 
     #projects {
-      display: none;
+      visibility: hidden;
 
       ul {
         padding: 60px 0 0 0;
         margin: 0 auto;
-        width: calc(100vw - 120px);
+        width: 100%;
 
         li {
           position: relative;
           margin: 0 auto;
           display: block;
+          width: 100%;
           height: 500px;
           background: #FFFFFF center center no-repeat;
           background-size: cover;
