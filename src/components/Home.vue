@@ -5,7 +5,7 @@
 
     <div id="projects">
       <ul>
-        <li v-for="project in projects" :style="{ backgroundImage: 'url(' + getPhoto(project.background) +')' }" @click="goTo('project', project.id)">
+        <li v-for="project in projects" :style="{ backgroundImage: 'url(' + getCover(project.background) +')' }" @click="goTo('project', project.id)">
           <div class="wrapper">
             <div class="title">{{project.title}}</div>
             <div class="type">{{project.type}}</div>
@@ -48,8 +48,8 @@
         document.querySelector('html').style.overflow = "auto";
       },
 
-      getPhoto(fileName) {
-          return AssetsManager.getPhoto(fileName);
+      getCover(fileName) {
+          return AssetsManager.getCover(fileName);
       },
 
       goTo(name, param) {

@@ -6,7 +6,7 @@
     <div id="project-wrapper">
 
       <div id="header" v-if="project.title">
-        <div id="banner" :style="{ backgroundImage: 'url(' + getPhoto(project.background) +')' }"></div>
+        <div id="banner" :style="{ backgroundImage: 'url(' + getCover(project.background) +')' }"></div>
         <h1 class="title">{{project.title}}</h1>
       </div>
 
@@ -20,7 +20,8 @@
         <div class="when block">
           <div class="title">When</div>
           {{project.details.when}}
-      </div>
+
+        </div>
         <div class="who block">
           <div class="title">With</div>
           <ul class="list">
@@ -31,16 +32,27 @@
 
       <div id="container">
 
-        <div class="text" v-if="project.details.text1">
-          {{project.details.text1}}
+        <div class="text" v-if="project.text1">
+          {{project.text1}}
         </div>
 
         <div class="video" v-if="project.vimeoId">
-          <iframe :src="vimeoURI" width="640px" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          <iframe :src="vimeoURI" width="640px" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen
+                  allowfullscreen></iframe>
         </div>
 
-        <div class="text" v-if="project.details.text2">
-          {{project.details.text2}}
+        <div class="video" v-if="project.youtubeId">
+          <iframe width="560" height="315" :src="youtubeURI" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
+
+        <div class="text" v-if="project.text2">
+          {{project.text2}}
+        </div>
+
+        <div id="gallery">
+          <div v-for="photo in project.photos">
+            <img :src="getAssets(photo)" alt="Photo">
+          </div>
         </div>
 
       </div>
@@ -68,14 +80,18 @@
       return {
         project: null,
         vimeoURI: null,
+        youtubeURI : null
       }
     },
 
     beforeMount() {
       this.project = DataManager.getProjectWithName(this.$route.params.id);
 
-      if(this.project.vimeoId) {
+      if (this.project.vimeoId) {
         this.vimeoURI = "https://player.vimeo.com/video/" + this.project.vimeoId;
+      }
+      if (this.project.youtubeId) {
+        this.youtubeURI = "https://www.youtube.com/embed/" + this.project.youtubeId;
       }
     },
 
@@ -87,10 +103,15 @@
       setScroll() {
         document.querySelector('body').style.overflow = "auto";
         document.querySelector('html').style.overflow = "auto";
+        window.scrollTo(0, 0);
       },
 
-      getPhoto(fileName) {
-        return AssetsManager.getPhoto(fileName);
+      getCover(filename) {
+        return AssetsManager.getCover(filename);
+      },
+
+      getAssets(filename) {
+        return AssetsManager.getAssetInFolder(this.project.id, filename);
       },
 
       goTo(name) {
@@ -175,8 +196,16 @@
 
         iframe {
           width: 100%;
-          max-width: 960px;
           height: 450px;
+        }
+      }
+
+      #gallery {
+        margin: 40px auto;
+        img {
+          width: 100%;
+          height: auto;
+          margin: 10px auto;
         }
       }
     }
