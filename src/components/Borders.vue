@@ -5,7 +5,7 @@
     <div class="border-right vertical-border"></div>
     <div class="border-bottom horizontal-border"></div>
     <div class="border-left vertical-border">
-      <img class="logo" src="../assets/svg/logo-sofia.svg" alt="" @click="goTo('intro')">
+      <img class="logo" src="../assets/svg/logo-sofia-clear.svg" alt="" @click="goTo('intro')">
       <nav>
         <ul>
           <li>about & contact</li>
@@ -49,6 +49,9 @@
   @import '../utils/global.scss';
 
   #borders {
+
+    color: $clear-purple;
+
     .horizontal-border {
       height: $border_width;
       width: 100vw;

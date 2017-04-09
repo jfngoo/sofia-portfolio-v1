@@ -1,7 +1,8 @@
 <template>
   <div id="home">
-
     <borders></borders>
+
+    <!--<id id="mask"></id>-->
 
     <div id="projects">
       <ul>
@@ -21,9 +22,11 @@
 <script>
 
   import Borders from 'components/Borders'
-
   import DataManager from 'lib/dataManager'
   import AssetsManager from 'lib/assetsManager'
+
+  import {TweenMax} from 'gsap'
+
   export default {
     name: 'home',
 
@@ -40,6 +43,7 @@
     mounted() {
       this.resetScroll();
       this.projects = DataManager.getProjects();
+      this.setTweens();
     },
 
     methods: {
@@ -57,6 +61,12 @@
           } else {
               this.$router.push({name: name});
           }
+      },
+
+      setTweens() {
+
+          const tl = new TimelineMax();
+
       }
     }
   }
@@ -66,6 +76,14 @@
 
   #home {
     min-height: 100vh;
+
+    #mask {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+    }
 
     #projects {
       ul {
