@@ -14,6 +14,10 @@
 
   @import './utils/global';
 
+  * {
+    box-sizing: border-box;
+  }
+
   #app {
     width: 100%;
     height: 100%;
