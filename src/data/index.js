@@ -14,7 +14,7 @@ export const data_en =
       text1: "Cushy! is a cushion that you can squeeze, pet, or punch when you’re cozy, on your couch, and you don’t know what TV show or movie to watch. It’ll tell you what’s best based on your mood. No need to wonder around for hours, looking for something you haven’t seen and that seems to fit how you’re feeling tonight.",
       vimeoId: "202369823",
       text2: "By pressing, stroking, cuddling or even punching Cushy, he'll know and tell you what movie correspond to your mood, based on your gestures. Thanks to a user friendly interface, you can get to your movie or TV show very fast. More here http://cushy.jackyfong.com/",
-      photos: ["cushy-1.jpg", "cushy-2.jpg", "cushy-3.jpg", "cushy-4.png", "cushy-5.gif"]
+      photos: ["cushy-1.jpg", "cushy-2.jpg", "cushy-3.jpg", "cushy-4.jpg", "cushy-5.gif"]
     },
     {
       id: "lost-elements",
