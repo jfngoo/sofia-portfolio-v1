@@ -65,10 +65,20 @@
         const target = event.target.offsetTop - 60;
 
         const height = this.$refs.projects.offsetHeight * 1.5;
-
         TweenMax.set(this.$refs.projects, {height: height});
 
-        TweenMax.to(window, .75, {
+        const offset = target - window.scrollY;
+        let speed = .75;
+
+        if (offset < 100) {
+          speed = .25;
+        } else if (offset < 20) {
+            speed = .15;
+        } else if (offset === 0) {
+            speed = .00001;
+        }
+
+        TweenMax.to(window, speed, {
           scrollTo: {
             y: target,
             onAutoKill: () => {
