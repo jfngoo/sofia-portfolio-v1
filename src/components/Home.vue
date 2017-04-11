@@ -8,7 +8,9 @@
             <ul>
                 <li v-for="project in projects" :id="project.id"
                     :style="{ backgroundImage: 'url(' + getCover(project.background) +')' }"
-                    @click="goToProject(project.id, $event)">
+                    @click="goToProject(project.id, $event)"
+                    @mouseover="overProject($event)"
+                    @mouseout="outProject($event)">
                     <div class="wrapper">
                         <div class="title">{{project.title}}</div>
                         <div class="type">{{project.type}}</div>
@@ -87,6 +89,16 @@
                     }
                 });
 
+            },
+
+            overProject(e) {
+                const wrapper = e.currentTarget.firstChild;
+                TweenMax.to(wrapper, .5, {x: 15});
+            },
+
+            outProject(e) {
+                const wrapper = e.currentTarget.firstChild;
+                TweenMax.to(wrapper, .3, {x: 0});
             },
 
             setTweens() {
