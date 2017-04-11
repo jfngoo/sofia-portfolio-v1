@@ -68,12 +68,10 @@
         TweenMax.set(this.$refs.projects, {height: height});
 
         const offset = target - window.scrollY;
-        let speed = .75;
+        let speed = .5;
 
         if (offset < 100) {
           speed = .25;
-        } else if (offset < 20) {
-            speed = .15;
         } else if (offset === 0) {
             speed = .00001;
         }
