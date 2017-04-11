@@ -90,9 +90,9 @@
 
                     let tl = new TimelineMax({onComplete: this.goTo});
 
-                    tl.to(this.$refs.title, 2, {y: -1000, opacity: 0, ease: Power3.easeIn}, "tag");
+                    tl.to(this.$refs.title, 1.75, {y: -1000, opacity: 0, ease: Power3.easeIn}, "tag");
                     tl.to(this.$refs.scroll, .5, {y: -10, opacity: 0}, "tag");
-                    tl.to(this.$refs.bar, 2, {height: "120vh", ease: Power3.easeIn}, "tag");
+                    tl.to(this.$refs.bar, 1.75, {height: "120vh", ease: Power3.easeIn}, "tag");
                     tl.to(this.$refs.bar, .5, {width: "100vw"});
                     tl.set("#borders", {display: "block"});
                     tl.fromTo("#borders .border-left", .5, {opacity: 0}, {opacity: 1}, "tag2");

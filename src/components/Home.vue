@@ -110,7 +110,6 @@
 
 
                     tl.set(this.$refs.mask, {width: 1});
-//          tl.to(this.$refs.mask, 1, {scale: 5000, ease: Power3.easeIn});
                     tl.to(this.$refs.mask, .5, {width: "180vw", ease: Power3.easeIn});
 
                     tl.set(this.$refs.home, {background: "#F0F2FA"});
