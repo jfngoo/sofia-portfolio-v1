@@ -135,9 +135,9 @@
         const tl = new TimelineMax();
 
         tl.from(this.$refs.bannerMask, 1, {opacity: 0}, "tag");
-        tl.from(this.$refs.title, 1, {y: 40, opacity: 0}, "tag -= .5");
-        tl.staggerFrom(".block", .5, {y: 40, opacity: 0}, .15, "tag -= .25");
-        tl.from(this.$refs.container, 1, {y: 40, opacity: 0});
+        tl.from(this.$refs.title, 1, {y: 40, opacity: 0}, "tag -= .75");
+        tl.staggerFrom(".block", .5, {y: 40, opacity: 0}, .15, "tag -= .55");
+        tl.from(this.$refs.container, 1, {y: 40, opacity: 0}, "tag -= .05");
       },
 
       addEventListeners() {
