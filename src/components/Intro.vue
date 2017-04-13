@@ -64,7 +64,7 @@
             addEventListeners() {
                 this.scrollListener = _.throttle(this.onScroll, 200);
 
-                window.addEventListener("mousewheel", this.scrollListener);
+                window.addEventListener("wheel", this.scrollListener);
                 window.addEventListener("touchmove", this.scrollListener);
             },
 
