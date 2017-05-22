@@ -1,3 +1,14 @@
+export const about_en = {
+  head_title: "SOFIA BOGGIO",
+  description: "I’m an interactive designer and cosplayer currently working at Joshfire and studying at Gobelins, Paris. <br><br> Neither a child nor an adult, I cherish my childhood and I make the best use of it through my work. I enjoy experimenting in design, development (with the little knowledge that I have), and crafting.",
+  mail: "jacky@fong.com",
+  facebookURL: "https://jackyfong.com",
+  twitterURL: "https://jackyfong.com",
+  behanceURL: "https://jackyfong.com",
+  twitchURL: "https://jackyfong.com"
+
+};
+
 export const data_en =
   [
     {

@@ -21,6 +21,7 @@
         <div class="when block">
           <div class="title">When</div>
           {{project.details.when}}
+
         </div>
         <div class="who block">
           <div class="title">With</div>
@@ -34,6 +35,7 @@
 
         <div class="text" v-if="project.text1">
           {{project.text1}}
+
         </div>
 
         <div class="video" v-if="project.vimeoId">
@@ -48,6 +50,7 @@
 
         <div class="text" v-if="project.text2">
           {{project.text2}}
+
         </div>
 
         <div id="gallery">
@@ -90,6 +93,12 @@
       }
     },
 
+    watch: {
+        '$router': val => {
+            console.log("router state changed", val)
+        }
+    },
+
     beforeMount() {
       this.project = DataManager.getProjectWithName(this.$route.params.id);
 
@@ -103,6 +112,7 @@
 
     mounted() {
       this.resetScroll();
+      StateManager.setPlayHomeAnimation(false);
 
       this.$nextTick(this.setTweens);
       StateManager.setIsInProject(this.project.id);
@@ -124,8 +134,8 @@
       },
 
       goTo(name) {
-        TweenMax.to(window, .3, {
-          scrollTo: {y: 0, autoKill: false}, onComplete: () => {
+        TweenMax.to(window, .5, {
+          scrollTo: {y: 0, autoKill: false, ease: Power2.easeOut}, onComplete: () => {
             this.$router.push({name: name});
           }
         });
@@ -141,6 +151,12 @@
       },
 
       addEventListeners() {
+
+//        window.onpopstate = event => {
+//            console.log(event);
+//          console.log("location: " + document.location + ", state: " + JSON.stringify(event.state));
+//        };
+
         EventBus.$on("BACK_TO_HOME", () => {
           this.goTo("home");
         });

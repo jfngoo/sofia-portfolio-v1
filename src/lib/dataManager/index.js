@@ -1,4 +1,4 @@
-import {data_en} from '../../data'
+import {about_en, data_en} from '../../data'
 
 class DataManager {
   static instance;
@@ -10,11 +10,16 @@ class DataManager {
     }
     DataManager.instance = this;
 
-    this.setData(data_en);
+    this.setData(about_en, data_en);
   }
 
-  setData(data) {
+  setData(about, data) {
+    this.about = about;
     this.projects = data;
+  }
+
+  getAbout() {
+    return this.about;
   }
 
   getProjects() {

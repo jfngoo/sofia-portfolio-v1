@@ -14,6 +14,10 @@ class AssetsManager {
     return this.fromCovers('./' + filename);
   }
 
+  getAboutBackground(filename) {
+    return this.fromPhotos('./about/' + filename);
+  }
+
   getPhoto(filename) {
     return this.fromPhotos('./' + filename + '.png');
   }
