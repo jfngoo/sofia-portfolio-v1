@@ -35,7 +35,6 @@
 
         <div class="text" v-if="project.text1">
           {{project.text1}}
-
         </div>
 
         <div class="video" v-if="project.vimeoId">
@@ -50,7 +49,6 @@
 
         <div class="text" v-if="project.text2">
           {{project.text2}}
-
         </div>
 
         <div id="gallery">
@@ -119,6 +117,15 @@
 
       this.addEventListeners();
     },
+
+//    beforeRouteLeave(to, from, next) {
+//      TweenMax.killAll();
+//      TweenMax.to(window, .3, {
+//        scrollTo: {y: 0, autoKill: false, ease: Power2.easeOut}, onComplete: () => {
+//          next();
+//        }
+//      });
+//    },
 
     methods: {
       resetScroll() {
