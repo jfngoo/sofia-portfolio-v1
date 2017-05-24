@@ -18,11 +18,11 @@
 
         <div id="social">
           <ul>
-            <li><a :href="mail">Mail</a></li>
-            <li><a :href="about.facebookURL">Facebook</a></li>
-            <li><a :href="about.twitterURL">Twitter</a></li>
-            <li><a :href="about.behanceURL">Behance</a></li>
-            <li><a :href="about.twitchURL">Twitch</a></li>
+            <li><a :href="mail" target="_blank">Mail</a></li>
+            <li><a :href="about.facebookURL" target="_blank">Facebook</a></li>
+            <li><a :href="about.twitterURL" target="_blank">Twitter</a></li>
+            <li><a :href="about.behanceURL" target="_blank">Behance</a></li>
+            <li><a :href="about.twitchURL" target="_blank">Twitch</a></li>
           </ul>
         </div>
 
