@@ -80,7 +80,7 @@
             },
 
             onScroll(e) {
-                if (!this.launched && (e.deltaY > 4 || e.changedTouches)) {
+                if (!this.launched && (e.deltaY > 1 || e.changedTouches)) {
                     this.launched = true;
 
                     TweenMax.killAll();
