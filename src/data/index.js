@@ -52,7 +52,7 @@ export const data_en =
       title: "S4M-M1",
       type: "Arduino",
       date: "2014",
-      background: "sammi.png",
+      background: "sammi.jpg",
       details: {
         what: ["IoT", "Arduino"],
         when: "2014",
@@ -77,5 +77,20 @@ export const data_en =
       text1: "Just because something isn’t tangible doesn’t mean you can’t see it. Data visualization has this power to make informations understandable in a glance. As Gobelins school has a lot of social medias, we created an experience that allows everyone to notice some patterns in the school’s visibility, the number of people following them or viewing their videos.",
       text2: "https://jackyfong.com/lab/socialnetworksactivity/",
       photos: ["am-0.gif", "am-1.jpg", "am-2.jpg"]
+    }
+    {
+      id: "ubisoft",
+      title: "Ubisoft, 1986-2016 − L'anthologie",
+      type: "Coffret imprimé",
+      date: "2014",
+      background: "ubisoft-cover.jpg",
+      details: {
+        what: ["Coffret imprimé"],
+        when: "2014",
+        who: ["Sofia Boggio"]
+      },
+      text1: "En 2016, Ubisoft célébrait son 30e anniversaire. En 2013, je le préparais déjà pour mon diplôme en Design Graphique option médias imprimés avec un projet de coffret anthologique. Ce coffret contient un livre parcourant l’histoire d’Ubisoft, ainsi que 10 jeux ayant fait la renommée de l’éditeur, dont Zombi, Rayman, Splinter Cell, ainsi que des plus récents comme Just Dance ou Watch Dogs. ",
+      text2: "L’aspect graphique du coffret représente Ubisoft, en constante évolution, de graphismes telles qu’ils pouvaient l’être sur Amstrad CPC pour Zombi, en passant par ceux de Assassin’s Creed jusqu’à Watch Dogs. Ce coffret retrace et permet de faire découvrir Ubisoft sous tous ses (meilleures) angles.",
+      photos: ["ubisoft-1.jpg", "ubisoft-2.jpg", "ubisoft-3.jpg"]
     }
   ];
