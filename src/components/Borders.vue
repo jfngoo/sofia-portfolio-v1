@@ -7,15 +7,14 @@
       © Sofia Boggio - 2017
 
 
-
     </div>
     <div class="border-left vertical-border">
-      <img class="logo" src="../assets/svg/logo-sofia-clear.svg" alt="" @click="goToHome()">
+      <img class="logo" src="../../static//svg/logo-sofia-clear.svg" alt="" @click="goToHome()">
       <nav>
         <ul>
-          <li @click="goToAbout()">about & contact</li>
+          <li ref="about" id="nav-about" @click="goToAbout()">about & contact</li>
           <!--<li>archive</li>-->
-          <li @click="goToHome()">work</li>
+          <li ref="work" id="nav-work" @click="goToHome()">work</li>
         </ul>
       </nav>
     </div>
@@ -36,6 +35,15 @@
       }
     },
 
+    mounted() {
+      if (this.$route.name === "home" || this.$route.name === "project") {
+        this.$refs.work.classList.add("active");
+      }
+      if (this.$route.name === "about") {
+        this.$refs.about.classList.add("active");
+      }
+    },
+
     methods: {
       goToHome() {
         if (StateManager.getIsInProject()) {
@@ -46,7 +54,7 @@
       },
 
       goToAbout() {
-          this.$router.push({name: "about"});
+        this.$router.push({name: "about"});
       }
 
 
@@ -121,6 +129,16 @@
 
             &:hover {
               cursor: pointer;
+            }
+
+            &:hover:after {
+              width: 80%;
+            }
+          }
+
+          li.active {
+            &:after {
+              width: 100%;
             }
 
             &:hover:after {

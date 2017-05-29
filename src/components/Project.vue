@@ -33,28 +33,23 @@
 
       <div ref="container" id="container">
 
-        <div class="text" v-if="project.text1">
-          {{project.text1}}
-        </div>
+        <div v-for="block in project.content">
 
-        <div class="video" v-if="project.vimeoId">
-          <iframe :src="vimeoURI" width="640px" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen
-                  allowfullscreen></iframe>
-        </div>
-
-        <div class="video" v-if="project.youtubeId">
-          <iframe width="560" height="315" :src="youtubeURI" frameborder="0" webkitallowfullscreen mozallowfullscreen
-                  allowfullscreen></iframe>
-        </div>
-
-        <div class="text" v-if="project.text2">
-          {{project.text2}}
-        </div>
-
-        <div id="gallery">
-          <div v-for="photo in project.photos">
-            <img :src="getAssets(photo)" alt="Photo">
+          <div class="text" v-if="block.type == 'text'" v-html="block.value"></div>
+          <div class="video" v-if="block.type == 'vimeoId'">
+            <iframe :src="'https://player.vimeo.com/video/' + block.value" width="640px" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
           </div>
+
+          <div class="video" v-if="block.type == 'youtubeId'">
+            <iframe width="560" height="315" :src="'https://www.youtube.com/embed/' + block.value" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          </div>
+
+          <div id="gallery" v-if="block.type == 'photos'">
+            <div v-for="photo in block.value">
+              <img :src="getAssets(photo)" alt="Photo">
+            </div>
+          </div>
+
         </div>
 
       </div>
@@ -85,6 +80,7 @@
 
     data () {
       return {
+        isLoaded: false,
         project: null,
         vimeoURI: null,
         youtubeURI: null
@@ -92,30 +88,19 @@
     },
 
     watch: {
-        '$router': val => {
-            console.log("router state changed", val)
+      isLoaded (dataLoaded) {
+        if (dataLoaded === true) {
+          this.onLoad();
         }
+      }
+
+//      '$router': val => {
+//        console.log("router state changed", val)
+//      }
     },
 
-    beforeMount() {
-      this.project = DataManager.getProjectWithName(this.$route.params.id);
-
-      if (this.project.vimeoId) {
-        this.vimeoURI = "https://player.vimeo.com/video/" + this.project.vimeoId;
-      }
-      if (this.project.youtubeId) {
-        this.youtubeURI = "https://www.youtube.com/embed/" + this.project.youtubeId;
-      }
-    },
-
-    mounted() {
-      this.resetScroll();
-      StateManager.setPlayHomeAnimation(false);
-
-      this.$nextTick(this.setTweens);
-      StateManager.setIsInProject(this.project.id);
-
-      this.addEventListeners();
+    created() {
+      this.loadData();
     },
 
 //    beforeRouteLeave(to, from, next) {
@@ -128,6 +113,27 @@
 //    },
 
     methods: {
+      loadData() {
+        if (!DataManager.isDataLoaded()) {
+          setTimeout(() => {
+            this.loadData();
+          }, 50);
+        } else {
+          this.project = DataManager.getProjectWithName(this.$route.params.id);
+          this.isLoaded = true;
+        }
+      },
+
+      onLoad() {
+        this.resetScroll();
+        StateManager.setPlayHomeAnimation(false);
+
+        this.$nextTick(this.setTweens);
+        StateManager.setIsInProject(this.project.id);
+
+        this.addEventListeners();
+      },
+
       resetScroll() {
         window.scrollTo(0, 0);
       },

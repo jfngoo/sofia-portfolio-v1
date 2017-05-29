@@ -6,7 +6,7 @@
         <div id="intro-wrapper">
             <div ref="title" class="center">
                 <h1>sofia boggio</h1>
-                <img src="../assets/svg/logo-sofia.svg">
+                <img src="../../static/svg/logo-sofia.svg">
             </div>
             <div ref="scroll" id="scrollto">
                 <router-link to="home">scroll to discover</router-link>
@@ -80,7 +80,7 @@
             },
 
             onScroll(e) {
-                if (!this.launched && (e.deltaY > 4 || e.changedTouches)) {
+                if (!this.launched && (e.deltaY > 1 || e.changedTouches)) {
                     this.launched = true;
 
                     TweenMax.killAll();

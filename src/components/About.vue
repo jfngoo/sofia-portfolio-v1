@@ -1,5 +1,5 @@
 <template>
-  <div id="about">
+  <div id="about" v-if="isLoaded">
 
     <borders></borders>
 
@@ -18,7 +18,7 @@
 
         <div id="social">
           <ul>
-            <li><a :href="mail" target="_blank">Mail</a></li>
+            <li><a :href="'mailto:' + about.mail">Mail</a></li>
             <li><a :href="about.facebookURL" target="_blank">Facebook</a></li>
             <li><a :href="about.twitterURL" target="_blank">Twitter</a></li>
             <li><a :href="about.behanceURL" target="_blank">Behance</a></li>
@@ -48,7 +48,7 @@
   import {TweenMax} from 'gsap'
 
   export default {
-    name: 'ProjectComponent',
+    name: 'AboutComponent',
 
     components: {
       Borders
@@ -56,32 +56,47 @@
 
     data () {
       return {
-        about: null,
-        mail: null
+        isLoaded: false,
+        about: null
       }
     },
 
-    beforeMount() {
-      this.about = DataManager.getAbout();
-
-      this.mail = "mailto:" + this.about.mail;
+    watch: {
+      isLoaded (dataLoaded) {
+        if (dataLoaded === true) {
+          this.onLoad();
+        }
+      }
     },
 
-    mounted() {
-      this.resetScroll();
-
-      StateManager.setPlayHomeAnimation(true);
-      this.$nextTick(this.setTweens);
-      //StateManager.setIsInProject(this.project.id);
-
-      //this.addEventListeners();
-    },
-
-    beforeDestroy() {
-
+    created() {
+      this.loadData();
     },
 
     methods: {
+
+      loadData() {
+        if (!DataManager.isDataLoaded()) {
+          setTimeout(() => {
+            this.loadData();
+          }, 50);
+        } else {
+          this.about = DataManager.getAbout();
+          this.isLoaded = true;
+        }
+      },
+
+      onLoad() {
+        this.resetScroll();
+
+        StateManager.setPlayHomeAnimation(true);
+        this.$nextTick(this.setTweens);
+
+        //StateManager.setIsInProject(this.project.id);
+
+        //this.addEventListeners();
+      },
+
       resetScroll() {
         window.scrollTo(0, 0);
       },

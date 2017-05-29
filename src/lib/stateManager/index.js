@@ -1,5 +1,3 @@
-import {data_en} from '../../data'
-
 class StateManager {
   static instance;
 
