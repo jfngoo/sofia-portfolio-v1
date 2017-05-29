@@ -88,7 +88,7 @@ export const data_en =
       text1: "Just because something isn’t tangible doesn’t mean you can’t see it. Data visualization has this power to make informations understandable in a glance. As Gobelins school has a lot of social medias, we created an experience that allows everyone to notice some patterns in the school’s visibility, the number of people following them or viewing their videos.",
       text2: "https://jackyfong.com/lab/socialnetworksactivity/",
       photos: ["am-0.gif", "am-1.jpg", "am-2.jpg"]
-    }
+    },
     {
       id: "ubisoft",
       title: "Ubisoft, 1986-2016 − L'anthologie",
