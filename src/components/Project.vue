@@ -121,7 +121,6 @@
         } else {
           this.project = DataManager.getProjectWithName(this.$route.params.id);
           this.isLoaded = true;
-          console.log(this.project);
         }
       },
 
