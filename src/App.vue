@@ -5,8 +5,24 @@
 </template>
 
 <script>
+  import axios from 'axios'
+  import DataManager from 'lib/dataManager'
+
   export default {
-    name: 'app'
+    name: 'app',
+
+    created() {
+      axios.get('/static/data.json')
+        .then((response) => {
+          DataManager.setData(response.data.about, response.data.projects);
+        })
+        .catch((err) => {
+          console.log("error", err);
+        });
+    },
+
+    mounted() {
+    },
   }
 </script>
 

@@ -1,5 +1,3 @@
-import {about_en, data_en} from '../../data'
-
 class DataManager {
   static instance;
 
@@ -10,12 +8,18 @@ class DataManager {
     }
     DataManager.instance = this;
 
-    this.setData(about_en, data_en);
+    this.dataLoaded = false;
   }
 
   setData(about, data) {
     this.about = about;
     this.projects = data;
+
+    this.dataLoaded = true;
+  }
+
+  isDataLoaded() {
+    return this.dataLoaded;
   }
 
   getAbout() {

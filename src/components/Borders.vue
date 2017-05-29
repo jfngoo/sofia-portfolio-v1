@@ -10,12 +10,12 @@
 
     </div>
     <div class="border-left vertical-border">
-      <img class="logo" src="../assets/svg/logo-sofia-clear.svg" alt="" @click="goToHome()">
+      <img class="logo" src="../../static//svg/logo-sofia-clear.svg" alt="" @click="goToHome()">
       <nav>
         <ul>
-          <li @click="goToAbout()">about & contact</li>
+          <li id="nav-about" @click="goToAbout()">about & contact</li>
           <!--<li>archive</li>-->
-          <li @click="goToHome()">work</li>
+          <li id="nav-work" @click="goToHome()">work</li>
         </ul>
       </nav>
     </div>

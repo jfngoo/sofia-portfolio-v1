@@ -6,7 +6,7 @@
         <div id="intro-wrapper">
             <div ref="title" class="center">
                 <h1>sofia boggio</h1>
-                <img src="../assets/svg/logo-sofia.svg">
+                <img src="../../static/svg/logo-sofia.svg">
             </div>
             <div ref="scroll" id="scrollto">
                 <router-link to="home">scroll to discover</router-link>
