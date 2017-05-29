@@ -7,8 +7,8 @@ class AssetsManager {
     }
     // this.fromPhotos = require.context('../../assets/img/');
     // this.fromCovers = require.context('../../assets/img/_covers');
-    this.fromPhotos = require.context('../../../static/img/');
-    this.fromCovers = require.context('../../../static/img/_covers');
+    this.fromPhotos = '../../../static/img/';
+    this.fromCovers = '../../../static/img/_covers';
     AssetsManager.instance = this;
   }
 
