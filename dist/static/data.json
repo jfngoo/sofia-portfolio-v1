@@ -45,6 +45,7 @@
         {
           "type": "photos",
           "value": [
+            "cushy-0.jpg",
             "cushy-1.jpg",
             "cushy-2.jpg",
             "cushy-3.jpg",
@@ -86,6 +87,10 @@
         {
           "type": "text",
           "value": "''At the dawn of time, the four fundamental elements couldn’t be controlled. Water, sun, wind, and earth unleashed upon the world, devastating everything in their path. Though all those elements were essential for our planet to sustain any life, it is said that an entity named Anjä was born in the depths of the Earth. She had the daunting task of containing the elements in an ancient relic and becoming its guardian. Century by century, nature finally calmed down. So Anjä slowly disappeared, conscientiously/carefully leaving the relic hidden inside a temple. But she hadn’t planned on humankind appearing… and stealing the relic for their own purposes.''"
+        },
+        {
+          "type": "vimeoId",
+          "value": "170851504"
         },
         {
           "type": "photos",
@@ -219,13 +224,13 @@
     },
     {
       "id": "ubisoft",
-      "title": "Ubisoft, 1986-2016 − L'anthologie",
-      "type": "Coffret imprimé",
+      "title": "Ubisoft, l'anthologie",
+      "type": "Game box set",
       "date": "2014",
       "background": "ubisoft-cover.jpg",
       "details": {
         "what": [
-          "Coffret imprimé"
+          "Game box set"
         ],
         "when": "2014",
         "who": [
@@ -235,11 +240,11 @@
       "content": [
         {
           "type": "text",
-          "value": "En 2016, Ubisoft célébrait son 30e anniversaire. En 2013, je le préparais déjà pour mon diplôme en Design Graphique option médias imprimés avec un projet de coffret anthologique. Ce coffret contient un livre parcourant l’histoire d’Ubisoft, ainsi que 10 jeux ayant fait la renommée de l’éditeur, dont Zombi, Rayman, Splinter Cell, ainsi que des plus récents comme Just Dance ou Watch Dogs."
+          "value": "In 2016, Ubisoft was celebrating its 30th anniversary. In 2014, I was preparing it for my diploma in Graphic Design (option printed medias) with an anthology box set project for Ubisoft. This box set contains a book that goes over Ubisoft’s history, and 10 games that made the reputation of the developer-publisher-distributor. Among them, you’ll be able to find Zombi, Rayman, Splinter Cell, or more recent ones like Just Dance or Watch Dogs."
         },
         {
           "type": "text",
-          "value": "L’aspect graphique du coffret représente Ubisoft, en constante évolution, de graphismes telles qu’ils pouvaient l’être sur Amstrad CPC pour Zombi, en passant par ceux de Assassin’s Creed jusqu’à Watch Dogs. Ce coffret retrace et permet de faire découvrir Ubisoft sous tous ses (meilleures) angles."
+          "value": "The design aspect of this box set represents Ubisoft as I’m seeing it, in constant evolution, from graphics as they were on Amstrad CPC for Zombi, to Watch Dogs, by way of Assassin’s Creed. It's telling Ubisoft’s story and also allowing neophyte to discover it through all its (best) angles."
         },
         {
           "type": "photos",
@@ -247,6 +252,37 @@
             "ubisoft-1.jpg",
             "ubisoft-2.jpg",
             "ubisoft-3.jpg"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "grasse",
+      "title": "Ville de Grasse",
+      "type": "Visual identity",
+      "date": "2013",
+      "background": "grasse-cover.jpg",
+      "details": {
+        "what": [
+          "Visual identity"
+        ],
+        "when": "2013",
+        "who": [
+          "Sofia Boggio"
+        ]
+      },
+      "content": [
+        {
+          "type": "text",
+          "value": "In 2013, the city of Grasse in France was registered for the Intangible Cultural Heritage of Humanity of the UNESCO. Therefor, it needed a brand new identity, one that would reflect its ambition as an historical city best known for its perfumes industry."
+        },
+        {
+          "type": "photos",
+          "value": [
+            "grasse-1.jpg",
+            "grasse-2.jpg",
+            "grasse-3.jpg",
+            "grasse-4.jpg"
           ]
         }
       ]
