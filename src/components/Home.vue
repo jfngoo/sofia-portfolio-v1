@@ -62,10 +62,11 @@
 
     methods: {
       loadData() {
+        console.log("calling loaddata");
         if (!DataManager.isDataLoaded()) {
           setTimeout(() => {
             this.loadData();
-          }, 50);
+          }, 300);
         } else {
           this.projects = DataManager.getProjects();
           this.isLoaded = true;

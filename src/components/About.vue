@@ -79,7 +79,7 @@
         if (!DataManager.isDataLoaded()) {
           setTimeout(() => {
             this.loadData();
-          }, 50);
+          }, 300);
         } else {
           this.about = DataManager.getAbout();
           this.isLoaded = true;

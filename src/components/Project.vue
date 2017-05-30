@@ -117,7 +117,7 @@
         if (!DataManager.isDataLoaded()) {
           setTimeout(() => {
             this.loadData();
-          }, 50);
+          }, 300);
         } else {
           this.project = DataManager.getProjectWithName(this.$route.params.id);
           this.isLoaded = true;
