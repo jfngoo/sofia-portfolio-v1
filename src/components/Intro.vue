@@ -74,9 +74,9 @@
             },
 
             setTweens() {
-                TweenMax.from(this.$refs.title, 1, {y: 50, opacity: 0, force3D: true});
+                TweenMax.from(this.$refs.title, 1, {y: 50, opacity: 0});
                 TweenMax.from(this.$refs.bar, 1, {bottom: -50, opacity: 0, delay: .5});
-                TweenMax.from(this.$refs.scroll, 1, {opacity: 0, delay: 1.5, force3D: true});
+                TweenMax.from(this.$refs.scroll, 1, {opacity: 0, delay: 1.5});
             },
 
             onScroll(e) {
@@ -91,7 +91,7 @@
                     let tl = new TimelineMax({onComplete: this.goTo});
 
                     tl.to(this.$refs.title, 1.75, {y: -1000, opacity: 0, ease: Power3.easeIn, force3D: true}, "tag");
-                    tl.to(this.$refs.scroll, .5, {y: -10, opacity: 0, force3D: true}, "tag");
+                    tl.to(this.$refs.scroll, .5, {y: -10, opacity: 0}, "tag");
                     tl.to(this.$refs.bar, 1.75, {height: "120vh", ease: Power3.easeIn}, "tag");
                     tl.to(this.$refs.bar, .5, {width: "100vw"});
                     tl.set("#borders", {display: "block"});
