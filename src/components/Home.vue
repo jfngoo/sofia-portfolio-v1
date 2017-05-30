@@ -62,7 +62,6 @@
 
     methods: {
       loadData() {
-        console.log("calling loaddata");
         if (!DataManager.isDataLoaded()) {
           setTimeout(() => {
             this.loadData();
@@ -139,8 +138,8 @@
           tl.set(this.$refs.home, {background: "#F0F2FA"});
           tl.set(this.$refs.mask, {display: "none"});
           tl.set(this.$refs.projects, {visibility: "visible"});
-          tl.staggerFrom("#projects ul li", 1, {opacity: 0, x: 40}, .25, "tag");
-          tl.staggerFrom("#projects ul li .wrapper", 1, {opacity: 0, x: 80}, .25, "tag -= 1.5");
+          tl.staggerFrom("#projects ul li", 1, {opacity: 0, x: 40, force3D: true}, .25, "tag");
+          tl.staggerFrom("#projects ul li .wrapper", 1, {opacity: 0, x: 80, force3D: true}, .25, "tag -= 1.5");
 
           StateManager.setPlayHomeAnimation(false);
         } else if (StateManager.getIsInProject()) {
@@ -153,8 +152,8 @@
           window.scrollTo(0, scrollTarget);
           tl.set("#projects ul li", {opacity: 0});
           tl.set(active, {opacity: 1});
-          tl.to("#projects ul li", 1, {opacity: 1});
-          tl.staggerFrom("#projects ul li .wrapper", 1, {opacity: 0, x: 80}, .25, "tag -= 1.5");
+          tl.to("#projects ul li", 1, {opacity: 1, force3D: true});
+          tl.staggerFrom("#projects ul li .wrapper", 1, {opacity: 0, x: 80, force3D: true}, .25, "tag -= 1.5");
 
           StateManager.setIsInProject(null);
         }
@@ -162,7 +161,7 @@
           tl.set(this.$refs.home, {background: "#F0F2FA"});
           tl.set(this.$refs.mask, {display: "none"});
           tl.set(this.$refs.projects, {visibility: "visible"});
-          tl.staggerFrom("#projects ul li .wrapper", 1, {opacity: 0, x: 80}, .25, "tag -= 1.5");
+          tl.staggerFrom("#projects ul li .wrapper", 1, {opacity: 0, x: 80, force3D: true}, .25, "tag -= 1.5");
         }
 
 
