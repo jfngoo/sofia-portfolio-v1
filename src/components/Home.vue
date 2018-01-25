@@ -176,7 +176,7 @@
 
   #home {
     min-height: 100vh;
-    background: $dark_purple;
+    background: $background_color;
     overflow-x: hidden;
     padding: 0 $border_width;
 

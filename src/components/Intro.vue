@@ -159,7 +159,7 @@
             #bar {
                 height: 40px;
                 width: 4px;
-                background: $dark_purple;
+                background: $background_color;
                 position: absolute;
                 bottom: 0;
                 display: block;

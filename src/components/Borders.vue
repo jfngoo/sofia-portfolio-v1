@@ -93,7 +93,7 @@
         position: relative;
         z-index: 99999;
         transform: rotate(-90deg);
-        margin-top: 83px;
+        margin-top: 67px;
         &:hover {
           cursor: pointer;
         }
@@ -104,7 +104,7 @@
         transform: rotate(-90deg);
         position: absolute;
         left: $border_width / 2;
-        bottom: 10px;
+        bottom: 0;
         width: 100vw;
         transform-origin: 0;
         z-index: 999;
