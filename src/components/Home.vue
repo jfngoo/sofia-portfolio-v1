@@ -87,7 +87,7 @@
 
       goToProject(id, event) {
 
-        const target = event.target.offsetTop - 60;
+        const target = event.target.offsetTop - 48;
 
         const height = this.$refs.projects.offsetHeight * 1.5;
         TweenMax.set(this.$refs.projects, {height: height});
@@ -148,7 +148,7 @@
           tl.set(this.$refs.mask, {display: "none"});
           tl.set(this.$refs.projects, {visibility: "visible"});
           const active = document.getElementById(StateManager.getIsInProject())
-          const scrollTarget = active.offsetTop - 60;
+          const scrollTarget = active.offsetTop - 48;
           window.scrollTo(0, scrollTarget);
           tl.set("#projects ul li", {opacity: 0});
           tl.set(active, {opacity: 1});
@@ -178,7 +178,7 @@
     min-height: 100vh;
     background: $dark_purple;
     overflow-x: hidden;
-    padding: 0 60px;
+    padding: 0 $border_width;
 
     #mask {
       position: fixed;
@@ -195,7 +195,7 @@
       visibility: hidden;
 
       ul {
-        padding: 60px 0 60px 0;
+        padding: $border_width 0 $border_width 0;
         margin: 0 auto;
         width: 100%;
 

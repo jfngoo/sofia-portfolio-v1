@@ -10,6 +10,56 @@
   },
   "projects": [
     {
+      "id": "stiqr",
+      "title": "Stiqr",
+      "type": "Mobile app",
+      "date": "2017",
+      "background": "stiqr-cover.jpg",
+      "details": {
+        "what": [
+          "Mobile App"
+        ],
+        "when": "2017",
+        "who": [
+          "Maximilien Jourdain",
+          "Kévin Moutier",
+          "Zoë Leloutre",
+          "Sofia Boggio"
+        ]
+      },
+      "content": [
+        {
+          "type": "text",
+          "value": "Stiqr was our big project in 2017 at Gobelins school, in partnership with the BPI (Bibliothèque Publique d’Information, a public reading library).<br> We based our concept on several interviews we conducted of a relatively young public and their habits in museums: they like going to the museum, but they are reluctant to go there alone — even though they part ways with their friends once inside, since they’re never quite interested by the same things. <br> We designed Stiqr to be a fun and simple way to motivate that public to go see more exhibitions."
+        },
+        {
+          "type": "vimeoId",
+          "value": "221714503"
+        },
+        {
+          "type": "text",
+          "value": "This app allows you to scan a piece of art with your phone, and see in augmented reality what people think of it with very meaningful emojis. You can add your perception whenever you want, if you feel like it. <br> The point is to express yourself with something else than « I like » or « I don’t like ». It also lets you know if you share common interest, enthusiasm, indifference etc. with everybody else. It can get frustrating to see that most people are not reacting the way you would’ve wanted them to to your favorite piece, but it can encourage you to think about the « why » of it all."
+        },
+        {
+          "type": "photos",
+          "value": [ "stiqr-1.jpg" ]
+        },
+        {
+          "type": "text",
+          "value": "Regarding the design of the app, we mixed an arty style (some fonts and illustrations) with something more structured and strict, since this is what generally inspired us the alliance between the museum and its rules, and what it contains (art)."
+        },
+        {
+          "type": "photos",
+          "value": [
+            "stiqr-2.jpg",
+            "stiqr-3.jpg",
+            "stiqr-4.jpg",
+            "stiqr-5.jpg"
+          ]
+        }
+      ]
+    },
+    {
       "id": "cushy",
       "title": "Cushy!",
       "type": "IoT",
@@ -40,7 +90,7 @@
         },
         {
           "type": "text",
-          "value": "By pressing, stroking, cuddling or even punching Cushy, he'll know and tell you what movie correspond to your mood, based on your gestures. Thanks to a user friendly interface, you can get to your movie or TV show very fast. More here <a href='http://cushy.jackyfong.com/'>http://cushy.jackyfong.com</a>"
+          "value": "This was a 1 month workshop on IoT at Gobelins school. <br><br>After many hours of research, try and error, we manage to make a sensor, out of velostat and copper strips, able to map the position and the strength of our hands on the surface of our cushion. So by pressing, stroking, cuddling or even punching Cushy, he'll know and tell you what movie correspond to your mood, based on your gestures. <br><br>Thanks to a user friendly interface, you can get to your movie or TV show very fast. We designed and crafted a custom cushion cover with fabric paint and printed fabric that is matching our UI. <br><br><br>More here <a href='http://cushy.jackyfong.com/'>http://cushy.jackyfong.com</a>"
         },
         {
           "type": "photos",
@@ -78,7 +128,7 @@
       "content": [
         {
           "type": "text",
-          "value": "Climatic issues are complex and linked together. In general, even if significant pourcentage of the population feels concerned by global warming, it seems hard to fully grasp this subject since medias and society tend to give a simplistic overview of it all. Therefor, we focused on climatic and environmental issues, and more precisely the understanding of what’s at stake."
+          "value": "''At the dawn of time, the four fundamental elements couldn’t be controlled. Water, sun, wind, and earth unleashed upon the world, devastating everything in their path. Though all those elements were essential for our planet to sustain any life, it is said that an entity named Anjä was born in the depths of the Earth. She had the daunting task of containing the elements in an ancient relic and becoming its guardian. Century by century, nature finally calmed down. So Anjä slowly disappeared, conscientiously/carefully leaving the relic hidden inside a temple. But she hadn’t planned on humankind appearing… and stealing the relic for their own purposes.''"
         },
         {
           "type": "vimeoId",
@@ -86,11 +136,15 @@
         },
         {
           "type": "text",
-          "value": "''At the dawn of time, the four fundamental elements couldn’t be controlled. Water, sun, wind, and earth unleashed upon the world, devastating everything in their path. Though all those elements were essential for our planet to sustain any life, it is said that an entity named Anjä was born in the depths of the Earth. She had the daunting task of containing the elements in an ancient relic and becoming its guardian. Century by century, nature finally calmed down. So Anjä slowly disappeared, conscientiously/carefully leaving the relic hidden inside a temple. But she hadn’t planned on humankind appearing… and stealing the relic for their own purposes.''"
+          "value": "Climatic issues are complex and linked together. In general, even if a significant pourcentage of the population feels concerned by global warming, it seems hard to fully grasp this subject since medias and society tend to give a simplistic overview of it all. Therefor, we focused on climatic and environmental issues, and more precisely the understanding of what’s at stake for this final project of our first in at Gobelins school."
         },
         {
           "type": "vimeoId",
           "value": "170851504"
+        },
+        {
+          "type": "text",
+          "value": "All of the game was made on Unity, 95% of it by one of our developer, and I jumped in to polish the graphics, changing the lights and placing a few assets so that it resembled our C4D renders. <br><br>All of us designed the object (aesthetically and technically). It is run by a Particle Photon (Arduino-like with wi-fi), 4 hall effect sensors and a magnet to know which element is selected, and a rotary encoder for the strength / quantity you’ll apply your element’s effects. There’re also 4 LED’s to visually understand what’s selected. I made it out of plexiglas, EVA foam and Worbla (thermoplastic)."
         },
         {
           "type": "photos",
@@ -126,11 +180,23 @@
       "content": [
         {
           "type": "text",
-          "value": "The weird “hobby” that is Cosplay brought me to experiment with two Arduino Uno and several motors (more that I could count). I even made the rail of the skirt, that allows it to turn, with a 3D printer. A lot of time was spent thinking of the right mecanisms for each part of this costume. This whole costume was handmade."
+          "value": "Once a curious girl of flesh and blood, Orianna is now a technological marvel comprised entirely of clockwork. She became gravely ill after an accident in the lower districts of Zaun, and her failing body had to be replaced with exquisite artifice, piece by piece. Accompanied by an extraordinary brass sphere she built for companionship and protection, Orianna is now free to explore the wonders of Piltover, and beyond."
         },
         {
           "type": "youtubeId",
           "value": "XXzo9GRlFNo"
+        },
+        {
+          "type": "text",
+          "value": "As surprising as it might seam, I’m treating my hobby, Cosplay, with as much implication and motivation than I do for work. This cosplay of Bladecraft Orianna, from the game League of Legends, took approximately 400 hours to make, in a bit more than a year if you count all the fixing part. Being something that I do in my spare time, I had no apparent reason to make it, except that, at the time, I really enjoyed the game, I still truly love the character and its lore, but most of all, I loved the challenge. I never worked with Arduino before this year, and I managed to make 2 projects, one for school and the other one for that particular cosplay, learning the technology as I went."
+        },
+        {
+          "type": "youtubeId",
+          "value": "-PTDZ0Imkpo"
+        },
+        {
+          "type": "text",
+          "value": "All of the costume was handmade mostly with foam, Worbla, fabric and electronics, nothing you see on the video is CGI. This contains two Arduino Uno and several motors (6 total). I designed all the mechanisms, made the key and the ball all by myself and for the skirt I asked Philippe Ravaux to make the 3D models for the rail that it sits on and Sarah Goldberg to print it for me. I then made the rest of the frame for the skirt, covered it with fabric and props, and voilà."
         },
         {
           "type": "photos",

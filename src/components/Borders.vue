@@ -81,7 +81,7 @@
     }
     .vertical-border {
       height: 100vh;
-      width: 60px;
+      width: $border_width;
       position: fixed;
       top: 0;
       z-index: 99;
@@ -103,7 +103,7 @@
 
         transform: rotate(-90deg);
         position: absolute;
-        left: 30px;
+        left: $border_width / 2;
         bottom: 10px;
         width: 100vw;
         transform-origin: 0;
