@@ -10,6 +10,46 @@
   },
   "projects": [
     {
+      "id": "LRI",
+      "title": "Interactive Devices in-store",
+      "type": "La Redoute Intérieurs",
+      "date": "2017",
+      "background": "LRI-cover.jpg",
+      "details": {
+        "what": [
+          "UX",
+          "Service design",
+          "UI",
+          "Maker"
+        ],
+        "when": "2017",
+        "who": [
+          "Joshfire",
+          "USERADGENTS"
+        ]
+      },
+      "content": [
+        {
+          "type": "text",
+          "value": "La Redoute Intérieurs wanted to make the most out of the opening of their new stores in Lyon and Carré Sénart to offer a multi-channel experience in-store. When I was working at Joshfire, we imagined with USERADGENTS an interactive device allowing client to get inspired, access the complete range of La Redoute Interieurs products and making its To-Go selection (by printing or e-mailing). "
+        },
+        {
+          "type": "youtubeId",
+          "value": "6zUgppfKIjk"
+        },
+        {
+          "type": "text",
+          "value": "The touchscreen (connected to the e-commerce’s website’s data) and the printer are hidden inside a solid pine and stainless steel console, materials that easily blend with the design of those new stores.<br><br><br>This Proof Of Concept will be deployed in all of the La Redoute Interieurs stores. This device will eventually allow a complete buying journey, for a seamless omnichannel experience."
+        },
+        {
+          "type": "photos",
+          "value": [
+            "LRI-vignette"
+          ]
+        }
+      ]
+    },
+    {
       "id": "stiqr",
       "title": "Stiqr",
       "type": "Mobile app",
