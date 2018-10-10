@@ -146,7 +146,7 @@
     font-size: .9rem;
 
     #about-wrapper {
-      padding: $border_width;
+      padding: 0 0 0 $border-width;
     }
 
     #header {
@@ -162,9 +162,9 @@
 
       #banner-mask {
         position: absolute;
-        top: $border_width;
+        top: 0;
         left: $border_width;
-        width: calc(100% - 2 * #{$border-width});
+        width: calc(100% - 1 * #{$border-width});
         height: 500px;
         background: #FFFFFF;
         opacity: .3;

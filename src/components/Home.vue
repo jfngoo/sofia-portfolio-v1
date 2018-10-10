@@ -178,7 +178,7 @@
     min-height: 100vh;
     background: $background_color;
     overflow-x: hidden;
-    padding: 0 $border_width;
+    padding: 0;
 
     #mask {
       position: fixed;
@@ -195,7 +195,7 @@
       visibility: hidden;
 
       ul {
-        padding: $border_width 0 $border_width 0;
+        padding: 0 0 0 $border-width;
         margin: 0 auto;
         width: 100%;
 
