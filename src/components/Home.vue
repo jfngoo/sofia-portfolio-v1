@@ -58,7 +58,6 @@
 
     created () {
       this.loadData()
-      console.log(StateManager.getPlayHomeAnimation())
     },
 
     methods: {
