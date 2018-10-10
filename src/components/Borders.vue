@@ -110,6 +110,7 @@
         ul {
           margin: 0;
           li {
+            color: #FFFFFF;
             position: relative;
             display: inline-block;
 

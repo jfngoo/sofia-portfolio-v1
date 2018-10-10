@@ -45,7 +45,7 @@
 
   import EventBus from 'lib/eventBus'
 
-  import {TweenMax} from 'gsap'
+  import { TweenMax } from 'gsap'
 
   export default {
     name: 'AboutComponent',
@@ -64,72 +64,60 @@
     watch: {
       isLoaded (dataLoaded) {
         if (dataLoaded === true) {
-          this.onLoad();
+          this.onLoad()
         }
       }
     },
 
-    created() {
-      this.loadData();
+    created () {
+      this.loadData()
     },
 
     methods: {
 
-      loadData() {
+      loadData () {
         if (!DataManager.isDataLoaded()) {
           setTimeout(() => {
-            this.loadData();
-          }, 300);
+            this.loadData()
+          }, 300)
         } else {
-          this.about = DataManager.getAbout();
-          this.isLoaded = true;
+          this.about = DataManager.getAbout()
+          this.isLoaded = true
         }
       },
 
-      onLoad() {
-        this.resetScroll();
-
-        StateManager.setPlayHomeAnimation(true);
-        this.$nextTick(this.setTweens);
-
-        //StateManager.setIsInProject(this.project.id);
-
-        //this.addEventListeners();
+      onLoad () {
+        this.resetScroll()
+        this.$nextTick(this.setTweens)
       },
 
-      resetScroll() {
-        window.scrollTo(0, 0);
+      resetScroll () {
+        window.scrollTo(0, 0)
       },
 
-      getBackground(filename) {
-        return AssetsManager.getAboutBackground(filename);
+      getBackground (filename) {
+        return AssetsManager.getAboutBackground(filename)
       },
 
-      getAssets(filename) {
-        return AssetsManager.getAssetInFolder(this.project.id, filename);
+      getAssets (filename) {
+        return AssetsManager.getAssetInFolder(this.project.id, filename)
       },
 
-      goTo(name) {
+      goTo (name) {
         TweenMax.to(window, .3, {
-          scrollTo: {y: 0, autoKill: false}, onComplete: () => {
-            this.$router.push({name: name});
+          scrollTo: { y: 0, autoKill: false }, onComplete: () => {
+            this.$router.push({ name: name })
           }
-        });
+        })
       },
 
-      setTweens() {
-        const tl = new TimelineMax();
+      setTweens () {
+        const tl = new TimelineMax()
 
-        tl.from(this.$refs.bannerMask, 1, {opacity: 0, force3D: true}, "tag");
-        tl.from(this.$refs.title, 1, {y: 40, opacity: 0, force3D: true}, "tag -= .75");
-        tl.staggerFrom(".block", .5, {y: 40, opacity: 0, force3D: true}, .15, "tag -= .55");
-        tl.from(this.$refs.container, 1, {y: 40, opacity: 0, force3D: true}, "tag -= .05");
-      },
-
-      addEventListeners() {
-        EventBus.$on("BACK_TO_HOME", () => {
-          this.goTo("home");
-        });
+        tl.from(this.$refs.bannerMask, 1, { opacity: 0, force3D: true }, 'tag')
+        tl.from(this.$refs.title, 1, { y: 40, opacity: 0, force3D: true }, 'tag -= .75')
+        tl.staggerFrom('.block', .5, { y: 40, opacity: 0, force3D: true }, .15, 'tag -= .55')
+        tl.from(this.$refs.container, 1, { y: 40, opacity: 0, force3D: true }, 'tag -= .05')
       }
     }
   }
