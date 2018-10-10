@@ -1,13 +1,11 @@
 <template>
 
   <div id="borders">
-    <div class="border-top horizontal-border"></div>
-    <div class="border-right vertical-border"></div>
-    <div class="border-bottom horizontal-border">
-      © Sofia Boggio - 2017
-
-
-    </div>
+    <!--<div class="border-top horizontal-border"></div>-->
+    <!--<div class="border-right vertical-border"></div>-->
+    <!--<div class="border-bottom horizontal-border">-->
+      <!--© Sofia Boggio - 2017-->
+    <!--</div>-->
     <div class="border-left vertical-border">
       <img class="logo" src="../../static//svg/logo-sofia-clear.svg" alt="" @click="goToHome()">
       <nav>
@@ -35,26 +33,26 @@
       }
     },
 
-    mounted() {
-      if (this.$route.name === "home" || this.$route.name === "project") {
-        this.$refs.work.classList.add("active");
+    mounted () {
+      if (this.$route.name === 'home' || this.$route.name === 'project') {
+        this.$refs.work.classList.add('active')
       }
-      if (this.$route.name === "about") {
-        this.$refs.about.classList.add("active");
+      if (this.$route.name === 'about') {
+        this.$refs.about.classList.add('active')
       }
     },
 
     methods: {
-      goToHome() {
+      goToHome () {
         if (StateManager.getIsInProject()) {
-          EventBus.$emit("BACK_TO_HOME");
+          EventBus.$emit('BACK_TO_HOME')
         } else {
-          this.$router.push({name: "home"});
+          this.$router.push({ name: 'home' })
         }
       },
 
-      goToAbout() {
-        this.$router.push({name: "about"});
+      goToAbout () {
+        this.$router.push({ name: 'about' })
       }
 
 
@@ -81,7 +79,7 @@
     }
     .vertical-border {
       height: 100vh;
-      width: 60px;
+      width: $border_width;
       position: fixed;
       top: 0;
       z-index: 99;
@@ -93,7 +91,7 @@
         position: relative;
         z-index: 99999;
         transform: rotate(-90deg);
-        margin-top: 83px;
+        margin-top: 67px;
         &:hover {
           cursor: pointer;
         }
@@ -103,8 +101,8 @@
 
         transform: rotate(-90deg);
         position: absolute;
-        left: 30px;
-        bottom: 10px;
+        left: $border_width / 2;
+        bottom: 0;
         width: 100vw;
         transform-origin: 0;
         z-index: 999;
@@ -112,6 +110,7 @@
         ul {
           margin: 0;
           li {
+            color: #FFFFFF;
             position: relative;
             display: inline-block;
 
