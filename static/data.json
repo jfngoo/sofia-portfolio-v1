@@ -4,11 +4,104 @@
     "description": "I’m an interactive designer and cosplayer currently working at Joshfire and studying at Gobelins, Paris. <br><br> Neither a child nor an adult, I cherish my childhood and I make the best use of it through my work. I enjoy experimenting in design, development (with the little knowledge that I have), and crafting.",
     "mail": "boggio.sofia@gmail.com",
     "facebookURL": "https://fr-fr.facebook.com/soocosplay/",
-    "twitterURL": "https://twitter.com/soozyx_",
+    "twitterURL": "https://twitter.com/soocosplay",
     "behanceURL": "https://www.behance.net/sofiaboggio",
-    "twitchURL": "https://www.twitch.tv/coscave"
+    "twitchURL": "https://www.twitch.tv/soocosplay"
   },
   "projects": [
+    {
+      "id": "allo",
+      "title": "Allo",
+      "type": "Vocal Assistant",
+      "date": "2018",
+      "background": "allo-cover.jpg",
+      "details": {
+        "what": [
+          "UX/UI",
+          "Service design",
+          "IoT"
+        ],
+        "when": "2018",
+        "who": [
+          "Léo Ternoir",
+          "Benjamin Gammaire",
+          "Quentin Tshaimanga",
+          "Sofia Boggio"
+        ]
+      },
+      "content": [
+        {
+          "type": "text",
+          "value": "Throughout the years, my classmates and I have been more conscious about how much waste we were producing. That’s why we decided to make Allo: the first zero-waste vocal assistant to be an alternative to the trash and give another life to every product of your house."
+        },
+        {
+          "type": "vimeoId",
+          "value": "277781869"
+        },
+        {
+          "type": "text",
+          "value": "<b>How does it work?</b><br>Whenever you have a product, whether it’s stale bread or an old sock, you can ask one of Allo’s 5 expert what to do with it. They can also give you advice on how to preserve them longer.<br><br>For example, if you find an orange in the back of your fridge that’s been sitting here too long, Paprika can recommend you to make dishwasher pods with the skin and the juice."
+        },
+        {
+          "type": "photos",
+          "value": [
+            "allo_experts.png"
+          ]
+        },
+        {
+          "type": "text",
+          "value": "We based ourselves on 6 design principles:<br><br><b>Benevolent</b><br>Allo is helping you find simple, accessible and frugal ideas for products that are starting to look damaged and not very appealing.<br><br><b>Private</b><br>Thanks to Snips technology, every discussion you have with Allo stays with Allo, locally.<br><br><b>Customized</b><br>Our habits, desires and tastes are all different and Allo adjusts itself and learn from them to suggest the perfect tips.<br><br><b>Good teacher</b><br>Allo is the assistant but it includes 5 experts, one per room of your house, in order for you to learn, room after room, each waste issues and how to find a solution for it.<br><br><b>At the right time</b><br><br>Impulse buys being hard to control, Allo fits perfectly after a product has been bought and right before it might get thrown away (but it doesn’t, thanks to Allo).<br><br><b>And the right place</b><br><br>Most food waste comes from people’s home. That’s why Allo is best suited at home in the room of your choosing. "
+        },
+        {
+          "type": "photos",
+          "value": [
+            "allo-2.png",
+            "allo-3.png",
+            "allo-4.png",
+            "allo-5.jpg",
+            "allo-6.jpg"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PB",
+      "title": "Petit Bateau",
+      "type": "Interactive shopping",
+      "date": "2018",
+      "background": "PB-cover.jpg",
+      "details": {
+        "what": [
+          "Service design",
+          "UI",
+          "Maker"
+        ],
+        "when": "2018",
+        "who": [
+          "Joshfire",
+          "USERADGENTS"
+        ]
+      },
+      "content": [
+        {
+          "type": "text",
+          "value": "With the opening of their store Rue de Sèvres, Paris (France), <a href=\"https://www.petit-bateau.fr/\">Petit Bateau</a> wanted to offer new services to enhance the user experience. "
+        },
+        {
+          "type": "youtubeId",
+          "value": "5nKtj4hvpjA"
+        },
+        {
+          "type": "text",
+          "value": "With <a href=\"https://www.useradgents.com\">USERADGENTS</a>, we imagined a playful and smart interactive device to discover more colors, shapes, sizes and infos about a product by simply scanning or searching it. The touchscreen (linked to the e-commerce website’s data) and the scanner are integrated to the store’s furnitures. <br>That POC will soon be deployed in other Petit Bateau’s stores. Over time, it will be possible to: finalize the purchase with a sales assistant, check other stores stock, and save or have purchases delivered in the hour."
+        },
+        {
+          "type": "photos",
+          "value": [
+          ]
+        }
+      ]
+    },
     {
       "id": "stiqr",
       "title": "Stiqr",
@@ -60,6 +153,45 @@
       ]
     },
     {
+      "id": "LRI",
+      "title": "La Redoute Intérieurs",
+      "type": "Interactive Devices in-store",
+      "date": "2017",
+      "background": "LRI-cover.jpg",
+      "details": {
+        "what": [
+          "Service design",
+          "UI",
+          "Maker"
+        ],
+        "when": "2017",
+        "who": [
+          "Joshfire",
+          "USERADGENTS"
+        ]
+      },
+      "content": [
+        {
+          "type": "text",
+          "value": "La Redoute Intérieurs wanted to make the most out of the opening of their new stores in Lyon and Carré Sénart to offer a multi-channel experience in-store. When I was working at Joshfire, we imagined with USERADGENTS an interactive device allowing client to get inspired, access the complete range of La Redoute Interieurs products and making its To-Go selection (by printing or e-mailing). "
+        },
+        {
+          "type": "youtubeId",
+          "value": "6zUgppfKIjk"
+        },
+        {
+          "type": "text",
+          "value": "The touchscreen (connected to the e-commerce’s website’s data) and the printer are hidden inside a solid pine and stainless steel console, materials that easily blend with the design of those new stores.<br><br><br>This Proof Of Concept will be deployed in all of the La Redoute Interieurs stores. This device will eventually allow a complete buying journey, for a seamless omnichannel experience."
+        },
+        {
+          "type": "photos",
+          "value": [
+            "LRI-vignette.jpg"
+          ]
+        }
+      ]
+    },
+    {
       "id": "cushy",
       "title": "Cushy!",
       "type": "IoT",
@@ -101,6 +233,45 @@
             "cushy-3.jpg",
             "cushy-4.jpg",
             "cushy-5.gif"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marly",
+      "title": "Parfums de Marly",
+      "type": "Interactive window display",
+      "date": "2016",
+      "background": "marly-cover.jpg",
+      "details": {
+        "what": [
+          "Interactive window",
+          "App",
+          "UI"
+        ],
+        "when": "2016",
+        "who": [
+          "Soixante Circuits"
+        ]
+      },
+      "content": [
+        {
+          "type": "text",
+          "value": "Interactive, realistic and elegantly tailored immersion into 18th century perfumer's workshop. We have setup the replica of parfumer's atelier into window of Marly shop."
+        },
+        {
+          "type": "vimeoId",
+          "value": "173030067"
+        },
+        {
+          "type": "text",
+          "value": "By scanning the QR code, passerby were invited to user their phone to control the confection of their parfume. Users followed the instructions on the screen that was also installed inside the window, and took part in the confection of perfume by choosing different aromas.<br><br><br>They could also post their portrait on Instagram with dedicated #, and then see it materialize in the form of a digitally displayed vintage painting in the window."
+        },
+        {
+          "type": "photos",
+          "value": [
+            "marly-1.jpg",
+            "marly-2.jpg"
           ]
         }
       ]
@@ -284,71 +455,6 @@
             "am-0.gif",
             "am-1.jpg",
             "am-2.jpg"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ubisoft",
-      "title": "Ubisoft, l'anthologie",
-      "type": "Game box set",
-      "date": "2014",
-      "background": "ubisoft-cover.jpg",
-      "details": {
-        "what": [
-          "Game box set"
-        ],
-        "when": "2014",
-        "who": [
-          "Sofia Boggio"
-        ]
-      },
-      "content": [
-        {
-          "type": "text",
-          "value": "In 2016, Ubisoft was celebrating its 30th anniversary. In 2014, I was preparing it for my diploma in Graphic Design (option printed medias) with an anthology box set project for Ubisoft. This box set contains a book that goes over Ubisoft’s history, and 10 games that made the reputation of the developer-publisher-distributor. Among them, you’ll be able to find Zombi, Rayman, Splinter Cell, or more recent ones like Just Dance or Watch Dogs."
-        },
-        {
-          "type": "text",
-          "value": "The design aspect of this box set represents Ubisoft as I’m seeing it, in constant evolution, from graphics as they were on Amstrad CPC for Zombi, to Watch Dogs, by way of Assassin’s Creed. It's telling Ubisoft’s story and also allowing neophyte to discover it through all its (best) angles."
-        },
-        {
-          "type": "photos",
-          "value": [
-            "ubisoft-1.jpg",
-            "ubisoft-2.jpg",
-            "ubisoft-3.jpg"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "grasse",
-      "title": "Ville de Grasse",
-      "type": "Visual identity",
-      "date": "2013",
-      "background": "grasse-cover.jpg",
-      "details": {
-        "what": [
-          "Visual identity"
-        ],
-        "when": "2013",
-        "who": [
-          "Sofia Boggio"
-        ]
-      },
-      "content": [
-        {
-          "type": "text",
-          "value": "In 2013, the city of Grasse in France was registered for the Intangible Cultural Heritage of Humanity of the UNESCO. Therefor, it needed a brand new identity, one that would reflect its ambition as an historical city best known for its perfumes industry."
-        },
-        {
-          "type": "photos",
-          "value": [
-            "grasse-1.jpg",
-            "grasse-2.jpg",
-            "grasse-3.jpg",
-            "grasse-4.jpg"
           ]
         }
       ]
