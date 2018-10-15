@@ -10,9 +10,25 @@ Vue.use(Router)
 export default new Router({
   mode: 'hash',
   routes: [
-    { path: '/', name: 'intro', component: Intro},
-    { path: '/home', name: 'home', component: Home},
-    { path: '/project/:id', name: 'project', component: Project},
-    { path: '/about', name: 'about', component: About},
+    {
+      path: '/',
+      name: 'intro',
+      component: Intro
+    },
+    {
+      path: '/home',
+      name: 'home',
+      component: Home
+    },
+    {
+      path: '/project/:id',
+      name: 'project',
+      component: Project
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: About
+    }
   ]
 })

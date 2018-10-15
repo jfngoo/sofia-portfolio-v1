@@ -4,12 +4,14 @@
     <!--<div class="border-top horizontal-border"></div>-->
     <!--<div class="border-right vertical-border"></div>-->
     <!--<div class="border-bottom horizontal-border">-->
-      <!--© Sofia Boggio - 2017-->
+    <!--© Sofia Boggio - 2017-->
     <!--</div>-->
     <div class="border-left vertical-border">
       <img class="logo" src="../../static//svg/logo-sofia-clear.svg" alt="" @click="goToHome()">
       <nav>
         <ul>
+          <li @click="setLang('fr')">FR</li>
+          <li @click="setLang('en')">EN</li>
           <li ref="about" id="nav-about" @click="goToAbout()">about & contact</li>
           <!--<li>archive</li>-->
           <li ref="work" id="nav-work" @click="goToHome()">work</li>
@@ -53,9 +55,12 @@
 
       goToAbout () {
         this.$router.push({ name: 'about' })
+      },
+
+      setLang (lang) {
+        StateManager.setLang(lang)
+        EventBus.$emit('CHANGE_LANG')
       }
-
-
     }
   }
 </script>

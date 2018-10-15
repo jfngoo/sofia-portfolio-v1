@@ -15,6 +15,7 @@
     "lodash": "^4.17.4",
     "normalize.css": "^5.0.0",
     "vue": "^2.2.2",
+    "vue-i18n": "^8.1.0",
     "vue-router": "^2.2.0"
   },
   "devDependencies": {
