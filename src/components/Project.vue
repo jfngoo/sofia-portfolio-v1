@@ -189,7 +189,7 @@
     font-size: .9rem;
 
     #project-wrapper {
-      padding: $border_width;
+      padding: 0 0 0 $border_width;
     }
 
     #header {
@@ -205,9 +205,9 @@
 
       #banner-mask {
         position: absolute;
-        top: $border_width;
+        top: 0;
         left: $border_width;
-        width: calc(100% - 2 * #{$border-width});
+        width: calc(100% - #{$border-width});
         height: 500px;
         background: #FFFFFF;
         opacity: .5;
@@ -251,8 +251,8 @@
     }
 
     #container {
-      margin: 20px auto;
-      padding: 60px 0;
+      margin: 20px auto 0;
+      padding: 60px 0 5px;
       max-width: 800px;
 
       .text {

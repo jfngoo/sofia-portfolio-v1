@@ -31,14 +31,14 @@
   import StateManager from 'lib/stateManager'
   import EventBus from 'lib/eventBus'
 
-  import {TweenMax} from 'gsap'
-  import ScrollToPlugin from 'gsap/ScrollToPlugin';
+  import { TweenMax } from 'gsap'
+  import ScrollToPlugin from 'gsap/ScrollToPlugin'
 
   export default {
     name: 'HomeComponent',
 
     components: {
-      Borders,
+      Borders
     },
 
     data () {
@@ -51,117 +51,114 @@
     watch: {
       isLoaded (dataLoaded) {
         if (dataLoaded === true) {
-          this.onLoad();
+          this.onLoad()
         }
       }
     },
 
-    created() {
-      this.loadData();
+    created () {
+      this.loadData()
     },
 
     methods: {
-      loadData() {
+      loadData () {
         if (!DataManager.isDataLoaded()) {
           setTimeout(() => {
-            this.loadData();
-          }, 300);
+            this.loadData()
+          }, 300)
         } else {
-          this.projects = DataManager.getProjects();
-          this.isLoaded = true;
+          this.projects = DataManager.getProjects()
+          this.isLoaded = true
         }
       },
 
-      onLoad() {
-        this.resetScroll();
-        this.$nextTick(this.setTweens);
+      onLoad () {
+        this.resetScroll()
+        this.$nextTick(this.setTweens)
       },
 
-      resetScroll() {
-        window.scrollTo(0, 0);
+      resetScroll () {
+        window.scrollTo(0, 0)
       },
 
-      getCover(fileName) {
-        return AssetsManager.getCover(fileName);
+      getCover (fileName) {
+        return AssetsManager.getCover(fileName)
       },
 
-      goToProject(id, event) {
+      goToProject (id, event) {
 
-        const target = event.target.offsetTop - 48;
+        const target = event.target.offsetTop - 48
 
-        const height = this.$refs.projects.offsetHeight * 1.5;
-        TweenMax.set(this.$refs.projects, {height: height});
+        const height = this.$refs.projects.offsetHeight * 1.5
+        TweenMax.set(this.$refs.projects, { height: height })
 
-        const offset = target - window.scrollY;
-        let speed = .5;
+        const offset = target - window.scrollY
+        let speed = .5
 
         if (offset < 100) {
-          speed = .25;
+          speed = .25
         } else if (offset === 0) {
-          speed = .00001;
+          speed = .00001
         }
 
         TweenMax.to(window, speed, {
           scrollTo: {
             y: target,
             onAutoKill: () => {
-              TweenMax.set(this.$refs.projects, {height: "auto"});
+              TweenMax.set(this.$refs.projects, { height: 'auto' })
             }
           }, onComplete: () => {
-            this.$router.push({name: "project", params: {id: id}});
+            this.$router.push({ name: 'project', params: { id: id } })
           }
-        });
+        })
 
       },
 
-      overProject(e) {
-        const wrapper = e.currentTarget.firstChild;
-        TweenMax.to(wrapper, .5, {x: 15});
+      overProject (e) {
+        const wrapper = e.currentTarget.firstChild
+        TweenMax.to(wrapper, .5, { x: 15 })
       },
 
-      outProject(e) {
-        const wrapper = e.currentTarget.firstChild;
-        TweenMax.to(wrapper, .3, {x: 0});
+      outProject (e) {
+        const wrapper = e.currentTarget.firstChild
+        TweenMax.to(wrapper, .3, { x: 0 })
       },
 
-      setTweens() {
-
-
-        const tl = new TimelineMax();
+      setTweens () {
+        const tl = new TimelineMax()
 
         if (StateManager.getPlayHomeAnimation()) {
 
+          tl.set(this.$refs.mask, { width: 1 })
+          tl.to(this.$refs.mask, .5, { width: '180vw', ease: Power3.easeIn })
 
-          tl.set(this.$refs.mask, {width: 1});
-          tl.to(this.$refs.mask, .5, {width: "180vw", ease: Power3.easeIn});
+          tl.set(this.$refs.home, { background: '#F0F2FA' })
+          tl.set(this.$refs.mask, { display: 'none' })
+          tl.set(this.$refs.projects, { visibility: 'visible' })
+          tl.staggerFrom('#projects ul li', 1, { opacity: 0, x: 40, force3D: true }, .25, 'tag')
+          tl.staggerFrom('#projects ul li .wrapper', 1, { opacity: 0, x: 80, force3D: true }, .25, 'tag -= 1.5')
 
-          tl.set(this.$refs.home, {background: "#F0F2FA"});
-          tl.set(this.$refs.mask, {display: "none"});
-          tl.set(this.$refs.projects, {visibility: "visible"});
-          tl.staggerFrom("#projects ul li", 1, {opacity: 0, x: 40, force3D: true}, .25, "tag");
-          tl.staggerFrom("#projects ul li .wrapper", 1, {opacity: 0, x: 80, force3D: true}, .25, "tag -= 1.5");
-
-          StateManager.setPlayHomeAnimation(false);
+          StateManager.setPlayHomeAnimation(false)
         } else if (StateManager.getIsInProject()) {
 
-          tl.set(this.$refs.home, {background: "#F0F2FA"});
-          tl.set(this.$refs.mask, {display: "none"});
-          tl.set(this.$refs.projects, {visibility: "visible"});
+          tl.set(this.$refs.home, { background: '#F0F2FA' })
+          tl.set(this.$refs.mask, { display: 'none' })
+          tl.set(this.$refs.projects, { visibility: 'visible' })
           const active = document.getElementById(StateManager.getIsInProject())
-          const scrollTarget = active.offsetTop - 48;
-          window.scrollTo(0, scrollTarget);
-          tl.set("#projects ul li", {opacity: 0});
-          tl.set(active, {opacity: 1});
-          tl.to("#projects ul li", 1, {opacity: 1, force3D: true});
-          tl.staggerFrom("#projects ul li .wrapper", 1, {opacity: 0, x: 80, force3D: true}, .25, "tag -= 1.5");
+          const scrollTarget = active.offsetTop - 48
+          window.scrollTo(0, scrollTarget)
+          tl.set('#projects ul li', { opacity: 0 })
+          tl.set(active, { opacity: 1 })
+          tl.to('#projects ul li', 1, { opacity: 1, force3D: true })
+          tl.staggerFrom('#projects ul li .wrapper', 1, { opacity: 0, x: 80, force3D: true }, .25, 'tag -= 1.5')
 
-          StateManager.setIsInProject(null);
+          StateManager.setIsInProject(null)
         }
         else {
-          tl.set(this.$refs.home, {background: "#F0F2FA"});
-          tl.set(this.$refs.mask, {display: "none"});
-          tl.set(this.$refs.projects, {visibility: "visible"});
-          tl.staggerFrom("#projects ul li .wrapper", 1, {opacity: 0, x: 80, force3D: true}, .25, "tag -= 1.5");
+          tl.set(this.$refs.home, { background: '#F0F2FA' })
+          tl.set(this.$refs.mask, { display: 'none' })
+          tl.set(this.$refs.projects, { visibility: 'visible' })
+          tl.staggerFrom('#projects ul li .wrapper', 1, { opacity: 0, x: 80, force3D: true }, .25, 'tag -= 1.5')
         }
 
 
@@ -178,13 +175,12 @@
     min-height: 100vh;
     background: $background_color;
     overflow-x: hidden;
-    padding: 0 $border_width;
+    padding: 0;
 
     #mask {
       position: fixed;
       top: 0;
-      left: 50%;
-      transform: translateX(-50%);
+      right: 0;
       height: 100vh;
       width: 0;
       background: $clear_purple;
@@ -195,7 +191,7 @@
       visibility: hidden;
 
       ul {
-        padding: $border_width 0 $border_width 0;
+        padding: 0 0 0 $border-width;
         margin: 0 auto;
         width: 100%;
 
@@ -229,7 +225,7 @@
             }
 
             .type {
-              margin: -4px 0 2px 0;
+              margin: 0 0 6px 0;
             }
 
             .date {
