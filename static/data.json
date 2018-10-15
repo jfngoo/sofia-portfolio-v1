@@ -43,7 +43,7 @@
           "value": [
             "allo-01.png"
           ]
-        }
+        },
         {
           "type": "text",
           "value": "<b>PROJET</b><br>Pour chaque produit qui vous semble bon à jeter, que ce soit du pain rassis ou une vieille chaussette, vous pouvez demander à l’un des 5 experts de Allo quoi faire avec ce produit plutôt que de le mettre à la poubelle. Ces experts sont aussi là pour donner des conseils sur la manière de préserver chacun de ces produits plus longtemps. Par exemple, avec une vieille orange retrouvée au fond de la corbeille de fruit, Paprika pourra vous suggérer de faire des tablettes pour votre lave-vaisselle.<br>La base de Allo a été conçu puis imprimé en 3D pour pouvoir contenir un Raspberry Pi 3, un ReSpeaker 4-mic Array et un haut parleur. Il fonctionne majoritairement grâce à la technologie de Snips."
@@ -201,7 +201,7 @@
             "borneDesign_01.png",
             "borneDesign_02.jpg"
           ]
-        }
+        },
         {
           "type": "text",
           "value": "<b>COMMENT ÇA MARCHE ?</b><br>L’interface tactile (connectée aux données du site e-commerce) et l’imprimante sont dissimulées dans une console en pin massif et en acier brut sur mesure, des matériaux qui s’intègrent parfaitement au design des nouveaux magasins. "
@@ -256,7 +256,7 @@
           "value": [
             "cushy-0.jpg"
           ]
-        }
+        },
         {
           "type": "text",
           "value": "<b>COMMENT ÇA MARCHE ?</b><br>Après beaucoup de recherches, d’essais et d’échecs. nous avons réussi à créer notre propre capteur à partir de Veloutât et de rubans de cuivre, capable de cartographier la position et la force de votre main sur la surface du coussin. C’est grâce à ce capteur home-made que Cushy sera en mesure de détecter votre humeur selon vos gestes envers lui. <br>Nous avons également designé et réalisé une housse de coussin en 100% coton, dont les patterns ont été réalisés à la peinture pour tissu d’un côté et à l’impression de l’autre pour correspondre à notre identité.<br><br>More here http://cushy.jackyfong.com"
@@ -471,6 +471,6 @@
           ]
         }
       ]
-    },
+    }
   ]
 }
