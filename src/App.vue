@@ -11,18 +11,15 @@
   export default {
     name: 'app',
 
-    created() {
+    created () {
       axios.get('/static/data.json')
         .then((response) => {
-          DataManager.setData(response.data.about, response.data.projects);
+          DataManager.setData(response.data.about, response.data.projects)
         })
         .catch((err) => {
-          console.log("error", err);
-        });
-    },
-
-    mounted() {
-    },
+          console.log('error', err)
+        })
+    }
   }
 </script>
 
