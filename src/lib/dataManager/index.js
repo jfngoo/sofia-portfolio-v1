@@ -1,45 +1,45 @@
 class DataManager {
-  static instance;
+  static instance
 
-  constructor() {
+  constructor () {
     if (DataManager.instance) {
-      return DataManager.instance;
-
+      return DataManager.instance
     }
-    DataManager.instance = this;
+    DataManager.instance = this
 
-    this.dataLoaded = false;
+    this.dataLoaded = false
   }
 
-  setData(about, data) {
-    this.about = about;
-    this.projects = data;
+  setData (about, data) {
+    this.about = about
+    this.projects = data
 
-    this.dataLoaded = true;
+    this.dataLoaded = true
   }
 
-  isDataLoaded() {
-    return this.dataLoaded;
+  isDataLoaded () {
+    return this.dataLoaded
   }
 
-  getAbout() {
-    return this.about;
+  getAbout () {
+    return this.about
   }
 
-  getProjects() {
-    return this.projects;
+  getProjects () {
+    return this.projects
   }
 
-  getProjectWithName(name) {
+  getProjectWithName (name) {
     for (let i = 0; i < this.projects.length; i++) {
-      const project = this.projects[i];
+      const project = this.projects[i]
       if (project.id === name) {
-        return project;
+        return project
       }
     }
 
-    return false;
+    return false
   }
 }
-const dataManager = new DataManager();
-export default dataManager;
+
+const dataManager = new DataManager()
+export default dataManager

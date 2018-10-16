@@ -36,96 +36,92 @@
 </template>
 
 <script>
+import Borders from 'components/Borders'
+import DataManager from 'lib/dataManager'
+import AssetsManager from 'lib/assetsManager'
 
-  import Borders from 'components/Borders'
+import { TweenMax, TimelineMax } from 'gsap'
 
-  import DataManager from 'lib/dataManager'
-  import AssetsManager from 'lib/assetsManager'
-  import StateManager from 'lib/stateManager'
+export default {
+  name: 'AboutComponent',
 
-  import EventBus from 'lib/eventBus'
+  components: {
+    Borders
+  },
 
-  import { TweenMax } from 'gsap'
+  data () {
+    return {
+      isLoaded: false,
+      about: null
+    }
+  },
 
-  export default {
-    name: 'AboutComponent',
-
-    components: {
-      Borders
-    },
-
-    data () {
-      return {
-        isLoaded: false,
-        about: null
-      }
-    },
-
-    watch: {
-      isLoaded (dataLoaded) {
-        if (dataLoaded === true) {
-          this.onLoad()
-        }
-      }
-    },
-
-    created () {
-      this.loadData()
-    },
-
-    methods: {
-
-      loadData () {
-        if (!DataManager.isDataLoaded()) {
-          setTimeout(() => {
-            this.loadData()
-          }, 300)
-        } else {
-          this.about = DataManager.getAbout()
-          this.isLoaded = true
-        }
-      },
-
-      onLoad () {
-        this.resetScroll()
-        this.$nextTick(this.setTweens)
-      },
-
-      resetScroll () {
-        window.scrollTo(0, 0)
-      },
-
-      getBackground (filename) {
-        return AssetsManager.getAboutBackground(filename)
-      },
-
-      getAssets (filename) {
-        return AssetsManager.getAssetInFolder(this.project.id, filename)
-      },
-
-      goTo (name) {
-        TweenMax.to(window, .3, {
-          scrollTo: { y: 0, autoKill: false }, onComplete: () => {
-            this.$router.push({ name: name })
-          }
-        })
-      },
-
-      setTweens () {
-        const tl = new TimelineMax()
-
-        tl.from(this.$refs.bannerMask, 1, { opacity: 0, force3D: true }, 'tag')
-        tl.from(this.$refs.title, 1, { y: 40, opacity: 0, force3D: true }, 'tag -= .75')
-        tl.staggerFrom('.block', .5, { y: 40, opacity: 0, force3D: true }, .15, 'tag -= .55')
-        tl.from(this.$refs.container, 1, { y: 40, opacity: 0, force3D: true }, 'tag -= .05')
+  watch: {
+    isLoaded (dataLoaded) {
+      if (dataLoaded === true) {
+        this.onLoad()
       }
     }
+  },
+
+  created () {
+    this.loadData()
+  },
+
+  methods: {
+
+    loadData () {
+      if (!DataManager.isDataLoaded()) {
+        setTimeout(() => {
+          this.loadData()
+        }, 300)
+      } else {
+        this.about = DataManager.getAbout()
+        this.isLoaded = true
+      }
+    },
+
+    onLoad () {
+      this.resetScroll()
+      this.$nextTick(this.setTweens)
+    },
+
+    resetScroll () {
+      window.scrollTo(0, 0)
+    },
+
+    getBackground (filename) {
+      return AssetsManager.getAboutBackground(filename)
+    },
+
+    getAssets (filename) {
+      return AssetsManager.getAssetInFolder(this.project.id, filename)
+    },
+
+    goTo (name) {
+      TweenMax.to(window, 0.3, {
+        scrollTo: { y: 0, autoKill: false },
+        onComplete: () => {
+          this.$router.push({ name: name })
+        }
+      })
+    },
+
+    setTweens () {
+      const tl = new TimelineMax()
+
+      tl.from(this.$refs.bannerMask, 1, { opacity: 0, force3D: true }, 'tag')
+      tl.from(this.$refs.title, 1, { y: 40, opacity: 0, force3D: true }, 'tag -= 0.75')
+      tl.staggerFrom('.block', 0.5, { y: 40, opacity: 0, force3D: true }, 0.15, 'tag -= 0.55')
+      tl.from(this.$refs.container, 1, { y: 40, opacity: 0, force3D: true }, 'tag -= 0.05')
+    }
   }
+}
 </script>
 
 <style lang="scss">
 
-  @import '../utils/global.scss';
+  @import '../assets/style/global';
 
   #about {
 
@@ -200,6 +196,4 @@
       }
     }
   }
-
-
 </style>

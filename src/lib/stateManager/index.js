@@ -4,7 +4,6 @@ class StateManager {
   constructor () {
     if (StateManager.instance) {
       return StateManager.instance
-
     }
     StateManager.instance = this
 
@@ -15,7 +14,6 @@ class StateManager {
 
   setLang (lang) {
     this.lang = lang
-    console.log('stateManager.setLang:', this.lang)
   }
 
   getLang () {
@@ -37,7 +35,6 @@ class StateManager {
   getIsInProject () {
     return this.isInProject
   }
-
 }
 
 const stateManager = new StateManager()

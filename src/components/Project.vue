@@ -15,7 +15,9 @@
         <div class="what block">
           <div class="title">What</div>
           <ul class="list">
-            <li v-for="what in project.details.what">{{what}}</li>
+            <li
+              v-for="what in project.details.what"
+              :key="what">{{what}}</li>
           </ul>
         </div>
         <div class="when block">
@@ -26,26 +28,36 @@
         <div class="who block">
           <div class="title">With</div>
           <ul class="list">
-            <li v-for="who in project.details.who">{{who}}</li>
+            <li
+              v-for="who in project.details.who"
+              :key="who">{{who}}</li>
           </ul>
         </div>
       </div>
 
       <div ref="container" id="container">
 
-        <div v-for="block in project.content">
+        <div
+          v-for="(block, index) in project.content"
+          :key="block.type + index">
 
           <div class="text" v-if="block.type == 'text'" v-html="block.value"></div>
           <div class="video" v-if="block.type == 'vimeoId'">
-            <iframe :src="'https://player.vimeo.com/video/' + block.value" width="640px" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            <iframe
+              :src="'https://player.vimeo.com/video/' + block.value" width="640px" height="360" frameborder="0"
+              webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
           </div>
 
           <div class="video" v-if="block.type == 'youtubeId'">
-            <iframe width="560" height="315" :src="'https://www.youtube.com/embed/' + block.value" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            <iframe
+              width="560" height="315" :src="'https://www.youtube.com/embed/' + block.value" frameborder="0"
+              webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
           </div>
 
           <div id="gallery" v-if="block.type == 'photos'">
-            <div v-for="photo in block.value">
+            <div
+              v-for="photo in block.value"
+              :key="photo">
               <img :src="getAssets(photo)" alt="Photo">
             </div>
           </div>
@@ -61,126 +73,126 @@
 
 <script>
 
-  import Borders from 'components/Borders'
+import Borders from 'components/Borders'
 
-  import DataManager from 'lib/dataManager'
-  import AssetsManager from 'lib/assetsManager'
-  import StateManager from 'lib/stateManager'
+import DataManager from 'lib/dataManager'
+import AssetsManager from 'lib/assetsManager'
+import StateManager from 'lib/stateManager'
 
-  import EventBus from 'lib/eventBus'
+import EventBus from 'lib/eventBus'
 
-  import {TweenMax} from 'gsap'
+import { TweenMax, TimelineMax, Power2 } from 'gsap'
 
-  export default {
-    name: 'ProjectComponent',
+export default {
+  name: 'ProjectComponent',
 
-    components: {
-      Borders
-    },
+  components: {
+    Borders
+  },
 
-    data () {
-      return {
-        isLoaded: false,
-        project: null,
-        vimeoURI: null,
-        youtubeURI: null
-      }
-    },
+  data () {
+    return {
+      isLoaded: false,
+      project: null,
+      vimeoURI: null,
+      youtubeURI: null
+    }
+  },
 
-    watch: {
-      isLoaded (dataLoaded) {
-        if (dataLoaded === true) {
-          this.onLoad();
-        }
-      }
-
-//      '$router': val => {
-//        console.log("router state changed", val)
-//      }
-    },
-
-    created() {
-      this.loadData();
-    },
-
-//    beforeRouteLeave(to, from, next) {
-//      TweenMax.killAll();
-//      TweenMax.to(window, .3, {
-//        scrollTo: {y: 0, autoKill: false, ease: Power2.easeOut}, onComplete: () => {
-//          next();
-//        }
-//      });
-//    },
-
-    methods: {
-      loadData() {
-        if (!DataManager.isDataLoaded()) {
-          setTimeout(() => {
-            this.loadData();
-          }, 300);
-        } else {
-          this.project = DataManager.getProjectWithName(this.$route.params.id);
-          this.isLoaded = true;
-        }
-      },
-
-      onLoad() {
-        this.resetScroll();
-        StateManager.setPlayHomeAnimation(false);
-
-        this.$nextTick(this.setTweens);
-        StateManager.setIsInProject(this.project.id);
-
-        this.addEventListeners();
-      },
-
-      resetScroll() {
-        window.scrollTo(0, 0);
-      },
-
-      getCover(filename) {
-        return AssetsManager.getCover(filename);
-      },
-
-      getAssets(filename) {
-        return AssetsManager.getAssetInFolder(this.project.id, filename);
-      },
-
-      goTo(name) {
-        TweenMax.to(window, .5, {
-          scrollTo: {y: 0, autoKill: false, ease: Power2.easeOut}, onComplete: () => {
-            this.$router.push({name: name});
-          }
-        });
-      },
-
-      setTweens() {
-        const tl = new TimelineMax();
-
-        tl.from(this.$refs.bannerMask, 1, {opacity: 0, force3D: true}, "tag");
-        tl.from(this.$refs.title, 1, {y: 40, opacity: 0, force3D: true}, "tag -= .75");
-        tl.staggerFrom(".block", .5, {y: 40, opacity: 0, force3D: true}, .15, "tag -= .55");
-        tl.from(this.$refs.container, 1, {y: 40, opacity: 0, force3D: true}, "tag -= .05");
-      },
-
-      addEventListeners() {
-
-//        window.onpopstate = event => {
-//            console.log(event);
-//          console.log("location: " + document.location + ", state: " + JSON.stringify(event.state));
-//        };
-
-        EventBus.$on("BACK_TO_HOME", () => {
-          this.goTo("home");
-        });
+  watch: {
+    isLoaded (dataLoaded) {
+      if (dataLoaded === true) {
+        this.onLoad()
       }
     }
+  },
+
+  created () {
+    this.loadData()
+  },
+
+  //    beforeRouteLeave(to, from, next) {
+  //      TweenMax.killAll();
+  //      TweenMax.to(window, .3, {
+  //        scrollTo: {y: 0, autoKill: false, ease: Power2.easeOut}, onComplete: () => {
+  //          next();
+  //        }
+  //      });
+  //    },
+
+  methods: {
+    loadData () {
+      if (!DataManager.isDataLoaded()) {
+        setTimeout(() => {
+          this.loadData()
+        }, 300)
+      } else {
+        this.project = DataManager.getProjectWithName(this.$route.params.id)
+        this.isLoaded = true
+      }
+    },
+
+    onLoad () {
+      this.resetScroll()
+      StateManager.setPlayHomeAnimation(false)
+
+      this.$nextTick(this.setTweens)
+      StateManager.setIsInProject(this.project.id)
+
+      this.addEventListeners()
+    },
+
+    resetScroll () {
+      window.scrollTo(0, 0)
+    },
+
+    getCover (filename) {
+      return AssetsManager.getCover(filename)
+    },
+
+    getAssets (filename) {
+      return AssetsManager.getAssetInFolder(this.project.id, filename)
+    },
+
+    goTo (name) {
+      TweenMax.to(window, 0.5, {
+        scrollTo: {
+          y: 0,
+          autoKill: false,
+          ease: Power2.easeOut
+        },
+        onComplete: () => {
+          this.$router.push({ name: name })
+        }
+      })
+    },
+
+    setTweens () {
+      const tl = new TimelineMax()
+
+      tl.from(this.$refs.bannerMask, 1, { opacity: 0, force3D: true }, 'tag')
+      tl.from(this.$refs.title, 1, { y: 40, opacity: 0, force3D: true }, 'tag -= .75')
+      tl.staggerFrom('.block', 0.5, { y: 40, opacity: 0, force3D: true }, 0.15, 'tag -= 0.55')
+      tl.from(this.$refs.container, 1, { y: 40, opacity: 0, force3D: true }, 'tag -= .05')
+    },
+
+    addEventListeners () {
+      //        window.onpopstate = event => {
+      //            console.log(event);
+      //          console.log("location: " + document.location + ", state: " + JSON.stringify(event.state));
+      //        };
+
+      EventBus.$on('BACK_TO_HOME', () => {
+        this.goTo('home')
+      })
+    }
   }
+}
 </script>
 
 <style lang="scss">
 
-  @import '../utils/global.scss';
+  @import '../assets/style/global';
 
   #project {
 
@@ -210,7 +222,7 @@
         width: calc(100% - #{$border-width});
         height: 500px;
         background: #FFFFFF;
-        opacity: .5;
+        opacity: 0.5;
         overflow: hidden;
       }
 
@@ -321,6 +333,4 @@
       }
     }
   }
-
-
 </style>

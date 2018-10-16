@@ -7,7 +7,7 @@
     <!--© Sofia Boggio - 2017-->
     <!--</div>-->
     <div class="border-left vertical-border">
-      <img class="logo" src="../../static//svg/logo-sofia-clear.svg" alt="" @click="goToHome()">
+      <img class="logo" src="../assets/svg/logo-sofia-clear.svg" alt="" @click="goToHome()">
       <nav>
         <ul>
           <li @click="setLang('fr')">FR</li>
@@ -23,51 +23,50 @@
 </template>
 
 <script>
+import StateManager from 'lib/stateManager'
+import EventBus from 'lib/eventBus'
 
-  import StateManager from 'lib/stateManager'
-  import EventBus from 'lib/eventBus'
+export default {
+  name: 'BordersComponent',
+  data () {
+    return {
+      projects: null
+    }
+  },
 
-  export default {
-    name: 'BordersComponent',
-    data () {
-      return {
-        projects: null
+  mounted () {
+    if (this.$route.name === 'home' || this.$route.name === 'project') {
+      this.$refs.work.classList.add('active')
+    }
+    if (this.$route.name === 'about') {
+      this.$refs.about.classList.add('active')
+    }
+  },
+
+  methods: {
+    goToHome () {
+      if (StateManager.getIsInProject()) {
+        EventBus.$emit('BACK_TO_HOME')
+      } else {
+        this.$router.push({ name: 'home' })
       }
     },
 
-    mounted () {
-      if (this.$route.name === 'home' || this.$route.name === 'project') {
-        this.$refs.work.classList.add('active')
-      }
-      if (this.$route.name === 'about') {
-        this.$refs.about.classList.add('active')
-      }
+    goToAbout () {
+      this.$router.push({ name: 'about' })
     },
 
-    methods: {
-      goToHome () {
-        if (StateManager.getIsInProject()) {
-          EventBus.$emit('BACK_TO_HOME')
-        } else {
-          this.$router.push({ name: 'home' })
-        }
-      },
-
-      goToAbout () {
-        this.$router.push({ name: 'about' })
-      },
-
-      setLang (lang) {
-        StateManager.setLang(lang)
-        EventBus.$emit('CHANGE_LANG')
-      }
+    setLang (lang) {
+      StateManager.setLang(lang)
+      EventBus.$emit('CHANGE_LANG')
     }
   }
+}
 </script>
 
 <style lang="scss">
 
-  @import '../utils/global.scss';
+  @import '../assets/style/global';
 
   #borders {
 
