@@ -13,7 +13,6 @@
           <li @click="setLang('fr')">FR</li>
           <li @click="setLang('en')">EN</li>
           <li ref="about" id="nav-about" @click="goToAbout()">{{ $t('nav.about') }}</li>
-          <!--<li>archive</li>-->
           <li ref="work" id="nav-work" @click="goToHome()">{{ $t('nav.work') }}</li>
         </ul>
       </nav>

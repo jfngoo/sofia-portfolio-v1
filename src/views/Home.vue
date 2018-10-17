@@ -28,9 +28,10 @@
 
 <script>
 import Borders from 'components/Borders'
-import DataManager from 'lib/dataManager'
 import AssetsManager from 'lib/assetsManager'
 import StateManager from 'lib/stateManager'
+import { mapGetters } from 'vuex'
+import { GET_PROJECTS } from '../store/config.getters'
 
 import { TweenMax, TimelineMax, Power3 } from 'gsap'
 import 'gsap/ScrollToPlugin'
@@ -44,8 +45,7 @@ export default {
 
   data () {
     return {
-      isLoaded: false,
-      projects: null
+      isLoaded: false
     }
   },
 
@@ -57,18 +57,23 @@ export default {
     }
   },
 
+  computed: {
+    ...mapGetters({
+      projects: GET_PROJECTS
+    })
+  },
+
   created () {
     this.loadData()
   },
 
   methods: {
     loadData () {
-      if (!DataManager.isDataLoaded()) {
+      if (!this.projects) {
         setTimeout(() => {
           this.loadData()
         }, 300)
       } else {
-        this.projects = DataManager.getProjects()
         this.isLoaded = true
       }
     },

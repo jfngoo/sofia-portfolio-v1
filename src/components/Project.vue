@@ -74,12 +74,12 @@
 <script>
 
 import Borders from 'components/Borders'
-
-import DataManager from 'lib/dataManager'
 import AssetsManager from 'lib/assetsManager'
 import StateManager from 'lib/stateManager'
-
 import EventBus from 'lib/eventBus'
+
+import { mapGetters } from 'vuex'
+import { GET_PROJECTS, GET_PROJECT_BY_ID } from '../store/config.getters'
 
 import { TweenMax, TimelineMax, Power2 } from 'gsap'
 
@@ -107,27 +107,25 @@ export default {
     }
   },
 
+  computed: {
+    ...mapGetters({
+      projects: GET_PROJECTS,
+      getProjectById: GET_PROJECT_BY_ID
+    })
+  },
+
   created () {
     this.loadData()
   },
 
-  //    beforeRouteLeave(to, from, next) {
-  //      TweenMax.killAll();
-  //      TweenMax.to(window, .3, {
-  //        scrollTo: {y: 0, autoKill: false, ease: Power2.easeOut}, onComplete: () => {
-  //          next();
-  //        }
-  //      });
-  //    },
-
   methods: {
     loadData () {
-      if (!DataManager.isDataLoaded()) {
+      if (!this.projects) {
         setTimeout(() => {
           this.loadData()
         }, 300)
       } else {
-        this.project = DataManager.getProjectWithName(this.$route.params.id)
+        this.project = this.getProjectById(this.$route.params.id)
         this.isLoaded = true
       }
     },
@@ -177,11 +175,6 @@ export default {
     },
 
     addEventListeners () {
-      //        window.onpopstate = event => {
-      //            console.log(event);
-      //          console.log("location: " + document.location + ", state: " + JSON.stringify(event.state));
-      //        };
-
       EventBus.$on('BACK_TO_HOME', () => {
         this.goTo('home')
       })

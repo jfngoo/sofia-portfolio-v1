@@ -37,8 +37,10 @@
 
 <script>
 import Borders from 'components/Borders'
-import DataManager from 'lib/dataManager'
 import AssetsManager from 'lib/assetsManager'
+
+import { mapGetters } from 'vuex'
+import { GET_ABOUT } from '../store/config.getters'
 
 import { TweenMax, TimelineMax } from 'gsap'
 
@@ -51,8 +53,7 @@ export default {
 
   data () {
     return {
-      isLoaded: false,
-      about: null
+      isLoaded: false
     }
   },
 
@@ -64,6 +65,12 @@ export default {
     }
   },
 
+  computed: {
+    ...mapGetters({
+      about: GET_ABOUT
+    })
+  },
+
   created () {
     this.loadData()
   },
@@ -71,12 +78,11 @@ export default {
   methods: {
 
     loadData () {
-      if (!DataManager.isDataLoaded()) {
+      if (!this.about) {
         setTimeout(() => {
           this.loadData()
         }, 300)
       } else {
-        this.about = DataManager.getAbout()
         this.isLoaded = true
       }
     },

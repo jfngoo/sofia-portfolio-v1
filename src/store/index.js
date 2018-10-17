@@ -5,6 +5,7 @@ import {
 } from './config.state'
 import {
   GET_PROJECTS,
+  GET_PROJECT_BY_ID,
   GET_ABOUT
 } from './config.getters'
 import {
@@ -16,7 +17,6 @@ import {
 } from './config.actions'
 
 import axios from 'axios'
-import DataManager from 'lib/dataManager'
 
 Vue.use(Vuex)
 
@@ -27,10 +27,12 @@ export default new Vuex.Store({
     data: {
       fr: {},
       en: {}
-    }
+    },
+    isDataLoaded: false
   },
   getters: {
     [GET_PROJECTS]: state => state.data[state[LANG]].projects,
+    [GET_PROJECT_BY_ID]: state => id => state.data[state[LANG]].projects.find(project => project.id === id),
     [GET_ABOUT]: state => state.data[state[LANG]].about
   },
   mutations: {
@@ -43,6 +45,9 @@ export default new Vuex.Store({
       if (state.locales.indexOf(payload.lang) !== -1) {
         state.data[payload.lang] = payload.data
       }
+    },
+    setDataIsLoaded (state, payload) {
+      state.isDataLoaded = payload
     }
   },
   actions: {
@@ -64,13 +69,13 @@ export default new Vuex.Store({
       // Try to fetch browser lang data
       axios.get(`/data_${browserLang}.json`)
         .then((response) => {
-          DataManager.setData(response.data.about, response.data.projects)
           commit(SET_DATA, { data: response.data, lang: browserLang })
 
           // Try to fetch the other lang
           axios.get(`/data_${otherLang}.json`)
             .then((response) => {
               commit(SET_DATA, { data: response.data, lang: otherLang })
+              commit('setDataIsLoaded', true)
             })
             .catch((err) => {
               console.error(`error loading ${otherLang} data`, err)
