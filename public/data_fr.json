@@ -1,7 +1,7 @@
 {
   "about": {
     "head_title": "SOFIA BOGGIO",
-    "description": "Du texte Français, I’m an interactive designer and cosplayer currently working at Joshfire and studying at Gobelins, Paris. <br><br> Neither a child nor an adult, I cherish my childhood and I make the best use of it through my work. I enjoy experimenting in design, development (with the little knowledge that I have), and crafting.",
+    "description": "<br>Designer interactif et diplômée d’un Master du même nom suite à 3 ans passés en alternance à Gobelins, je suis spécialisée en UX Design, mais pas seulement.<br><br>Au sein de Soixante Circuits (studio d’expériences numériques) puis de Joshfire (agence de conseil en innovation), j’ai eu l’opportunité de travailler avec des clients de domaines variés : Twitter, Parfums de Marly, Hermès, Générali, La Redoute Intérieurs, Paris Saint-Germain, Petit Bateau, Société Générale, PMU etc. Je me suis ainsi approprié les différents principes de design d’interaction et d’UX et j’y ai développé un profil polyvalent. <br><br>Mon expertise en UX Design couplée à mes compétences d’UI Designer me permettent d’intervenir avec pertinence à n’importe quel moment d’un projet. J’assure une veille constante pour me tenir au courant des nouvelles tendances. Je suis également makeuse, curieuse, passionnée et investie dans mes univers de création et d’expression.",
     "mail": "boggio.sofia@gmail.com",
     "facebookURL": "https://fr-fr.facebook.com/soocosplay/",
     "twitterURL": "https://twitter.com/soocosplay",
@@ -12,7 +12,7 @@
     {
       "id": "allo",
       "title": "Allo",
-      "type": "Assistant Vocal",
+      "type": "Vocal Assistant",
       "date": "2018",
       "background": "allo-cover.jpg",
       "details": {
@@ -25,14 +25,13 @@
         "who": [
           "Léo Ternoir",
           "Benjamin Gammaire",
-          "Quentin Tshaimanga",
-          "Sofia Boggio"
+          "Quentin Tshaimanga"
         ]
       },
       "content": [
         {
           "type": "text",
-          "value": "Ce texte en Français, Throughout the years, my classmates and I have been more conscious about how much waste we were producing. That’s why we decided to make Allo: the first zero-waste vocal assistant to be an alternative to the trash and give another life to every product of your house."
+          "value": "<b>CONTEXTE</b><br>Au fil des années, mes camarades et moi-même sommes devenus plus conscients quant à la quantité de déchets produits, par nous et par les autres. C’est pourquoi nous avons réalisé Allo: le premier assistant vocal zéro-gaspi, pour donner une alternative à la poubelle et donner une seconde vie à tous les produits de la maison."
         },
         {
           "type": "vimeoId",
@@ -40,26 +39,31 @@
         },
         {
           "type": "text",
-          "value": "<b>How does it work?</b><br>Whenever you have a product, whether it’s stale bread or an old sock, you can ask one of Allo’s 5 expert what to do with it. They can also give you advice on how to preserve them longer.<br><br>For example, if you find an orange in the back of your fridge that’s been sitting here too long, Paprika can recommend you to make dishwasher pods with the skin and the juice."
+          "value": "<b>PROJET</b><br>Pour chaque produit qui vous semble bon à jeter, que ce soit du pain rassis ou une vieille chaussette, vous pouvez demander à l’un des 5 experts de Allo quoi faire avec ce produit plutôt que de le mettre à la poubelle. Ces experts sont aussi là pour donner des conseils sur la manière de préserver chacun de ces produits plus longtemps. Par exemple, avec une vieille orange retrouvée au fond de la corbeille de fruit, Paprika pourra vous suggérer de faire des tablettes pour votre lave-vaisselle.<br>La base de Allo a été conçu puis imprimé en 3D pour pouvoir contenir un Raspberry Pi 3, un ReSpeaker 4-mic Array et un haut parleur. Il fonctionne majoritairement grâce à la technologie de Snips."
         },
         {
           "type": "photos",
           "value": [
-            "allo_experts.png"
+            "allo-01.jpg"
+          ]
+        },
+        {
+          "type": "photos",
+          "value": [
+            "allo-02.png"
           ]
         },
         {
           "type": "text",
-          "value": "We based ourselves on 6 design principles:<br><br><b>Benevolent</b><br>Allo is helping you find simple, accessible and frugal ideas for products that are starting to look damaged and not very appealing.<br><br><b>Private</b><br>Thanks to Snips technology, every discussion you have with Allo stays with Allo, locally.<br><br><b>Customized</b><br>Our habits, desires and tastes are all different and Allo adjusts itself and learn from them to suggest the perfect tips.<br><br><b>Good teacher</b><br>Allo is the assistant but it includes 5 experts, one per room of your house, in order for you to learn, room after room, each waste issues and how to find a solution for it.<br><br><b>At the right time</b><br><br>Impulse buys being hard to control, Allo fits perfectly after a product has been bought and right before it might get thrown away (but it doesn’t, thanks to Allo).<br><br><b>And the right place</b><br><br>Most food waste comes from people’s home. That’s why Allo is best suited at home in the room of your choosing. "
+          "value": "<b>COMMENT ÇA MARCHE ?</b><br>Allo a beaucoup évolué grâce aux tests utilisateurs que nous avons conduits (interviews, observation, focus group, tests in-situ…) Nous avons rencontré différents problèmes, comme trouver l’endroit où Allo serait le plus adapté, garder les conversations naturelles et privées, ou encore éviter de transmettre un sentiment de pression ou de moralisation qui pourrait potentiellement repousser les utilisateurs. Ce sont grâce à ces tests utilisateurs que nous avons pu définir 6 Design principles.<br><br><b>Bienveillance</b> : Allo vous aide à trouver des idées simples,<br>accessibles et frugales pour chaque produit qui vous paraît abîmé.<br><br><b>Privé</b> : Grâce à la technologie de Snips, les discussions <br>que vous avez avec Allo restent avec Allo, stockée localement.<br><br><b>Custom</b> : Nos habitudes, envies et goûts varient d’une personne<br>à une autre, et Allo s’adapte et apprend pour suggérer les astuces <br>les plus adaptées.<br><br><b>Pédagogique</b> : Allo est votre assistant dans lequel sont contenus<br>5 experts, un par pièce de la maison, afin que vous puissiez apprendre,<br>pièce après pièce, les différentes problématiques liées au gaspillage<br>dans la maison et comment y remédier.<br><br><b>Au bout moment</b> : Les achats liés à l’envie et non au besoin<br>n’étant pas contrôlable, Allo s’intègre parfaitement dans le cycle de la vie<br>d’un produit qui vient d’être acheté, et ce jusqu’à-ce qu’il soit presque jeté.<br><br><b>Au bon endroit</b> : La majeure partie du gaspillage alimentaire provient<br>de nos maisons, c’est pour cette raison que c’est dans la maison<br>que Allo convient le mieux, dans la pièce de votre choix."
         },
         {
           "type": "photos",
           "value": [
-            "allo-2.png",
-            "allo-3.png",
-            "allo-4.png",
-            "allo-5.jpg",
-            "allo-6.jpg"
+            "allo-03.jpg",
+            "allo-04.jpg",
+            "allo-05.jpg",
+            "allo-06.jpg"
           ]
         }
       ]
@@ -85,7 +89,7 @@
       "content": [
         {
           "type": "text",
-          "value": "With the opening of their store Rue de Sèvres, Paris (France), <a href=\"https://www.petit-bateau.fr/\">Petit Bateau</a> wanted to offer new services to enhance the user experience. "
+          "value": "<b>CONTEXTE</b><br>Dans le cadre du lancement d’un nouveau concept de boutique Rue de Sèvres, Petit Bateau souhaitait proposer de nouveaux services pour augmenter l’expérience client en point de vente."
         },
         {
           "type": "youtubeId",
@@ -93,11 +97,22 @@
         },
         {
           "type": "text",
-          "value": "With <a href=\"https://www.useradgents.com\">USERADGENTS</a>, we imagined a playful and smart interactive device to discover more colors, shapes, sizes and infos about a product by simply scanning or searching it. The touchscreen (linked to the e-commerce website’s data) and the scanner are integrated to the store’s furnitures. <br>That POC will soon be deployed in other Petit Bateau’s stores. Over time, it will be possible to: finalize the purchase with a sales assistant, check other stores stock, and save or have purchases delivered in the hour."
+          "value": "<b>PROJET</b><br>Nous avons imaginé avec USERADGENTS un dispositif interactif ludique et malin, pour découvrir plus de couleurs, de formes, de tailles et d’informations, par simple scan ou recherche de produit. Pour ce projet, nous avons défini l’expérience globale (parcours utilisateur et fonctionnalités), réalisé le design graphique de l’interface, la conception et définition de la solution technique, fait le développement software & hardware, fabriqué et personnalisé les formes en bois à scanner.<br>Ce POC sera déployé prochainement dans d’autres boutiques Petit Bateau. À terme, le dispositif permettra de finaliser l’achat avec un conseiller de vente, de consulter les stocks des autres boutiques, et de réserver ou se faire livrer ses achats dans l’heure."
+        },
+        {
+          "type": "text",
+          "value": "<br><br><b>COMMENT ÇA MARCHE ?</b><br>L’interface tactile est connectée aux données du site e-commerce, permettant aux clients de naviguer dans l’ensemble du catalogue Petit Bateau avec une priorité apportée aux produits disponibles en boutique. Les écrans et scanners sont intégrés au mobilier de la boutique."
         },
         {
           "type": "photos",
           "value": [
+            "PB_photo_1.jpg",
+            "PB_photo_2.jpg",
+            "PB_photo_3.jpg",
+            "PB_photo_4.jpg",
+            "PB_photo_5.jpg",
+            "PB_photo_6.jpg",
+            "PB_photo_7.jpg"
           ]
         }
       ]
@@ -116,14 +131,13 @@
         "who": [
           "Maximilien Jourdain",
           "Kévin Moutier",
-          "Zoë Leloutre",
-          "Sofia Boggio"
+          "Zoë Leloutre"
         ]
       },
       "content": [
         {
           "type": "text",
-          "value": "Stiqr was our big project in 2017 at Gobelins school, in partnership with the BPI (Bibliothèque Publique d’Information, a public reading library).<br> We based our concept on several interviews we conducted of a relatively young public and their habits in museums: they like going to the museum, but they are reluctant to go there alone — even though they part ways with their friends once inside, since they’re never quite interested by the same things. <br> We designed Stiqr to be a fun and simple way to motivate that public to go see more exhibitions."
+          "value": "<b>CONTEXTE</b><br>Stiqr était notre projet de fin de Master 1 à Gobelins, l’école de l’image, en partenariat avec la BPI (Bibliothèque Publique d’Information). Nous avons conçu notre concept grâce aux nombreuses interviews que nous avons réalisées auprès d’un public assez jeune et de leurs habitudes au musée. Nous en avons conclus que la plupart d’entre eux aimaient, avec modération, se rendre au musée mais pas seul — tout en sachant qu’une fois dans le musée, peu d’entre eux restent ensemble tout au long de l’exposition, ils préfèrent généralement regarder à leur rythme car ils ne seront pas attirés par les mêmes oeuvres."
         },
         {
           "type": "vimeoId",
@@ -131,7 +145,7 @@
         },
         {
           "type": "text",
-          "value": "This app allows you to scan a piece of art with your phone, and see in augmented reality what people think of it with very meaningful emojis. You can add your perception whenever you want, if you feel like it. <br> The point is to express yourself with something else than « I like » or « I don’t like ». It also lets you know if you share common interest, enthusiasm, indifference etc. with everybody else. It can get frustrating to see that most people are not reacting the way you would’ve wanted them to to your favorite piece, but it can encourage you to think about the « why » of it all."
+          "value": "<b>PROJET</b><br>Nous avons designé Stiqr pour être un moyen amusant et simple de motiver un public jeune à aller voir plus d’expositions. Cette application permet de scanner une oeuvre avec un téléphone et de voir, en réalité augmentée, ce que les gens pensent de cette oeuvre dans un premier temps au travers d’emojis très expressifs, mais également avec des commentaires pour ceux qui le souhaitent. <br><br>Le but était de montrer comment s’exprimer au-delà du « j’aime » ou « je n’aime pas », de poser une émotion plus concrète sur le ressenti face à une oeuvre. C’est également un moyen de savoir si on partage des intérêts communs, de l’enthousiasme, de l’indifférence etc. avec quelqu’un d’autre. Il peut évidemment être frustrant de voir que la majeure partie des personnes ayant réagi ne pensent pas comme vous l’auriez aimé, mais cela encourage surtout à réfléchir au pourquoi du comment."
         },
         {
           "type": "photos",
@@ -139,7 +153,7 @@
         },
         {
           "type": "text",
-          "value": "Regarding the design of the app, we mixed an arty style (some fonts and illustrations) with something more structured and strict, since this is what generally inspired us the alliance between the museum and its rules, and what it contains (art)."
+          "value": "<b>COMMENT ÇA MARCHE ?</b><br>Après avoir sélectionné l’exposition dans laquelle on se trouve, il devient possible de scanner les oeuvres grâce à la reconnaissance d’image offerte par Vuforia. Vous pouvez alors voir les emojis des personnes étant passées par là avant vous en réalisé augmentée.<br><br>Le design de l’application est un mélange entre un effet « fait main » (certaines fonts et les illustrations) avec quelque chose de plus structuré et strict, en regard avec l’alliance de l’art et les musées dont les règles peuvent être plus ou moins rigides."
         },
         {
           "type": "photos",
@@ -173,7 +187,7 @@
       "content": [
         {
           "type": "text",
-          "value": "La Redoute Intérieurs wanted to make the most out of the opening of their new stores in Lyon and Carré Sénart to offer a multi-channel experience in-store. When I was working at Joshfire, we imagined with USERADGENTS an interactive device allowing client to get inspired, access the complete range of La Redoute Interieurs products and making its To-Go selection (by printing or e-mailing). "
+          "value": "<b>CONTEXTE</b><br>La Redoute Intérieurs souhait profiter de l’ouverture de nouvelles boutiques à Lyon et Carré Sénart pour proposer une xpérience multicanale en point de vente."
         },
         {
           "type": "youtubeId",
@@ -181,12 +195,27 @@
         },
         {
           "type": "text",
-          "value": "The touchscreen (connected to the e-commerce’s website’s data) and the printer are hidden inside a solid pine and stainless steel console, materials that easily blend with the design of those new stores.<br><br><br>This Proof Of Concept will be deployed in all of the La Redoute Interieurs stores. This device will eventually allow a complete buying journey, for a seamless omnichannel experience."
+          "value": "<b>PROJET</b><br>Nous avons imaginé avec USERADGENTS un dispositif interactif permettant au client de s’inspirer, d’accéder à la gamme complète des produits La Redoute Intérieurs et d’effectuer sa sélection à emporter (impression et partage e-mail). Suite à une étude terrain, pour interroger les clients et conseillers et comprendre leurs habitudes, comportements et attentes, nous avons designé l’expérience globale, le design graphique de l’interface ainsi que celui de la console, et réalisé la conception et définition de la solution technique.<br>Ce POC sera déployé dans toutes les boutiques La Redoute Intérieurs. À terme, le dispositif permettra un parcours d’achat complet, pour une expérience omnicanale sans couture."
         },
         {
           "type": "photos",
           "value": [
-            "LRI-vignette.jpg"
+            "borneDesign_01.png",
+            "borneDesign_02.jpg"
+          ]
+        },
+        {
+          "type": "text",
+          "value": "<b>COMMENT ÇA MARCHE ?</b><br>L’interface tactile (connectée aux données du site e-commerce) et l’imprimante sont dissimulées dans une console en pin massif et en acier brut sur mesure, des matériaux qui s’intègrent parfaitement au design des nouveaux magasins. "
+        },
+        {
+          "type": "photos",
+          "value": [
+            "borne_01.jpg",
+            "borne_02.jpg",
+            "borne_03.jpg",
+            "borne_04.jpg",
+            "borne_05.jpg"
           ]
         }
       ]
@@ -207,14 +236,13 @@
           "Léo Ternoir",
           "Jacky Fong",
           "Léna Scaravella",
-          "Thomas Boulongne",
-          "Sofia Boggio"
+          "Thomas Boulongne"
         ]
       },
       "content": [
         {
           "type": "text",
-          "value": "Cushy! is a cushion that you can squeeze, pet, or punch when you’re cozy, on your couch, and you don’t know what TV show or movie to watch. It’ll tell you what’s best based on your mood. No need to wonder around for hours, looking for something you haven’t seen and that seems to fit how you’re feeling tonight."
+          "value": "<b>CONTEXTE</b><br>Cushy! est un projet qui s’est étalé sur environ 1 mois à Gobelins, l’école de l’image. Nous avions pour seule instruction de faire un objet connecté.<br>Compte tenu du peu de temps à notre disposition, nous nous sommes rapidement décidé sur quelque chose de fun, avec du challenge mais faisable dans le temps imparti avec un intérêt commun: les films et les séries TV."
         },
         {
           "type": "vimeoId",
@@ -222,12 +250,21 @@
         },
         {
           "type": "text",
-          "value": "This was a 1 month workshop on IoT at Gobelins school. <br><br>After many hours of research, try and error, we manage to make a sensor, out of velostat and copper strips, able to map the position and the strength of our hands on the surface of our cushion. So by pressing, stroking, cuddling or even punching Cushy, he'll know and tell you what movie correspond to your mood, based on your gestures. <br><br>Thanks to a user friendly interface, you can get to your movie or TV show very fast. We designed and crafted a custom cushion cover with fabric paint and printed fabric that is matching our UI. <br><br><br>More here <a href='http://cushy.jackyfong.com/'>http://cushy.jackyfong.com</a>"
+          "value": "<b>PROJET</b><br>Cushy, c’est un coussin que vous poussez presser, caresser ou frapper alors que vous êtes confortablement installé.e dans votre canapé et que vous ne savez pas quoi regarder à la télé. Il pourra vous dire ce qui correspond le mieux à votre humeur. Plus besoin de réfléchir pendant des heures, grâce à une interface facile à utiliser, vous serez très vite plongé dans la série qui vous va le mieux. "
         },
         {
           "type": "photos",
           "value": [
-            "cushy-0.jpg",
+            "cushy-0.jpg"
+          ]
+        },
+        {
+          "type": "text",
+          "value": "<b>COMMENT ÇA MARCHE ?</b><br>Après beaucoup de recherches, d’essais et d’échecs. nous avons réussi à créer notre propre capteur à partir de Veloutât et de rubans de cuivre, capable de cartographier la position et la force de votre main sur la surface du coussin. C’est grâce à ce capteur home-made que Cushy sera en mesure de détecter votre humeur selon vos gestes envers lui. <br>Nous avons également designé et réalisé une housse de coussin en 100% coton, dont les patterns ont été réalisés à la peinture pour tissu d’un côté et à l’impression de l’autre pour correspondre à notre identité.<br><br>More here <a href='http://cushy.jackyfong.com/'>http://cushy.jackyfong.com</a>"
+        },
+        {
+          "type": "photos",
+          "value": [
             "cushy-1.jpg",
             "cushy-2.jpg",
             "cushy-3.jpg",
@@ -257,7 +294,7 @@
       "content": [
         {
           "type": "text",
-          "value": "Interactive, realistic and elegantly tailored immersion into 18th century perfumer's workshop. We have setup the replica of parfumer's atelier into window of Marly shop."
+          "value": "<b>CONTEXTE</b><br>Pour leur boutique rue Cambon, Parfums de Marly souhaitait recréer l’ambiance authentique d’un atelier de parfumeur du 18e siècle visible depuis la rue."
         },
         {
           "type": "vimeoId",
@@ -265,7 +302,11 @@
         },
         {
           "type": "text",
-          "value": "By scanning the QR code, passerby were invited to user their phone to control the confection of their parfume. Users followed the instructions on the screen that was also installed inside the window, and took part in the confection of perfume by choosing different aromas.<br><br><br>They could also post their portrait on Instagram with dedicated #, and then see it materialize in the form of a digitally displayed vintage painting in the window."
+          "value": "<b>PROJET</b><br>Nous avons réalisé cette immersion interactive, réaliste et élégante permettant aux passants de contrôler certains éléments de la vitrine grâce à leur téléphone, le but étant de créer leur propre parfum, étape par étape, entre le tangible et le numérique. Afin de laisser leur trace sur cette installation et en faire partie intégrante, les passants étaient également invités à prendre une photo d’eux devant la boutique et la poster sur Instagram avec un # dédié, les faisant ainsi apparaître dans un cadre numérique rococo à l’intérieur de la vitrine."
+        },
+        {
+          "type": "text",
+          "value": "<br><br><b>COMMENT ÇA MARCHE ?</b><br>Un QR code autocollant placé sur la vitrine permettait aux passants de le scanner pour lancer l’expérience et contrôler un plateau tournant sous lequel se trouve un moteur et une machine à fumée. "
         },
         {
           "type": "photos",
@@ -292,14 +333,13 @@
         "who": [
           "Anthelme Dumont",
           "Mélanie Lo",
-          "Kirgan Somville",
-          "Sofia Boggio"
+          "Kirgan Somville"
         ]
       },
       "content": [
         {
           "type": "text",
-          "value": "''At the dawn of time, the four fundamental elements couldn’t be controlled. Water, sun, wind, and earth unleashed upon the world, devastating everything in their path. Though all those elements were essential for our planet to sustain any life, it is said that an entity named Anjä was born in the depths of the Earth. She had the daunting task of containing the elements in an ancient relic and becoming its guardian. Century by century, nature finally calmed down. So Anjä slowly disappeared, conscientiously/carefully leaving the relic hidden inside a temple. But she hadn’t planned on humankind appearing… and stealing the relic for their own purposes.''"
+          "value": "<b>CONTEXTE</b><br>Les phénomènes climatiques que l’on voit apparaître de nos jours et les problèmes qu’ils engendrent sont complexes et les liens qu’ils peuvent avoir les uns avec les autres peuvent sembler imperceptibles. Et bien qu’un pourcentage significatif de la population est inquiet concernant le réchauffement climatique, beaucoup de notions à ce sujet restent difficiles à comprendre et à appréhender. C’est pour ces raisons que, pour ce projet de fin d’année à Gobelins, nous nous sommes concentrés sur la meilleure manière d’expliquer, de manière ludique et pédagogique, les problèmes climatiques et environnementaux actuels et leurs enjeux."
         },
         {
           "type": "vimeoId",
@@ -307,7 +347,7 @@
         },
         {
           "type": "text",
-          "value": "Climatic issues are complex and linked together. In general, even if a significant pourcentage of the population feels concerned by global warming, it seems hard to fully grasp this subject since medias and society tend to give a simplistic overview of it all. Therefor, we focused on climatic and environmental issues, and more precisely the understanding of what’s at stake for this final project of our first in at Gobelins school."
+          "value": "<b>HISTOIRE</b><br><i>À l’aube du monde, les quatre éléments fondamentaux ne pouvaient être contrôlés. L’eau, le soleil, le vent et la terre se déchainèrent sur la planète, ravageant tout sur leur passage. Ces éléments étant nécessaires à la vie, on raconte qu’une entité appelée Anjä naquit des entrailles de la terre. Elle avait pour redoutable tâche de rassembler et contenir ces éléments dans une ancienne relique et devenir leur gardienne. Siècle après siècle, la nature finie par se calmer. Anja disparu, laissant la relique cachée au sein d’un temple dont le nom reste inconnu. Elle n’avait cependant pas prévu l’apparition de l’humanité… et de leur volonté à voler la relique pour leurs propres besoins.</i>"
         },
         {
           "type": "vimeoId",
@@ -315,7 +355,17 @@
         },
         {
           "type": "text",
-          "value": "All of the game was made on Unity, 95% of it by one of our developer, and I jumped in to polish the graphics, changing the lights and placing a few assets so that it resembled our C4D renders. <br><br>All of us designed the object (aesthetically and technically). It is run by a Particle Photon (Arduino-like with wi-fi), 4 hall effect sensors and a magnet to know which element is selected, and a rotary encoder for the strength / quantity you’ll apply your element’s effects. There’re also 4 LED’s to visually understand what’s selected. I made it out of plexiglas, EVA foam and Worbla (thermoplastic)."
+          "value": "<b>PROJET</b><br>Afin de permettre au joueur d’en apprendre plus sur le dérèglement climatique, il va devoir récupérer chaque élément pour apprendre à la utiliser petit à petit et ainsi résoudre les enigmes de ce puzzle game sur tablette accompagné d'un objet connecté. Le jeu est composé de 4 chapitres dans lesquels sont contenus un nombre prédéterminé de niveaux. Nous avons matérialisé la relique en tant qu’object connecté que le joueur utilisera pour contrôler les éléments et rétablir l’équilibre de l’environnement qui l’entour. "
+        },
+        {
+          "type": "photos",
+          "value": [
+            "lostelements-3.png"
+          ]
+        },
+        {
+          "type": "text",
+          "value": "<b>COMMENT ÇA MARCHE ?</b><br>Le jeu a entièrement été réalisé sur Unity. Il est connecté à l’objet et son Photon Particle (Arduino-like) en wifi et détecte le changement d’éléments grâce à 4 capteurs à effet hall et un aimant, ainsi qu’un potentiomètre pour régler l’intensité de l’élément sélectionné. "
         },
         {
           "type": "photos",
@@ -323,9 +373,7 @@
             "lostelements-1.jpg",
             "lostelements-2.jpg",
             "lostelements-4.jpg",
-            "lostelements-3.png",
-            "lostelements-5.jpg",
-            "lostelements-6.jpg"
+            "lostelements-5.jpg"
           ]
         }
       ]
@@ -343,7 +391,6 @@
         ],
         "when": "2015",
         "who": [
-          "Sofia Boggio",
           "help from Philippe Ravaux",
           "and Sarah Goldberg"
         ]
@@ -351,7 +398,7 @@
       "content": [
         {
           "type": "text",
-          "value": "Once a curious girl of flesh and blood, Orianna is now a technological marvel comprised entirely of clockwork. She became gravely ill after an accident in the lower districts of Zaun, and her failing body had to be replaced with exquisite artifice, piece by piece. Accompanied by an extraordinary brass sphere she built for companionship and protection, Orianna is now free to explore the wonders of Piltover, and beyond."
+          "value": "<b>CONTEXTE</b><br>Aussi étrange que ça puisse paraître, je considère que le cosplay est un travail à part entière que je traite avec autant d’implication et de motivation qu’un projet de design interactif.<br>Ce cosplay de Orianna Bladecraft, provenant du jeu League of Legends, a été réalisé pour le challenge d’ajouter des mécanismes à l’intérieur d’un costume, le tout en plus de 400 heures."
         },
         {
           "type": "youtubeId",
@@ -359,7 +406,7 @@
         },
         {
           "type": "text",
-          "value": "As surprising as it might seam, I’m treating my hobby, Cosplay, with as much implication and motivation than I do for work. This cosplay of Bladecraft Orianna, from the game League of Legends, took approximately 400 hours to make, in a bit more than a year if you count all the fixing part. Being something that I do in my spare time, I had no apparent reason to make it, except that, at the time, I really enjoyed the game, I still truly love the character and its lore, but most of all, I loved the challenge. I never worked with Arduino before this year, and I managed to make 2 projects, one for school and the other one for that particular cosplay, learning the technology as I went."
+          "value": "<b>HISTOIRE</b><br><i>Autrefois une jeune fille curieuse, de chair et d'os, Orianna est aujourd'hui une merveille de technologie entièrement mécanisée. Elle est tombée gravement malade à la suite d'un accident dans les quartiers inférieurs de Zaun, et son corps défaillant a été remplacé petit à petit par des prothèses perfectionnées. Accompagnée par une sphère extraordinaire qu'elle a elle-même créée pour lui servir de compagnon et de protectrice, Orianna est désormais libre d'explorer la merveilleuse ville de Piltover et ce qui se trouve au-delà.</i>"
         },
         {
           "type": "youtubeId",
@@ -367,7 +414,7 @@
         },
         {
           "type": "text",
-          "value": "All of the costume was handmade mostly with foam, Worbla, fabric and electronics, nothing you see on the video is CGI. This contains two Arduino Uno and several motors (6 total). I designed all the mechanisms, made the key and the ball all by myself and for the skirt I asked Philippe Ravaux to make the 3D models for the rail that it sits on and Sarah Goldberg to print it for me. I then made the rest of the frame for the skirt, covered it with fabric and props, and voilà."
+          "value": "<b>COMMENT ÇA MARCHE ?</b><br>Le costume a été créé à 100% de mes mains avec comme matériaux principaux de la mousse EVA, du Worbla (un thermoplastique), du tissu, et un peu d’électronique (2 Arduino Uno, 6 moteurs, 3 batteries). J’ai designé tous les mécanismes et ai demandé de l’aide à Philippe Ravaux pour les modèles 3D du rail qui permet de faire tourner la jupe, ainsi qu’à Sarah Goldberg pour l’impression de ce rail."
         },
         {
           "type": "photos",
@@ -396,14 +443,13 @@
         ],
         "when": "2014",
         "who": [
-          "Cynthia Charles",
-          "Sofia Boggio"
+          "Cynthia Charles"
         ]
       },
       "content": [
         {
           "type": "text",
-          "value": "Both technologie's lovers, curious and passionate by Arduino, we couldn't miss this opportunity to use it. But, as we never had the chance the try, we couldn't either set the bar too high. Therefor, based on many inspirations, we've created S4M-M1 aka Sammy, a small Robot, autonomous thanks to his HC SR-04 sensor ; conceived / made / programmed by us."
+          "value": "<b>CONTEXTE</b><br>Cynthia Charles et moi-même, lorsque nous étions étudiante à l’EPSAA en post-diplôme multimédia, avions un projet dont la seule consigne était de créer quelque chose « en dehors de l’écran ». Toutes deux intéressées à l’idée d’utiliser un Arduino pour la première fois, nous avons créé S4M-M1, ou Sammy pour les intimes. "
         },
         {
           "type": "vimeoId",
@@ -411,50 +457,24 @@
         },
         {
           "type": "text",
-          "value": "To allow the audience to understand a little bit better how this robot works, we projected a design that evolves by the calculation from the robot position to the nearest obstacle, creating a sine curve : red when close to an obstacle, blue when far from it."
+          "value": "<b>PROJET</b><br>Sammy est un robot autonome dont le seul objectif est de se déplacer sans jamais se cogner dans un obstacle. Pour permettre aux passants de comprendre comment Sammy fonctionne, un design qui évolue en fonction de la position du robot par rapport à un obstacle est projeté en fond, créant une courbe sinusoïdale (rouge quand un obstacle est proche, bleu quand la voie est libre)."
         },
         {
           "type": "photos",
           "value": [
-            "s-1.jpg",
+            "s-1.jpg"
+          ]
+        },
+        {
+          "type": "text",
+          "value": "<b>COMMENT ÇA MARCHE ?</b><br>En plus de l’Arduino, un capteur ultrason HC SR-04 permet de mesurer la distance entre Sammy et un obstacle et ainsi de déterminer que lorsque le robot se trouve à moins de 5cm d’un objet, il doit s’arrêter, tourner et repartir. Un capteur bluetooth connecte Sammy a Processing pour la visualisation de la courbe."
+        },
+        {
+          "type": "photos",
+          "value": [
             "s-2.jpg",
             "s-3.jpg",
             "s-4.jpg"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "attraction-magnitude",
-      "title": "Attraction Magnitude",
-      "type": "Data visualization",
-      "date": "2014",
-      "background": "am-cover.jpg",
-      "details": {
-        "what": [
-          "Data visualization"
-        ],
-        "when": "2015",
-        "who": [
-          "Jacky Fong",
-          "Sofia Boggio"
-        ]
-      },
-      "content": [
-        {
-          "type": "text",
-          "value": "Just because something isn’t tangible doesn’t mean you can’t see it. Data visualization has this power to make informations understandable in a glance. As Gobelins school has a lot of social medias, we created an experience that allows everyone to notice some patterns in the school’s visibility, the number of people following them or viewing their videos."
-        },
-        {
-          "type": "text",
-          "value": "<a href='https://jackyfong.com/lab/socialnetworksactivity/'>https://jackyfong.com/lab/socialnetworksactivity</a>"
-        },
-        {
-          "type": "photos",
-          "value": [
-            "am-0.gif",
-            "am-1.jpg",
-            "am-2.jpg"
           ]
         }
       ]
