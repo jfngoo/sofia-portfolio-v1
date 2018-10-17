@@ -9,7 +9,7 @@
         <img src="../assets/svg/logo-sofia.svg">
       </div>
       <div ref="scroll" id="scrollto">
-        <a @click="goToHome">scroll to discover</a>
+        <a @click="goToHome">{{ $t('intro.scroll') }}</a>
       </div>
       <div ref="bar" id="bar"></div>
     </div>

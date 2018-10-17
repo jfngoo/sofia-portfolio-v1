@@ -5,55 +5,39 @@
 </template>
 
 <script>
-import axios from 'axios'
-import DataManager from 'lib/dataManager'
-import StateManager from 'lib/stateManager'
-import EventBus from 'lib/eventBus'
+import { mapState, mapActions } from 'vuex'
+import { LANG } from './store/config.state'
+import { FETCH_DATA } from './store/config.actions'
 
 export default {
   name: 'app',
 
   data () {
     return {
-      defaultLang: 'en'
+      browserLang: 'en'
     }
+  },
+
+  watch: {
+    lang (locale) {
+      this.$i18n.locale = locale
+    }
+  },
+
+  computed: {
+    ...mapState({
+      lang: LANG
+    })
   },
 
   created () {
-    const navLang = navigator.language.toLowerCase()
-
-    if (navLang === 'fr' || navLang.includes('fr-')) {
-      this.defaultLang = 'fr'
-    } else {
-      this.defaultLang = 'en'
-    }
-
-    StateManager.setLang(this.defaultLang)
-
-    axios.get(`/data_${this.defaultLang}.json`)
-      .then((response) => {
-        DataManager.setData(response.data.about, response.data.projects)
-      })
-      .catch((err) => {
-        console.log('error', err)
-      })
-  },
-
-  mounted () {
-    EventBus.$on('CHANGE_LANG', this.reloadData)
+    this.fetchData()
   },
 
   methods: {
-    reloadData () {
-      axios.get(`/static/data_${StateManager.getLang()}.json`)
-        .then((response) => {
-          DataManager.setData(response.data.about, response.data.projects)
-          console.log('reloaded')
-        })
-        .catch((err) => {
-          console.log('error', err)
-        })
-    }
+    ...mapActions({
+      fetchData: FETCH_DATA
+    })
   }
 }
 </script>

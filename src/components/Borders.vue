@@ -12,9 +12,9 @@
         <ul>
           <li @click="setLang('fr')">FR</li>
           <li @click="setLang('en')">EN</li>
-          <li ref="about" id="nav-about" @click="goToAbout()">about & contact</li>
+          <li ref="about" id="nav-about" @click="goToAbout()">{{ $t('nav.about') }}</li>
           <!--<li>archive</li>-->
-          <li ref="work" id="nav-work" @click="goToHome()">work</li>
+          <li ref="work" id="nav-work" @click="goToHome()">{{ $t('nav.work') }}</li>
         </ul>
       </nav>
     </div>
@@ -25,6 +25,8 @@
 <script>
 import StateManager from 'lib/stateManager'
 import EventBus from 'lib/eventBus'
+import { mapMutations } from 'vuex'
+import { SET_LANG } from '../store/config.mutations'
 
 export default {
   name: 'BordersComponent',
@@ -44,6 +46,10 @@ export default {
   },
 
   methods: {
+    ...mapMutations({
+      setLang: SET_LANG
+    }),
+
     goToHome () {
       if (StateManager.getIsInProject()) {
         EventBus.$emit('BACK_TO_HOME')
@@ -54,11 +60,6 @@ export default {
 
     goToAbout () {
       this.$router.push({ name: 'about' })
-    },
-
-    setLang (lang) {
-      StateManager.setLang(lang)
-      EventBus.$emit('CHANGE_LANG')
     }
   }
 }
