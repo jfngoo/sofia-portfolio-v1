@@ -197,6 +197,7 @@ export default {
     min-height: 100vh;
     background: #FFFFFF;
     font-size: .9rem;
+    overflow: hidden;
 
     #project-wrapper {
       padding: 0 0 0 $border_width;
