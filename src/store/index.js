@@ -62,31 +62,31 @@ export default new Vuex.Store({
       const otherLang = state.locales.filter(locale => locale !== browserLang)[0]
 
       // Try to fetch browser lang data
-      axios.get(`/data_${ browserLang }.json`)
+      axios.get(`/data_${browserLang}.json`)
         .then((response) => {
           DataManager.setData(response.data.about, response.data.projects)
           commit(SET_DATA, { data: response.data, lang: browserLang })
 
           // Try to fetch the other lang
-          axios.get(`/data_${ otherLang }.json`)
+          axios.get(`/data_${otherLang}.json`)
             .then((response) => {
               commit(SET_DATA, { data: response.data, lang: otherLang })
             })
             .catch((err) => {
-              console.error(`error loading ${ otherLang } data`, err)
+              console.error(`error loading ${otherLang} data`, err)
             })
         })
         .catch((err) => {
-          console.error(`error loading ${ browserLang } data`, err)
+          console.error(`error loading ${browserLang} data`, err)
 
           // Try to fetch other lang if browser lang can't load
-          axios.get(`/data_${ otherLang }.json`)
+          axios.get(`/data_${otherLang}.json`)
             .then((response) => {
               commit(SET_DATA, { data: response.data, lang: otherLang })
               commit(SET_LANG, otherLang)
             })
             .catch((err) => {
-              console.error(`error loading ${ otherLang } data`, err)
+              console.error(`error loading ${otherLang} data`, err)
             })
         })
 
