@@ -87,7 +87,7 @@
 
       goToProject (id, event) {
 
-        const target = event.target.offsetTop - 48
+        const target = event.target.offsetTop
 
         const height = this.$refs.projects.offsetHeight * 1.5
         TweenMax.set(this.$refs.projects, { height: height })
@@ -145,7 +145,7 @@
           tl.set(this.$refs.mask, { display: 'none' })
           tl.set(this.$refs.projects, { visibility: 'visible' })
           const active = document.getElementById(StateManager.getIsInProject())
-          const scrollTarget = active.offsetTop - 48
+          const scrollTarget = active.offsetTop
           window.scrollTo(0, scrollTarget)
           tl.set('#projects ul li', { opacity: 0 })
           tl.set(active, { opacity: 1 })
