@@ -1,7 +1,7 @@
 <template>
   <div id="project" v-if="project">
 
-    <borders></borders>
+    <nav-bar></nav-bar>
 
     <div id="project-wrapper">
 
@@ -73,7 +73,7 @@
 
 <script>
 
-import Borders from 'components/Borders'
+import NavBar from './NavBar'
 import AssetsManager from 'lib/assetsManager'
 import EventBus from 'lib/eventBus'
 
@@ -87,7 +87,7 @@ export default {
   name: 'ProjectComponent',
 
   components: {
-    Borders
+    NavBar
   },
 
   data () {

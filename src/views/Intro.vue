@@ -1,8 +1,5 @@
 <template>
   <div id="intro">
-
-    <borders ref="borders" id="borders"></borders>
-
     <div id="intro-wrapper">
       <div ref="title" class="center">
         <h1>sofia boggio</h1>
@@ -25,14 +22,8 @@ import { TweenMax, TimelineMax, Power3 } from 'gsap'
 import { mapMutations } from 'vuex'
 import { SET_PLAY_HOME_ANIMATION } from '../store/config.mutations'
 
-import Borders from 'components/Borders'
-
 export default {
   name: 'IntroComponent',
-
-  components: {
-    Borders
-  },
 
   data () {
     return {
@@ -135,15 +126,6 @@ export default {
     align-items: center;
 
     background: $clear_purple;
-
-    #borders {
-      position: absolute;
-      height: 100vh;
-      width: 100vw;
-      display: none;
-      top: 0;
-      left: 0;
-    }
 
     #intro-wrapper {
 

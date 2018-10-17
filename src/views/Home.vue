@@ -1,6 +1,6 @@
 <template>
   <div ref="home" id="home" v-if="isLoaded">
-    <borders></borders>
+    <nav-bar></nav-bar>
 
     <div ref="mask" id="mask"></div>
 
@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import Borders from 'components/Borders'
+import NavBar from '../components/NavBar'
 import AssetsManager from 'lib/assetsManager'
 
 import { mapState, mapGetters, mapMutations } from 'vuex'
@@ -42,7 +42,7 @@ export default {
   name: 'HomeComponent',
 
   components: {
-    Borders
+    NavBar
   },
 
   data () {

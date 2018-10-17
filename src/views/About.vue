@@ -1,7 +1,7 @@
 <template>
   <div id="about" v-if="isLoaded">
 
-    <borders></borders>
+    <nav-bar></nav-bar>
 
     <div id="about-wrapper">
 
@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import Borders from 'components/Borders'
+import NavBar from '../components/NavBar'
 import AssetsManager from 'lib/assetsManager'
 
 import { mapGetters } from 'vuex'
@@ -48,7 +48,7 @@ export default {
   name: 'AboutComponent',
 
   components: {
-    Borders
+    NavBar
   },
 
   data () {
@@ -130,7 +130,6 @@ export default {
   @import '../assets/style/global';
 
   #about {
-
     min-height: 100vh;
     background: #FFFFFF;
     font-size: .9rem;

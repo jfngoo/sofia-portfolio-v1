@@ -13,9 +13,7 @@ module.exports = {
         'vue$': 'vue/dist/vue.esm.js',
         '@': resolve('src'),
         '~': resolve('src/assets'),
-        'lib': resolve('src/lib'),
-        'data': resolve('src/data'),
-        'components': resolve('src/components')
+        'lib': resolve('src/lib')
       }
     }
   }
