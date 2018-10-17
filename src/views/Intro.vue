@@ -21,7 +21,9 @@
 
 import _ from 'lodash'
 import { TweenMax, TimelineMax, Power3 } from 'gsap'
-import StateManager from 'lib/stateManager'
+
+import { mapMutations } from 'vuex'
+import { SET_PLAY_HOME_ANIMATION } from '../store/config.mutations'
 
 import Borders from 'components/Borders'
 
@@ -50,8 +52,12 @@ export default {
   },
 
   methods: {
+    ...mapMutations({
+      setPlayHomeAnimation: SET_PLAY_HOME_ANIMATION
+    }),
+
     goTo () {
-      StateManager.setPlayHomeAnimation(true)
+      this.setPlayHomeAnimation(true)
       this.$router.push({ name: 'home' })
     },
 

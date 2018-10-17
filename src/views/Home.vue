@@ -29,9 +29,11 @@
 <script>
 import Borders from 'components/Borders'
 import AssetsManager from 'lib/assetsManager'
-import StateManager from 'lib/stateManager'
-import { mapGetters } from 'vuex'
+
+import { mapState, mapGetters, mapMutations } from 'vuex'
+import { CURRENT_PROJECT_ID, PLAY_HOME_ANIMATION } from '../store/config.state'
 import { GET_PROJECTS } from '../store/config.getters'
+import { SET_CURRENT_PROJECT_ID, SET_PLAY_HOME_ANIMATION } from '../store/config.mutations'
 
 import { TweenMax, TimelineMax, Power3 } from 'gsap'
 import 'gsap/ScrollToPlugin'
@@ -58,6 +60,11 @@ export default {
   },
 
   computed: {
+    ...mapState({
+      currentProjectId: CURRENT_PROJECT_ID,
+      playHomeAnimation: PLAY_HOME_ANIMATION
+    }),
+
     ...mapGetters({
       projects: GET_PROJECTS
     })
@@ -68,6 +75,11 @@ export default {
   },
 
   methods: {
+    ...mapMutations({
+      setCurrentProjectId: SET_CURRENT_PROJECT_ID,
+      setPlayHomeAnimation: SET_PLAY_HOME_ANIMATION
+    }),
+
     loadData () {
       if (!this.projects) {
         setTimeout(() => {
@@ -132,7 +144,7 @@ export default {
     setTweens () {
       const tl = new TimelineMax()
 
-      if (StateManager.getPlayHomeAnimation()) {
+      if (this.playHomeAnimation) {
         tl.set(this.$refs.mask, { width: 1 })
         tl.to(this.$refs.mask, 0.5, { width: '180vw', ease: Power3.easeIn })
 
@@ -142,12 +154,12 @@ export default {
         tl.staggerFrom('#projects ul li', 1, { opacity: 0, x: 40, force3D: true }, 0.25, 'tag')
         tl.staggerFrom('#projects ul li .wrapper', 1, { opacity: 0, x: 80, force3D: true }, 0.25, 'tag -= 1.5')
 
-        StateManager.setPlayHomeAnimation(false)
-      } else if (StateManager.getIsInProject()) {
+        this.setPlayHomeAnimation(false)
+      } else if (this.currentProjectId) {
         tl.set(this.$refs.home, { background: '#F0F2FA' })
         tl.set(this.$refs.mask, { display: 'none' })
         tl.set(this.$refs.projects, { visibility: 'visible' })
-        const active = document.getElementById(StateManager.getIsInProject())
+        const active = document.getElementById(this.currentProjectId)
         const scrollTarget = active.offsetTop
         window.scrollTo(0, scrollTarget)
         tl.set('#projects ul li', { opacity: 0 })
@@ -155,7 +167,7 @@ export default {
         tl.to('#projects ul li', 1, { opacity: 1, force3D: true })
         tl.staggerFrom('#projects ul li .wrapper', 1, { opacity: 0, x: 80, force3D: true }, 0.25, 'tag -= 1.5')
 
-        StateManager.setIsInProject(null)
+        this.setCurrentProjectId(null)
       } else {
         tl.set(this.$refs.home, { background: '#F0F2FA' })
         tl.set(this.$refs.mask, { display: 'none' })

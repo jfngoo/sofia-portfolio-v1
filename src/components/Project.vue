@@ -75,11 +75,11 @@
 
 import Borders from 'components/Borders'
 import AssetsManager from 'lib/assetsManager'
-import StateManager from 'lib/stateManager'
 import EventBus from 'lib/eventBus'
 
-import { mapGetters } from 'vuex'
+import { mapGetters, mapMutations } from 'vuex'
 import { GET_PROJECTS, GET_PROJECT_BY_ID } from '../store/config.getters'
+import { SET_CURRENT_PROJECT_ID, SET_PLAY_HOME_ANIMATION } from '../store/config.mutations'
 
 import { TweenMax, TimelineMax, Power2 } from 'gsap'
 
@@ -119,6 +119,11 @@ export default {
   },
 
   methods: {
+    ...mapMutations({
+      setCurrentProjectId: SET_CURRENT_PROJECT_ID,
+      setPlayHomeAnimation: SET_PLAY_HOME_ANIMATION
+    }),
+
     loadData () {
       if (!this.projects) {
         setTimeout(() => {
@@ -132,10 +137,10 @@ export default {
 
     onLoad () {
       this.resetScroll()
-      StateManager.setPlayHomeAnimation(false)
+      this.setPlayHomeAnimation(false)
 
       this.$nextTick(this.setTweens)
-      StateManager.setIsInProject(this.project.id)
+      this.setCurrentProjectId(this.project.id)
 
       this.addEventListeners()
     },

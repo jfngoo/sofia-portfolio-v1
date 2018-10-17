@@ -22,9 +22,10 @@
 </template>
 
 <script>
-import StateManager from 'lib/stateManager'
 import EventBus from 'lib/eventBus'
-import { mapMutations } from 'vuex'
+
+import { mapState, mapMutations } from 'vuex'
+import { CURRENT_PROJECT_ID } from '../store/config.state'
 import { SET_LANG } from '../store/config.mutations'
 
 export default {
@@ -33,6 +34,12 @@ export default {
     return {
       projects: null
     }
+  },
+
+  computed: {
+    ...mapState({
+      currentProjectId: CURRENT_PROJECT_ID
+    })
   },
 
   mounted () {
@@ -50,7 +57,7 @@ export default {
     }),
 
     goToHome () {
-      if (StateManager.getIsInProject()) {
+      if (this.currentProjectId) {
         EventBus.$emit('BACK_TO_HOME')
       } else {
         this.$router.push({ name: 'home' })

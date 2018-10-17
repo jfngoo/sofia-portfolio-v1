@@ -1,17 +1,24 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import {
-  LANG
+  LANG,
+  PLAY_HOME_ANIMATION,
+  CURRENT_PROJECT_ID
 } from './config.state'
+
 import {
   GET_PROJECTS,
   GET_PROJECT_BY_ID,
   GET_ABOUT
 } from './config.getters'
+
 import {
   SET_LANG,
-  SET_DATA
+  SET_DATA,
+  SET_PLAY_HOME_ANIMATION,
+  SET_CURRENT_PROJECT_ID
 } from './config.mutations'
+
 import {
   FETCH_DATA
 } from './config.actions'
@@ -28,7 +35,8 @@ export default new Vuex.Store({
       fr: {},
       en: {}
     },
-    isDataLoaded: false
+    [PLAY_HOME_ANIMATION]: true,
+    [CURRENT_PROJECT_ID]: null
   },
   getters: {
     [GET_PROJECTS]: state => state.data[state[LANG]].projects,
@@ -46,8 +54,11 @@ export default new Vuex.Store({
         state.data[payload.lang] = payload.data
       }
     },
-    setDataIsLoaded (state, payload) {
-      state.isDataLoaded = payload
+    [SET_PLAY_HOME_ANIMATION] (state, payload) {
+      state[PLAY_HOME_ANIMATION] = payload
+    },
+    [SET_CURRENT_PROJECT_ID] (state, payload) {
+      state[CURRENT_PROJECT_ID] = payload
     }
   },
   actions: {
@@ -75,7 +86,6 @@ export default new Vuex.Store({
           axios.get(`/data_${otherLang}.json`)
             .then((response) => {
               commit(SET_DATA, { data: response.data, lang: otherLang })
-              commit('setDataIsLoaded', true)
             })
             .catch((err) => {
               console.error(`error loading ${otherLang} data`, err)
