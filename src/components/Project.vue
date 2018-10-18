@@ -299,7 +299,7 @@ export default {
       }
 
       #gallery {
-        margin: 40px auto 0;
+        margin: 40px auto;
         img {
           width: 100%;
           height: auto;

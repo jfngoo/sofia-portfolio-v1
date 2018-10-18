@@ -8,5 +8,8 @@
   },
   "project": {
     "next": "Projet suivant"
+  },
+  "about": {
+    "made": "Réalisé avec"
   }
 }

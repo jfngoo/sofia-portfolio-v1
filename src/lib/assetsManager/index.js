@@ -30,6 +30,10 @@ class AssetsManager {
       new Image().src = this.getCover(filename)
     }
   }
+
+  preloadAboutImage (filename) {
+    new Image().src = this.getAboutBackground(filename)
+  }
 }
 
 const assetsManager = new AssetsManager()

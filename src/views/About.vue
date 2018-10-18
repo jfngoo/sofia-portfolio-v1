@@ -3,7 +3,7 @@
     <div id="about-wrapper">
 
       <div id="header">
-        <div id="banner" :style="{ backgroundImage: 'url(' + getBackground('about.jpg') +')' }"></div>
+        <div id="banner" :style="{ backgroundImage: 'url(' + getBackground(about.background) +')' }"></div>
         <div ref="bannerMask" id="banner-mask"></div>
         <h1 ref="title" class="title" v-html="about.head_title"></h1>
       </div>
@@ -23,7 +23,7 @@
           </ul>
         </div>
 
-        <div id="thanks">Made with <a href="https://jackyfong.com">Jacky Fong</a></div>
+        <div id="thanks">{{ $t('about.made') }} <a href="https://jackyfong.com">Jacky Fong</a></div>
 
       </div>
 

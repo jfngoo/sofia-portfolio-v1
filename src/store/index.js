@@ -132,6 +132,7 @@ export default new Vuex.Store({
       }
 
       AssetsManager.preloadCovers(covers)
+      AssetsManager.preloadAboutImage(getters[GET_ABOUT].background)
     }
   }
 })
