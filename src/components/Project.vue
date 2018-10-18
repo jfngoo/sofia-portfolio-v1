@@ -84,7 +84,6 @@ export default {
   data () {
     return {
       isLoaded: false,
-      project: null,
       vimeoURI: null,
       youtubeURI: null
     }
@@ -102,7 +101,13 @@ export default {
     ...mapGetters({
       projects: GET_PROJECTS,
       getProjectById: GET_PROJECT_BY_ID
-    })
+    }),
+
+    project () {
+      if (this.projects) {
+        return this.getProjectById(this.$route.params.id)
+      }
+    }
   },
 
   created () {
@@ -119,9 +124,8 @@ export default {
       if (!this.projects) {
         setTimeout(() => {
           this.loadData()
-        }, 300)
+        }, 100)
       } else {
-        this.project = this.getProjectById(this.$route.params.id)
         this.isLoaded = true
       }
     },

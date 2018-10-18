@@ -73,7 +73,7 @@ export default {
       if (!this.about) {
         setTimeout(() => {
           this.loadData()
-        }, 300)
+        }, 100)
       } else {
         this.isLoaded = true
       }

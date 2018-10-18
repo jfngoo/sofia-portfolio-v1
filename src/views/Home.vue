@@ -77,7 +77,7 @@ export default {
       if (!this.projects) {
         setTimeout(() => {
           this.loadData()
-        }, 300)
+        }, 100)
       } else {
         this.isLoaded = true
       }
