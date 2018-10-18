@@ -131,7 +131,7 @@ export default {
   },
 
   beforeDestroy () {
-    this.removeEventListener()
+    this.removeEventListeners()
   },
 
   methods: {
