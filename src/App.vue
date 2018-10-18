@@ -7,8 +7,9 @@
 
 <script>
 import NavBar from './components/NavBar'
-import { mapState, mapGetters, mapActions } from 'vuex'
+import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
 import { LANG } from './store/config.state'
+import { SET_CURRENT_PROJECT_ID } from './store/config.mutations'
 import { GET_PROJECTS } from './store/config.getters'
 import { FETCH_DATA } from './store/config.actions'
 
@@ -28,6 +29,10 @@ export default {
   watch: {
     lang (locale) {
       this.$i18n.locale = locale
+    },
+
+    '$route.params.id' (val) {
+      val ? this.setCurrentProjectId(val) : this.setCurrentProjectId(null)
     }
   },
 
@@ -50,11 +55,15 @@ export default {
   },
 
   methods: {
-    ...mapActions({
-      fetchData: FETCH_DATA
+    ...mapMutations({
+      setCurrentProjectId: SET_CURRENT_PROJECT_ID
     }),
 
-    preloadImages () {
+    ...mapActions({
+      fetchData: FETCH_DATA
+    })
+
+    // preloadImages () {
       // new Image().src = url
 
       //var img=new Image();
@@ -62,7 +71,7 @@ export default {
 
       //img.onload = callback;
       //img.onerror = callback;
-    }
+    // }
   }
 }
 </script>

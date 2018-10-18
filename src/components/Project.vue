@@ -76,7 +76,7 @@ import EventBus from 'lib/eventBus'
 
 import { mapGetters, mapMutations } from 'vuex'
 import { GET_PROJECTS, GET_PROJECT_BY_ID } from '../store/config.getters'
-import { SET_CURRENT_PROJECT_ID, SET_PLAY_HOME_ANIMATION } from '../store/config.mutations'
+import { SET_PLAY_HOME_ANIMATION } from '../store/config.mutations'
 
 import { TweenMax, TimelineMax, Power2 } from 'gsap'
 
@@ -136,7 +136,6 @@ export default {
 
   methods: {
     ...mapMutations({
-      setCurrentProjectId: SET_CURRENT_PROJECT_ID,
       setPlayHomeAnimation: SET_PLAY_HOME_ANIMATION
     }),
 
@@ -155,7 +154,6 @@ export default {
       this.setPlayHomeAnimation(false)
 
       this.$nextTick(this.setTweens)
-      this.setCurrentProjectId(this.project.id)
     },
 
     resetScroll () {
