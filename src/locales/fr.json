@@ -5,5 +5,8 @@
   "nav": {
     "work": "projets",
     "about": "à propos & contact"
+  },
+  "project": {
+    "next": "Projet suivant"
   }
 }

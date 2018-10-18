@@ -63,7 +63,9 @@
 
       </div>
 
+      <next-project></next-project>
     </div>
+
 
   </div>
 </template>
@@ -78,8 +80,14 @@ import { SET_CURRENT_PROJECT_ID, SET_PLAY_HOME_ANIMATION } from '../store/config
 
 import { TweenMax, TimelineMax, Power2 } from 'gsap'
 
+import NextProject from './NextProject'
+
 export default {
   name: 'ProjectComponent',
+
+  components: {
+    NextProject
+  },
 
   data () {
     return {
@@ -94,6 +102,10 @@ export default {
       if (dataLoaded === true) {
         this.onLoad()
       }
+    },
+
+    '$route.params.id' () {
+      this.onLoad()
     }
   },
 
@@ -112,6 +124,14 @@ export default {
 
   created () {
     this.loadData()
+  },
+
+  mounted () {
+    this.addEventListeners()
+  },
+
+  beforeDestroy () {
+    this.removeEventListener()
   },
 
   methods: {
@@ -136,8 +156,6 @@ export default {
 
       this.$nextTick(this.setTweens)
       this.setCurrentProjectId(this.project.id)
-
-      this.addEventListeners()
     },
 
     resetScroll () {
@@ -178,6 +196,10 @@ export default {
       EventBus.$on('BACK_TO_HOME', () => {
         this.goTo('home')
       })
+    },
+
+    removeEventListeners () {
+      EventBus.$off('BACK_TO_HOME')
     }
   }
 }
@@ -258,7 +280,7 @@ export default {
 
     #container {
       margin: 20px auto 0;
-      padding: 60px 0 5px;
+      padding: 60px 0 0;
       max-width: 800px;
 
       .text {
@@ -277,11 +299,11 @@ export default {
       }
 
       #gallery {
-        margin: 40px auto;
+        margin: 40px auto 0;
         img {
           width: 100%;
           height: auto;
-          margin: 10px auto;
+          margin: 10px auto 0;
         }
       }
     }
