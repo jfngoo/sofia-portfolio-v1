@@ -95,7 +95,7 @@ export default {
       position: relative;
       z-index: 1;
       display: flex;
-      text-shadow: 0 0 20px #6c6c6c;
+      text-shadow: 0 0 20px $text_shadow_color;
 
       .arrow {
         align-self: center;

@@ -122,11 +122,14 @@ export default {
     }
     .border-left {
       left: 0;
+      box-shadow: -4px 0 25px lighten($shadow_color, 5);
+
       .logo {
         position: relative;
         z-index: 99999;
         transform: rotate(-90deg);
         margin-top: 67px;
+
         &:hover {
           cursor: pointer;
         }
