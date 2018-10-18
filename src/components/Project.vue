@@ -1,8 +1,5 @@
 <template>
   <div id="project" v-if="project">
-
-    <nav-bar></nav-bar>
-
     <div id="project-wrapper">
 
       <div id="header" v-if="project.title">
@@ -72,8 +69,6 @@
 </template>
 
 <script>
-
-import NavBar from './NavBar'
 import AssetsManager from 'lib/assetsManager'
 import EventBus from 'lib/eventBus'
 
@@ -85,10 +80,6 @@ import { TweenMax, TimelineMax, Power2 } from 'gsap'
 
 export default {
   name: 'ProjectComponent',
-
-  components: {
-    NavBar
-  },
 
   data () {
     return {

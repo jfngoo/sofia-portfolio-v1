@@ -24,6 +24,7 @@ import {
 } from './config.actions'
 
 import axios from 'axios'
+import AssetsManager from '../lib/assetsManager'
 
 Vue.use(Vuex)
 
@@ -62,7 +63,7 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    [FETCH_DATA] ({ commit, state }) {
+    [FETCH_DATA] ({ commit, state, dispatch }) {
       const navLang = navigator.language.toLowerCase()
       let browserLang = ''
 
@@ -81,6 +82,7 @@ export default new Vuex.Store({
       axios.get(`/data_${browserLang}.json`)
         .then((response) => {
           commit(SET_DATA, { data: response.data, lang: browserLang })
+          dispatch('preloadCovers')
 
           // Try to fetch the other lang
           axios.get(`/data_${otherLang}.json`)
@@ -119,6 +121,19 @@ export default new Vuex.Store({
       //     GoogleAnalytics.sendEvent('Load', 'auto - failed to load data')
       //     console.error(error)
       //   })
+    },
+
+    preloadCovers ({ getters }) {
+      const covers = []
+
+      for (let i = 0; i < getters[GET_PROJECTS].length; i++) {
+        const cover = getters[GET_PROJECTS][i].background
+        covers.push(cover)
+      }
+
+      AssetsManager.preloadCovers(covers)
     }
   }
 })
+
+

@@ -1,8 +1,5 @@
 <template>
   <div id="about" v-if="isLoaded">
-
-    <nav-bar></nav-bar>
-
     <div id="about-wrapper">
 
       <div id="header">
@@ -36,7 +33,6 @@
 </template>
 
 <script>
-import NavBar from '../components/NavBar'
 import AssetsManager from 'lib/assetsManager'
 
 import { mapGetters } from 'vuex'
@@ -46,10 +42,6 @@ import { TweenMax, TimelineMax } from 'gsap'
 
 export default {
   name: 'AboutComponent',
-
-  components: {
-    NavBar
-  },
 
   data () {
     return {

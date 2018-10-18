@@ -1,16 +1,23 @@
 <template>
   <div id="app">
+    <nav-bar v-if="!isOnIntro"></nav-bar>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex'
+import NavBar from './components/NavBar'
+import { mapState, mapGetters, mapActions } from 'vuex'
 import { LANG } from './store/config.state'
+import { GET_PROJECTS } from './store/config.getters'
 import { FETCH_DATA } from './store/config.actions'
 
 export default {
   name: 'app',
+
+  components: {
+    NavBar
+  },
 
   data () {
     return {
@@ -27,7 +34,15 @@ export default {
   computed: {
     ...mapState({
       lang: LANG
-    })
+    }),
+
+    ...mapGetters({
+      projects: GET_PROJECTS
+    }),
+
+    isOnIntro () {
+      return this.$route.name === 'intro'
+    }
   },
 
   created () {
@@ -37,7 +52,17 @@ export default {
   methods: {
     ...mapActions({
       fetchData: FETCH_DATA
-    })
+    }),
+
+    preloadImages () {
+      // new Image().src = url
+
+      //var img=new Image();
+      //img.src=url;
+
+      //img.onload = callback;
+      //img.onerror = callback;
+    }
   }
 }
 </script>

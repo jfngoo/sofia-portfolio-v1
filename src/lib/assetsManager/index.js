@@ -23,6 +23,13 @@ class AssetsManager {
   getAssetInFolder (folder, filename) {
     return this.fromPhotos + folder + '/' + filename
   }
+
+  preloadCovers (arrayOfImages) {
+    for (let i = 0; i < arrayOfImages.length; i++) {
+      const filename = arrayOfImages[i]
+      new Image().src = this.getCover(filename)
+    }
+  }
 }
 
 const assetsManager = new AssetsManager()

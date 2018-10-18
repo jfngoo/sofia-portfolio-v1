@@ -1,7 +1,5 @@
 <template>
   <div ref="home" id="home" v-if="isLoaded">
-    <nav-bar></nav-bar>
-
     <div ref="mask" id="mask"></div>
 
     <div ref="projects" id="projects">
@@ -27,7 +25,6 @@
 </template>
 
 <script>
-import NavBar from '../components/NavBar'
 import AssetsManager from 'lib/assetsManager'
 
 import { mapState, mapGetters, mapMutations } from 'vuex'
@@ -40,10 +37,6 @@ import 'gsap/ScrollToPlugin'
 
 export default {
   name: 'HomeComponent',
-
-  components: {
-    NavBar
-  },
 
   data () {
     return {

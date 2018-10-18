@@ -9,11 +9,27 @@
     <div class="border-left vertical-border">
       <img class="logo" src="../assets/svg/logo-sofia-clear.svg" alt="" @click="goToHome()">
       <nav>
-        <ul>
-          <li @click="setLang('fr')">FR</li>
-          <li @click="setLang('en')">EN</li>
-          <li ref="about" id="nav-about" @click="goToAbout()">{{ $t('nav.about') }}</li>
-          <li ref="work" id="nav-work" @click="goToHome()">{{ $t('nav.work') }}</li>
+        <ul class="langSelector">
+          <li
+            ref="en"
+            :class="{ active: isEN }"
+            @click="setLang('en')">EN</li>
+          <li
+            ref="fr"
+            :class="{ active: isFR }"
+            @click="setLang('fr')">FR</li>
+        </ul>
+        <ul class="routeSelector">
+          <li
+            ref="about"
+            id="nav-about"
+            :class="{ active: isOnAbout }"
+            @click="goToAbout()">{{ $t('nav.about') }}</li>
+          <li
+            ref="work"
+            id="nav-work"
+            :class="{ active: isOnWork }"
+            @click="goToHome()">{{ $t('nav.work') }}</li>
         </ul>
       </nav>
     </div>
@@ -25,7 +41,7 @@
 import EventBus from 'lib/eventBus'
 
 import { mapState, mapMutations } from 'vuex'
-import { CURRENT_PROJECT_ID } from '../store/config.state'
+import { LANG, CURRENT_PROJECT_ID } from '../store/config.state'
 import { SET_LANG } from '../store/config.mutations'
 
 export default {
@@ -38,16 +54,24 @@ export default {
 
   computed: {
     ...mapState({
+      lang: LANG,
       currentProjectId: CURRENT_PROJECT_ID
-    })
-  },
+    }),
 
-  mounted () {
-    if (this.$route.name === 'home' || this.$route.name === 'project') {
-      this.$refs.work.classList.add('active')
-    }
-    if (this.$route.name === 'about') {
-      this.$refs.about.classList.add('active')
+    isFR () {
+      return this.lang === 'fr'
+    },
+
+    isEN () {
+      return this.lang === 'en'
+    },
+
+    isOnWork () {
+      return this.$route.name === 'home' || this.$route.name === 'project'
+    },
+
+    isOnAbout () {
+      return this.$route.name === 'about'
     }
   },
 
@@ -109,7 +133,7 @@ export default {
       }
 
       nav {
-
+        display: flex;
         transform: rotate(-90deg);
         position: absolute;
         left: $border_width / 2;
@@ -118,6 +142,24 @@ export default {
         transform-origin: 0;
         z-index: 999;
         text-align: left;
+
+        ul.routeSelector {
+          font-weight: bold;
+          margin-left: 30px;
+        }
+
+        ul.langSelector {
+          li + li {
+            margin-left: 10px;
+          }
+
+          li {
+            &:after {
+              display: none;
+            }
+          }
+        }
+
         ul {
           margin: 0;
           li {
@@ -147,12 +189,10 @@ export default {
           }
 
           li.active {
+            font-weight: bold;
+
             &:after {
               width: 100%;
-            }
-
-            &:hover:after {
-              width: 80%;
             }
           }
 
