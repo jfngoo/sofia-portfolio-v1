@@ -62,16 +62,6 @@ export default {
     ...mapActions({
       fetchData: FETCH_DATA
     })
-
-    // preloadImages () {
-      // new Image().src = url
-
-      //var img=new Image();
-      //img.src=url;
-
-      //img.onload = callback;
-      //img.onerror = callback;
-    // }
   }
 }
 </script>
