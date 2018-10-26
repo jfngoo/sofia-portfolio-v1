@@ -66,7 +66,6 @@
       <next-project></next-project>
     </div>
 
-
   </div>
 </template>
 

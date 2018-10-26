@@ -5,7 +5,7 @@
     @click="goToNextProject">
     <div class="wrapper">
       <div class="arrow">
-        ->
+        &rarr;
       </div>
       <div class="text">
         <div class="info">{{ $t('project.next') }}</div>
