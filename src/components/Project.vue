@@ -75,7 +75,7 @@ import EventBus from 'lib/eventBus'
 
 import { mapGetters, mapMutations } from 'vuex'
 import { GET_PROJECTS, GET_PROJECT_BY_ID } from '../store/config.getters'
-import { SET_PLAY_HOME_ANIMATION } from '../store/config.mutations'
+import { SET_PLAY_HOME_ANIMATION, SET_LAST_PROJECT_ID } from '../store/config.mutations'
 
 import { TweenMax, TimelineMax, Power2 } from 'gsap'
 
@@ -127,6 +127,7 @@ export default {
 
   mounted () {
     this.addEventListeners()
+    this.setLastProjectId(this.$route.params.id)
   },
 
   beforeDestroy () {
@@ -135,7 +136,8 @@ export default {
 
   methods: {
     ...mapMutations({
-      setPlayHomeAnimation: SET_PLAY_HOME_ANIMATION
+      setPlayHomeAnimation: SET_PLAY_HOME_ANIMATION,
+      setLastProjectId: SET_LAST_PROJECT_ID
     }),
 
     loadData () {

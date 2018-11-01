@@ -3,7 +3,8 @@ import Vuex from 'vuex'
 import {
   LANG,
   PLAY_HOME_ANIMATION,
-  CURRENT_PROJECT_ID
+  CURRENT_PROJECT_ID,
+  LAST_PROJECT_ID
 } from './config.state'
 
 import {
@@ -16,7 +17,8 @@ import {
   SET_LANG,
   SET_DATA,
   SET_PLAY_HOME_ANIMATION,
-  SET_CURRENT_PROJECT_ID
+  SET_CURRENT_PROJECT_ID,
+  SET_LAST_PROJECT_ID
 } from './config.mutations'
 
 import {
@@ -37,7 +39,8 @@ export default new Vuex.Store({
       en: {}
     },
     [PLAY_HOME_ANIMATION]: true,
-    [CURRENT_PROJECT_ID]: null
+    [CURRENT_PROJECT_ID]: null,
+    [LAST_PROJECT_ID]: null
   },
   getters: {
     [GET_PROJECTS]: state => state.data[state[LANG]].projects,
@@ -60,6 +63,9 @@ export default new Vuex.Store({
     },
     [SET_CURRENT_PROJECT_ID] (state, payload) {
       state[CURRENT_PROJECT_ID] = payload
+    },
+    [SET_LAST_PROJECT_ID] (state, payload) {
+      state[LAST_PROJECT_ID] = payload
     }
   },
   actions: {

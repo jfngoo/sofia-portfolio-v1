@@ -28,9 +28,9 @@
 import AssetsManager from 'lib/assetsManager'
 
 import { mapState, mapGetters, mapMutations } from 'vuex'
-import { CURRENT_PROJECT_ID, PLAY_HOME_ANIMATION } from '../store/config.state'
+import { CURRENT_PROJECT_ID, PLAY_HOME_ANIMATION, LAST_PROJECT_ID } from '../store/config.state'
 import { GET_PROJECTS } from '../store/config.getters'
-import { SET_PLAY_HOME_ANIMATION } from '../store/config.mutations'
+import { SET_PLAY_HOME_ANIMATION, SET_LAST_PROJECT_ID } from '../store/config.mutations'
 
 import { TweenMax, TimelineMax, Power3 } from 'gsap'
 import 'gsap/ScrollToPlugin'
@@ -55,7 +55,8 @@ export default {
   computed: {
     ...mapState({
       currentProjectId: CURRENT_PROJECT_ID,
-      playHomeAnimation: PLAY_HOME_ANIMATION
+      playHomeAnimation: PLAY_HOME_ANIMATION,
+      lastProjectId: LAST_PROJECT_ID
     }),
 
     ...mapGetters({
@@ -69,7 +70,8 @@ export default {
 
   methods: {
     ...mapMutations({
-      setPlayHomeAnimation: SET_PLAY_HOME_ANIMATION
+      setPlayHomeAnimation: SET_PLAY_HOME_ANIMATION,
+      setLastProjectId: SET_LAST_PROJECT_ID
     }),
 
     loadData () {
@@ -147,17 +149,18 @@ export default {
         tl.staggerFrom('#projects ul li .wrapper', 1, { opacity: 0, x: 80, force3D: true }, 0.25, 'tag -= 1.5')
 
         this.setPlayHomeAnimation(false)
-      } else if (this.currentProjectId) {
+      } else if (this.lastProjectId) {
         tl.set(this.$refs.home, { background: '#F0F2FA' })
         tl.set(this.$refs.mask, { display: 'none' })
         tl.set(this.$refs.projects, { visibility: 'visible' })
-        const active = document.getElementById(this.currentProjectId)
+        const active = document.getElementById(this.lastProjectId)
         const scrollTarget = active.offsetTop
         window.scrollTo(0, scrollTarget)
         tl.set('#projects ul li', { opacity: 0 })
         tl.set(active, { opacity: 1 })
         tl.to('#projects ul li', 1, { opacity: 1, force3D: true })
         tl.staggerFrom('#projects ul li .wrapper', 1, { opacity: 0, x: 80, force3D: true }, 0.25, 'tag -= 1.5')
+        this.setLastProjectId(null)
       } else {
         tl.set(this.$refs.home, { background: '#F0F2FA' })
         tl.set(this.$refs.mask, { display: 'none' })
