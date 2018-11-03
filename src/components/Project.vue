@@ -10,7 +10,7 @@
 
       <div id="details" v-if="project.details">
         <div class="what block">
-          <div class="title">What</div>
+          <div class="title">{{ $t('project.what') }}</div>
           <ul class="list">
             <li
               v-for="what in project.details.what"
@@ -18,12 +18,12 @@
           </ul>
         </div>
         <div class="when block">
-          <div class="title">When</div>
+          <div class="title">{{ $t('project.when') }}</div>
           {{project.details.when}}
 
         </div>
         <div class="who block">
-          <div class="title">With</div>
+          <div class="title">{{ $t('project.with') }}</div>
           <ul class="list">
             <li
               v-for="who in project.details.who"

@@ -7,7 +7,10 @@
     "about": "à propos & contact"
   },
   "project": {
-    "next": "Projet suivant"
+    "next": "Projet suivant",
+    "what": "Projet",
+    "when": "Année",
+    "with": "Avec"
   },
   "about": {
     "made": "Réalisé avec"

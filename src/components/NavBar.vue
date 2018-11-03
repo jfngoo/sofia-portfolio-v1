@@ -178,7 +178,7 @@ export default {
               position: absolute;
               left: 50%;
               transform: translateX(-50%);
-              bottom: 2px;
+              bottom: -2px;
               transition: width ease .4s;
             }
 
