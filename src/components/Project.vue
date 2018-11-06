@@ -72,14 +72,14 @@
 <script>
 import AssetsManager from 'lib/assetsManager'
 import EventBus from 'lib/eventBus'
+import NextProject from './NextProject'
 
 import { mapGetters, mapMutations } from 'vuex'
 import { GET_PROJECTS, GET_PROJECT_BY_ID } from '../store/config.getters'
 import { SET_PLAY_HOME_ANIMATION, SET_LAST_PROJECT_ID } from '../store/config.mutations'
 
 import { TweenMax, TimelineMax, Power2 } from 'gsap'
-
-import NextProject from './NextProject'
+require('gsap/ScrollToPlugin') // require is a workaround, import doesn't work somehow...
 
 export default {
   name: 'ProjectComponent',
