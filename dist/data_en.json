@@ -1,0 +1,537 @@
+{
+  "about": {
+    "background": "about.jpg",
+    "head_title": "SOFIA BOGGIO",
+    "description": "Interactive designer and graduated from a Master’s degree of the same name, further to 3 years in apprenticeship at <a href=\"https://www.gobelins.fr\"><b>Gobelins</b></a>, I’m specialized in UX Design, but not only.<br><br>At <a href=\"http://www.soixantecircuits.fr\"><b>Soixante Circuits</b></a> (digital experiences studio) then <a href=\"https://www.joshfire.com\"><b>Joshfire</b></a> (innovation consulting agency), I had the opportunity to work with clients from various fields and I developed a versatile profile.<br>From UX to UI, motion design to video editing, or product design to an IoT prototype, I’m a maker, curious, passionate and dedicated.<br><br>Want to work together? Contact me!",
+    "mail": "boggio.sofia@gmail.com",
+    "facebookURL": "https://fr-fr.facebook.com/soocosplay/",
+    "twitterURL": "https://twitter.com/soocosplay",
+    "behanceURL": "https://www.behance.net/sofiaboggio",
+    "twitchURL": "https://www.twitch.tv/soocosplay"
+  },
+  "projects": [
+    {
+      "id": "allo",
+      "title": "Allo",
+      "type": "Vocal Assistant",
+      "date": "2018",
+      "background": "allo-cover.jpg",
+      "details": {
+        "what": [
+          "UX/UI",
+          "Service design",
+          "IoT"
+        ],
+        "when": "2018",
+        "who": [
+          "Léo Ternoir",
+          "Benjamin Gammaire",
+          "Quentin Tshaimanga",
+          "Sofia Boggio"
+        ]
+      },
+      "content": [
+        {
+          "type": "text",
+          "value": "<b>CONTEXT</b><br>Throughout the years, my classmates and I have been more conscious about how much waste we were producing. That’s why we decided to make Allo: the first zero-waste vocal assistant to be an alternative to the trash and give another life to every product of your house"
+        },
+        {
+          "type": "vimeoId",
+          "value": "277781869"
+        },
+        {
+          "type": "text",
+          "value": "<b>PROJECT</b><br>Each time you have a product that seems to be ready to be thrown away, ask Allo and one of its 5 zero-waste experts what to do with that product to avoid the trash.<br><br>Those experts are here to give you advice on how to preserve your products or give them a new life. For example, with an old orange, Marin, the bathroom expert, can suggest a DIY recipe for dishwasher pods."
+        },
+        {
+          "type": "photos",
+          "value": [
+            "allo-01.jpg"
+          ]
+        },
+        {
+          "type": "text",
+          "value": "<b>HOW DOES IT WORK?</b><br>I conceived Allo’s base on <a href=\"https://www.autodesk.com/products/fusion-360/overview\"><b>Fusion 360</b></a> then 3D printed it so that it could contain a Raspberry Pi 3, a ReSpeaker 4-mic Array and a speaker. It works with <a href=\"https://snips.ai\"><b>Snips</b></a>."
+        },
+        {
+          "type": "photos",
+          "value": [
+            "allo-02.png"
+          ]
+        },
+        {
+          "type": "text",
+          "value": "<b>CHALLENGES</b><br>Allo evolved a lot thanks to users inputs (shadowing, interviews, focus groups, user tests in-situ…) We encountered several issues: where to put Allo? How to keep conversations private? How to avoid a feeling of being moralised? We were able to define 6 design principles with the data we collected."
+        },
+        {
+          "type": "photos",
+          "value": [
+            "allo-02-2_EN.jpg",
+            "allo-03.jpg",
+            "allo-04.jpg",
+            "allo-05.jpg",
+            "allo-06.jpg"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PB",
+      "title": "Petit Bateau",
+      "type": "Interactive shopping",
+      "date": "2018",
+      "background": "PB-cover.jpg",
+      "details": {
+        "what": [
+          "Service design",
+          "UI",
+          "Maker"
+        ],
+        "when": "2018",
+        "who": [
+          "Joshfire",
+          "USERADGENTS"
+        ]
+      },
+      "content": [
+        {
+          "type": "text",
+          "value": "<b>CONTEXT</b><br>For the launch of their new concept store Rue de Sèvres, Petit Bateau wanted to enhance customer’s experience."
+        },
+        {
+          "type": "youtubeId",
+          "value": "5nKtj4hvpjA"
+        },
+        {
+          "type": "text",
+          "value": "<b>PROJECT</b><br>Hand in hand with <a href=\"https://www.useradgents.com/\"><b>USERADGENTS</b></a>, we imagined an interactive, smart and playful device to discover more colours, shapes, sizes and informations with a simple scan or search.<BR><BR>We defined the user journey and features of the device, designed the interface, the technical solution, developed the software and hardware, made and customised the scannable wooden shapes.<BR>This POC will soon be deployed in other Petit Bateau stores. The end goal will allow customers to see the stock in other shops and book / get delivered articles within the hour, and the sales assistants to finalise the sale."
+        },
+        {
+          "type": "text",
+          "value": "<br><br><b>HOW DOES IT WORK?</b><br>The touchscreen is linked to the e-commerce website’s data, allowing customers to browse the whole catalog, products available in the store being highlighted. Screens and scanners are integrated inside the store’s furniture."
+        },
+        {
+          "type": "photos",
+          "value": [
+            "PB_photo_1.jpg",
+            "PB_photo_2.jpg",
+            "PB_photo_3.jpg",
+            "PB_photo_4.jpg",
+            "PB_photo_5.jpg",
+            "PB_photo_6.jpg",
+            "PB_photo_7.jpg"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stiqr",
+      "title": "Stiqr",
+      "type": "Mobile app",
+      "date": "2017",
+      "background": "stiqr-cover.jpg",
+      "details": {
+        "what": [
+          "Mobile App"
+        ],
+        "when": "2017",
+        "who": [
+          "Maximilien Jourdain",
+          "Kévin Moutier",
+          "Zoë Leloutre"
+        ]
+      },
+      "content": [
+        {
+          "type": "text",
+          "value": "<b>PROJECT</b><br>Stiqr is a mobile app enhancing an exhibition’s visit by offering a virtual space for the visitors to express themselves and exchange perceptions about a piece of art at different key moments of the exhibition.<br><br>It’s possible to scan a piece of art with your phone and express yourself or see what other visitors think of that piece of art (via emojis or comments), all of that in augmented reality."
+        },
+        {
+          "type": "text",
+          "value": "<br><br><b>CONTEXT</b><br>Stiqr was our big project in 2017 at Gobelins school, in partnership with the BPI (Bibliothèque Publique d’Information, a public reading library)."
+        },
+        {
+          "type": "vimeoId",
+          "value": "221714503"
+        },
+        {
+          "type": "text",
+          "value": "<b>RESEARCH</b><br>We based our concept on several interviews we conducted of a relatively young public and their habits in museums ; personas and user journey resulting from those interviews ; then wireframes for the final app."
+        },
+        {
+          "type": "text",
+          "value": "<br><br><b>OBJECTIVES</b><br>We had four main objectives for Stiqr:<br>— Democratisation of museums for a young target;<br>— Make the visit more playful and attractive;<br>— Express a range of various emotions (other than « I like » / « I don’t like »);<br>— Involve the visitor more in his/her visit thank to the augmented reality."
+        },
+        {
+          "type": "photos",
+          "value": [ "stiqr-1.jpg" ]
+        },
+        {
+          "type": "text",
+          "value": "<b>HOW DOES IT WORK?</b><br>After selecting an exhibition you’d like to go, once there, you can scan art pieces thanks to the image recognition offered by Vuforia. You can then see others emojis in Augmented Reality."
+        },
+        {
+          "type": "photos",
+          "value": [
+            "stiqr-2.jpg",
+            "stiqr-3.jpg",
+            "stiqr-4.jpg",
+            "stiqr-5.jpg"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "LRI",
+      "title": "La Redoute Intérieurs",
+      "type": "Interactive Devices in-store",
+      "date": "2017",
+      "background": "LRI-cover.jpg",
+      "details": {
+        "what": [
+          "Service design",
+          "UI",
+          "Maker"
+        ],
+        "when": "2017",
+        "who": [
+          "Joshfire",
+          "USERADGENTS"
+        ]
+      },
+      "content": [
+        {
+          "type": "text",
+          "value": "<b>CONTEXT</b><br>La Redoute Intérieurs wanted to make the most out of the opening of their new stores in Lyon and Carré Sénart to offer a multi-channel experience in-store. "
+        },
+        {
+          "type": "youtubeId",
+          "value": "6zUgppfKIjk"
+        },
+        {
+          "type": "text",
+          "value": "<b>PROJECT</b><br>When I was working at Joshfire, we imagined with <a href=\"https://www.useradgents.com/\"><b>USERADGENTS</b></a> an interactive device allowing client to get inspired, access the complete range of La Redoute Interieurs products and making its To-Go selection (by printing or e-mailing). <br>After some user research in the field, interviewing clients and sales assistants to understand their habits, behaviour and expectations, we designed the global experience (user journey), the interface and the console itself, and defined the technical solution.<br><br>This Proof Of Concept will be deployed in all of the La Redoute Interieurs stores. This device will eventually allow a complete buying journey, for a seamless omnichannel experience."
+        },
+        {
+          "type": "photos",
+          "value": [
+            "borneDesign_01.png",
+            "borneDesign_02.jpg"
+          ]
+        },
+        {
+          "type": "text",
+          "value": "<b>HOW DOES IT WORK?</b><br>The touchscreen (connected to the e-commerce’s website’s data) and the printer are hidden inside a solid pine and stainless steel console, materials that easily blend with the design of those new stores."
+        },
+        {
+          "type": "photos",
+          "value": [
+            "borne_01.jpg",
+            "borne_02.jpg",
+            "borne_03.jpg",
+            "borne_04.jpg",
+            "borne_05.jpg"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cushy",
+      "title": "Cushy!",
+      "type": "IoT",
+      "date": "2017",
+      "background": "cushy-cover.jpg",
+      "details": {
+        "what": [
+          "IoT",
+          "Arduino"
+        ],
+        "when": "2017",
+        "who": [
+          "Léo Ternoir",
+          "Jacky Fong",
+          "Léna Scaravella",
+          "Thomas Boulongne",
+          "Sofia Boggio"
+        ]
+      },
+      "content": [
+        {
+          "type": "text",
+          "value": "<b>PROJECT</b><br>Cushy! is a cushion that you can squeeze, pet, or punch when you’re cozy, on your couch, and you don’t know what TV show or movie to watch. It’ll tell you what’s best based on your mood. No need to wonder around for hours, looking for something you haven’t seen and that seems to fit how you’re feeling tonight. Thanks to a user friendly interface, you can instantly get to your movie or TV show."
+        },
+        {
+          "type": "vimeoId",
+          "value": "202369823"
+        },
+        {
+          "type": "text",
+          "value": "<b>CONTEXT</b><br>Cushy! was a 1 month workshop at Gobelins school. We had no other instructions than making an IoT.<br>Since we didn’t have much time, we wanted something fun, challenging but doable and link to a common interest: movies and TV shows."
+        },
+        {
+          "type": "photos",
+          "value": [
+            "cushy-0.jpg"
+          ]
+        },
+        {
+          "type": "text",
+          "value": "<b>HOW DOES IT WORK?</b><br>After many hours of research, try and error, we manage to make a sensor, out of velostat and copper strips, able to map the position and the strength of our hands on the surface of our cushion. So by pressing, stroking, cuddling or even punching Cushy, he'll know and tell you what movie correspond to your mood, based on your gestures. <br>We designed and crafted a custom cushion cover with fabric paint and printed fabric that is matching our UI. More here: <a href='http://cushy.jackyfong.com/'>http://cushy.jackyfong.com</a>"
+        },
+        {
+          "type": "photos",
+          "value": [
+            "cushy-1.jpg",
+            "cushy-2.jpg",
+            "cushy-3.jpg",
+            "cushy-4.jpg",
+            "cushy-5.gif"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marly",
+      "title": "Parfums de Marly",
+      "type": "Interactive window display",
+      "date": "2016",
+      "background": "marly-cover.jpg",
+      "details": {
+        "what": [
+          "Interactive window",
+          "App",
+          "UI"
+        ],
+        "when": "2016",
+        "who": [
+          "Soixante Circuits"
+        ]
+      },
+      "content": [
+        {
+          "type": "text",
+          "value": "<b>CONTEXT</b><br>For their shop rue Cambon, Parfums de Marly wished to re-create the unique ambiance of a parfumer’s workshop from the 18th century that would be visible from the street."
+        },
+        {
+          "type": "vimeoId",
+          "value": "173030067"
+        },
+        {
+          "type": "text",
+          "value": "<b>PROJECT</b><br>We made a realistic and elegantly tailored immersion allowing passersby to interact with the window display with their phone and take part in the confection of a perfume by choosing different aromas.<br>By posting their portrait on Instagram, they could also see it materialise in the form of a digitally displayed rococo painting."
+        },
+        {
+          "type": "text",
+          "value": "<br><br><b>HOW DOES IT WORK?</b><br>A QR Code sticker placed on a window allowed passersby to scan it to launch the experience and control a turning tray. A motor and a smoke machine were installed underneath."
+        },
+        {
+          "type": "photos",
+          "value": [
+            "marly-1.jpg",
+            "marly-2.jpg"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lost-elements",
+      "title": "Lost Elements",
+      "type": "Video Game",
+      "date": "2016",
+      "background": "lostelements-cover.jpg",
+      "details": {
+        "what": [
+          "Tablet game",
+          "IoT",
+          "Unity"
+        ],
+        "when": "2016",
+        "who": [
+          "Anthelme Dumont",
+          "Mélanie Lo",
+          "Kirgan Somville",
+          "Sofia Boggio"
+        ]
+      },
+      "content": [
+        {
+          "type": "text",
+          "value": "<b>STORY</b><br><i>At the dawn of time, the four fundamental elements couldn’t be controlled. Water, sun, wind, and earth unleashed upon the world, devastating everything in their path. Though all those elements were essential for our planet to sustain any life, it is said that an entity named Anjä was born in the depths of the Earth. She had the daunting task of containing the elements in an ancient relic and becoming its guardian. Century by century, nature finally calmed down. So Anjä slowly disappeared, conscientiously/carefully leaving the relic hidden inside a temple. But she hadn’t planned on humankind appearing… and stealing the relic for their own purposes.</i>"
+        },
+        {
+          "type": "vimeoId",
+          "value": "173657249"
+        },
+        {
+          "type": "text",
+          "value": "<b>PROJECT</b><br>Lost Elements is a puzzle game with a connected object that will carry you to an oneiric world not so far from present realities.<br>In order for the player to understand climate imbalance, he/she will have to gather all four elements to learn how to use them properly to solve every puzzles the levels hold. <br>The game consists of a tutorial and four chapters (one per element) in which are contained a predetermined amount of levels. "
+        },
+        {
+          "type": "vimeoId",
+          "value": "170851504"
+        },
+        {
+          "type": "text",
+          "value": "<b>CONTEXT</b><br>Climatic phenomenons that we see today and issues caused by them are complex and the links between one another can feel invisible. And although a meaningful pourcentage of the population is worried about global warming, many basic knowledge and notions about that subject are still quite hard to grasp. That’s why, for that project at Gobelins, we focused on the best way to explain, in a playful way, current climatic and environmental issues and what’s at stake."
+        },
+        {
+          "type": "photos",
+          "value": [
+            "lostelements-3.png"
+          ]
+        },
+        {
+          "type": "text",
+          "value": "<b>HOW DOES IT WORK?</b><br>The game was entirely made on Unity. It’s connected to the object and its Photon Particle (Arduino-like) in wi-fi and detects the selected element thanks to four hall effect sensors and a magnet, as well as a potentiometer to adjust the intensity of the element currently being used."
+        },
+        {
+          "type": "photos",
+          "value": [
+            "lostelements-1.jpg",
+            "lostelements-2.jpg",
+            "lostelements-4.jpg",
+            "lostelements-5.jpg"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "orianna",
+      "title": "Orianna",
+      "type": "Cosplay",
+      "date": "2015",
+      "background": "orianna-cover.jpg",
+      "details": {
+        "what": [
+          "Cosplay",
+          "Arduino"
+        ],
+        "when": "2015",
+        "who": [
+          "Sofia Boggio",
+          "help from Philippe Ravaux",
+          "and Sarah Goldberg"
+        ]
+      },
+      "content": [
+        {
+          "type": "text",
+          "value": "<b>STORY</b><br><i>Once a curious girl of flesh and blood, Orianna is now a technological marvel comprised entirely of clockwork. She became gravely ill after an accident in the lower districts of Zaun, and her failing body had to be replaced with exquisite artifice, piece by piece. Accompanied by an extraordinary brass sphere she built for companionship and protection, Orianna is now free to explore the wonders of Piltover, and beyond.</i>"
+        },
+        {
+          "type": "youtubeId",
+          "value": "XXzo9GRlFNo"
+        },
+        {
+          "type": "text",
+          "value": "<b>CONTEXT / PROJECT</b><br>Cosplay (from « costume and « playing ») isn’t such a well known hobby yet. Many biases are still sticking to it but, for me, it’s a way to challenge myself and going even further with each new project.<br><br>I made Orianna, from League of Legends, to follow through my experimentations with Arduino and motors, improvising myself as an engineer for the 400 hours I spent on it. <br><br>As you can see, I consider my hobby, cosplay, as a work of its own, and treat it with as much implication and motivation than an interactive design project."
+        },
+        {
+          "type": "youtubeId",
+          "value": "-PTDZ0Imkpo"
+        },
+        {
+          "type": "text",
+          "value": "<b>HOW DOES IT WORK?</b><br>The costume was almost 100% hand-made with as primary materials EVA foam, Worbla (thermoplastic), fabric and electronics (2 Arduino Uno, 6 motors, 3 batteries…) I designed every mechanisms, asked the help of Philippe Ravaux for the 3D models of the rail allowing the skirt to spin and then asked Sarah Goldberg to print that rail since I didn’t have a 3D printer at the time."
+        },
+        {
+          "type": "photos",
+          "value": [
+            "o-3.gif",
+            "o-4.jpg",
+            "o-4bis.jpg",
+            "o-5.jpg",
+            "o-7.jpg",
+            "o-8.jpg",
+            "o-9.jpg"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4m-m1",
+      "title": "S4M-M1",
+      "type": "Arduino",
+      "date": "2014",
+      "background": "sammi.jpg",
+      "details": {
+        "what": [
+          "IoT",
+          "Arduino"
+        ],
+        "when": "2014",
+        "who": [
+          "Cynthia Charles",
+          "Sofia Boggio"
+        ]
+      },
+      "content": [
+        {
+          "type": "text",
+          "value": "<b>CONTEXT</b><br>To answer to Dominique Moulon’s instructions (EPSAA, Digital Post-diploma) « Outside the screen », Cynthia Charles and myself got ourselves working with Arduino for the first time and made S4M-M1, or Sammy for friends."
+        },
+        {
+          "type": "vimeoId",
+          "value": "123190477"
+        },
+        {
+          "type": "text",
+          "value": "<b>PROJECT</b><br>Sammy is an autonomous robot who’s only purpose was to move around without bumping into things.<br>We exhibited it during our school's open day and added an evolving design projected behind Sammy so that people passing by could understand what our robot was seeing and how it basically worked. That design was a sinusoidal curve, red when Sammy was close to an obstacle and blue when the coast was clear. "
+        },
+        {
+          "type": "photos",
+          "value": [
+            "s-1.jpg"
+          ]
+        },
+        {
+          "type": "text",
+          "value": "<b>HOW DOES IT WORK?</b><br>Beyond the Arduino, we had an ultrasonic sensor (HC SR-04) measuring the distance between Sammy and an obstacle, thus  identifying that when the robot was less than 5cm from an object, it had to stop, turn around and keep on rolling. A bluetooth sensor connected Sammy to Processing for the visualisation of the curve."
+        },
+        {
+          "type": "photos",
+          "value": [
+            "s-2.jpg",
+            "s-3.jpg",
+            "s-4.jpg"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "attraction-magnitude",
+      "title": "Attraction Magnitude",
+      "type": "Data visualization",
+      "date": "2014",
+      "background": "am-cover.jpg",
+      "details": {
+        "what": [
+          "Data visualization"
+        ],
+        "when": "2015",
+        "who": [
+          "Jacky Fong",
+          "Sofia Boggio"
+        ]
+      },
+      "content": [
+        {
+          "type": "text",
+          "value": "Just because something isn’t tangible doesn’t mean you can’t see it. Data visualization has this power to make informations understandable in a glance. As Gobelins school has a lot of social medias, we created an experience that allows everyone to notice some patterns in the school’s visibility, the number of people following them or viewing their videos."
+        },
+        {
+          "type": "text",
+          "value": "<a href='https://jackyfong.com/lab/socialnetworksactivity/'>https://jackyfong.com/lab/socialnetworksactivity</a>"
+        },
+        {
+          "type": "photos",
+          "value": [
+            "am-0.gif",
+            "am-1.jpg",
+            "am-2.jpg"
+          ]
+        }
+      ]
+    }
+  ]
+}
