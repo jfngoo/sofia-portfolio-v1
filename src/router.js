@@ -7,7 +7,9 @@ import Project from './components/Project'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
+  // USE HISTORY MODE WHEN SERVER IS CORRECTLY CONFIGURED FOR THAT
+  // mode: 'history',
+  mode: 'hash',
   base: process.env.BASE_URL,
   routes: [
     {
