@@ -124,7 +124,8 @@ export default {
   #about {
     min-height: 100vh;
     background: #FFFFFF;
-    font-size: .9rem;
+    font-size: $main_font_size;
+    overflow: hidden;
 
     #about-wrapper {
       padding: 0 0 0 $border-width;
@@ -145,7 +146,7 @@ export default {
         position: absolute;
         top: 0;
         left: $border_width;
-        width: calc(100% - 1 * #{$border-width});
+        width: calc(100% - #{$border-width});
         height: 500px;
         background: #FFFFFF;
         opacity: .3;
@@ -166,7 +167,6 @@ export default {
       padding: 0 20px 60px 20px;
       max-width: 500px;
       line-height: 1.4rem;
-      font-size: 1rem;
       text-align: left;
 
       #social {

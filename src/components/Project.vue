@@ -212,7 +212,7 @@ export default {
 
     min-height: 100vh;
     background: #FFFFFF;
-    font-size: .9rem;
+    font-size: $main_font_size;
     overflow: hidden;
 
     #project-wrapper {

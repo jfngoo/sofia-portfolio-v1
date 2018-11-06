@@ -102,7 +102,7 @@ export default {
   #borders {
 
     color: $clear-purple;
-    font-size: .9rem;
+    font-size: $main_font_size;
 
     .horizontal-border {
       height: $border_width;
