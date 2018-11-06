@@ -18,8 +18,9 @@
 <script>
 import AssetsManager from '../lib/assetsManager'
 
-import { mapGetters } from 'vuex'
+import { mapGetters, mapMutations } from 'vuex'
 import { GET_PROJECTS, GET_PROJECT_BY_ID } from '../store/config.getters'
+import { SET_LAST_PROJECT_ID } from '../store/config.mutations'
 
 export default {
   name: 'NextProject',
@@ -51,11 +52,16 @@ export default {
   },
 
   methods: {
+    ...mapMutations({
+      setLastProjectId: SET_LAST_PROJECT_ID
+    }),
+
     getCover (filename) {
       return AssetsManager.getCover(filename)
     },
 
     goToNextProject () {
+      this.setLastProjectId(this.nextProject.id)
       this.$router.push({ name: 'project', params: { id: this.nextProject.id } })
     }
   }

@@ -160,7 +160,6 @@ export default {
         tl.set(active, { opacity: 1 })
         tl.to('#projects ul li', 1, { opacity: 1, force3D: true })
         tl.staggerFrom('#projects ul li .wrapper', 1, { opacity: 0, x: 80, force3D: true }, 0.25, 'tag -= 1.5')
-        this.setLastProjectId(null)
       } else {
         tl.set(this.$refs.home, { background: '#F0F2FA' })
         tl.set(this.$refs.mask, { display: 'none' })
