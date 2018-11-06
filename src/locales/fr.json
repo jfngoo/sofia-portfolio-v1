@@ -1,0 +1,18 @@
+{
+  "intro": {
+    "scroll": "défiler pour découvrir"
+  },
+  "nav": {
+    "work": "projets",
+    "about": "à propos & contact"
+  },
+  "project": {
+    "next": "Projet suivant",
+    "what": "Projet",
+    "when": "Année",
+    "with": "Avec"
+  },
+  "about": {
+    "made": "Réalisé avec"
+  }
+}

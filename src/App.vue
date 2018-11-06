@@ -1,31 +1,74 @@
 <template>
   <div id="app">
+    <nav-bar v-if="!isOnIntro"></nav-bar>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-  import axios from 'axios'
-  import DataManager from 'lib/dataManager'
+import NavBar from './components/NavBar'
+import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
+import { LANG } from './store/config.state'
+import { SET_CURRENT_PROJECT_ID } from './store/config.mutations'
+import { GET_PROJECTS } from './store/config.getters'
+import { FETCH_DATA } from './store/config.actions'
 
-  export default {
-    name: 'app',
+export default {
+  name: 'app',
 
-    created () {
-      axios.get('/static/data.json')
-        .then((response) => {
-          DataManager.setData(response.data.about, response.data.projects)
-        })
-        .catch((err) => {
-          console.log('error', err)
-        })
+  components: {
+    NavBar
+  },
+
+  data () {
+    return {
+      browserLang: 'en'
     }
+  },
+
+  watch: {
+    lang (locale) {
+      this.$i18n.locale = locale
+    },
+
+    '$route.params.id' (val) {
+      val ? this.setCurrentProjectId(val) : this.setCurrentProjectId(null)
+    }
+  },
+
+  computed: {
+    ...mapState({
+      lang: LANG
+    }),
+
+    ...mapGetters({
+      projects: GET_PROJECTS
+    }),
+
+    isOnIntro () {
+      return this.$route.name === 'intro'
+    }
+  },
+
+  created () {
+    this.fetchData()
+  },
+
+  methods: {
+    ...mapMutations({
+      setCurrentProjectId: SET_CURRENT_PROJECT_ID
+    }),
+
+    ...mapActions({
+      fetchData: FETCH_DATA
+    })
   }
+}
 </script>
 
 <style lang="scss">
 
-  @import './utils/global';
+  @import './assets/style/global';
 
   * {
     box-sizing: border-box;

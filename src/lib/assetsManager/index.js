@@ -1,36 +1,40 @@
 class AssetsManager {
-  static instance;
+  static instance
 
-  constructor() {
+  constructor () {
     if (AssetsManager.instance) {
-      return AssetsManager.instance;
+      return AssetsManager.instance
     }
     // this.fromPhotos = require.context('../../assets/img/');
     // this.fromCovers = require.context('../../assets/img/_covers');
-    this.fromPhotos = '../../../static/img/';
-    this.fromCovers = '../../../static/img/_covers/';
-    AssetsManager.instance = this;
+    this.fromPhotos = '../../../img/static/'
+    this.fromCovers = '../../../img/static/_covers/'
+    AssetsManager.instance = this
   }
 
-  getCover(filename) {
-    // return this.fromCovers('./' + filename);
-    return this.fromCovers + filename;
+  getCover (filename) {
+    return this.fromCovers + filename
   }
 
-  getAboutBackground(filename) {
-    // return this.fromPhotos('./about/' + filename);
-    return this.fromPhotos + '/about/' + filename;
+  getAboutBackground (filename) {
+    return this.fromPhotos + '/about/' + filename
   }
 
-  getPhoto(filename) {
-    // return this.fromPhotos('./' + filename + '.png');
-    return this.fromPhotos + filename + '.png';
+  getAssetInFolder (folder, filename) {
+    return this.fromPhotos + folder + '/' + filename
   }
 
-  getAssetInFolder(folder, filename) {
-    // return this.fromPhotos('./' + folder + '/' + filename);
-    return this.fromPhotos + folder + '/' + filename;
+  preloadCovers (arrayOfImages) {
+    for (let i = 0; i < arrayOfImages.length; i++) {
+      const filename = arrayOfImages[i]
+      new Image().src = this.getCover(filename)
+    }
+  }
+
+  preloadAboutImage (filename) {
+    new Image().src = this.getAboutBackground(filename)
   }
 }
-const assetsManager = new AssetsManager();
-export default assetsManager;
+
+const assetsManager = new AssetsManager()
+export default assetsManager

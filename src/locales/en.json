@@ -1,0 +1,18 @@
+{
+  "intro": {
+    "scroll": "scroll to discover"
+  },
+  "nav": {
+    "work": "work",
+    "about": "about & contact"
+  },
+  "project": {
+    "next": "Next Project",
+    "what": "Project",
+    "when": "Year",
+    "with": "With"
+  },
+  "about": {
+    "made": "Made with"
+  }
+}
