@@ -33,7 +33,7 @@ import { GET_PROJECTS } from '../store/config.getters'
 import { SET_PLAY_HOME_ANIMATION, SET_LAST_PROJECT_ID } from '../store/config.mutations'
 
 import { TweenMax, TimelineMax, Power3 } from 'gsap'
-import 'gsap/ScrollToPlugin'
+require('gsap/ScrollToPlugin') // require is a workaround, import doesn't work somehow...
 
 export default {
   name: 'HomeComponent',

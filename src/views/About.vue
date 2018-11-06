@@ -38,7 +38,7 @@ import AssetsManager from 'lib/assetsManager'
 import { mapGetters } from 'vuex'
 import { GET_ABOUT } from '../store/config.getters'
 
-import { TweenMax, TimelineMax } from 'gsap'
+import { TimelineMax } from 'gsap'
 
 export default {
   name: 'AboutComponent',
@@ -94,15 +94,6 @@ export default {
 
     getAssets (filename) {
       return AssetsManager.getAssetInFolder(this.project.id, filename)
-    },
-
-    goTo (name) {
-      TweenMax.to(window, 0.3, {
-        scrollTo: { y: 0, autoKill: false },
-        onComplete: () => {
-          this.$router.push({ name: name })
-        }
-      })
     },
 
     setTweens () {
