@@ -2,7 +2,6 @@
 
 Sofia Boggio's portfolio: [sofiaboggio.fr][http://sofiaboggio.fr/]
 
-
 ## Project setup
 ```
 npm install
